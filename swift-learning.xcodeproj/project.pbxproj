@@ -17,8 +17,28 @@
 		401A375A2876F7C600C411B9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37442876F7C400C411B9 /* Persistence.swift */; };
 		401A375B2876F7C600C411B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A37452876F7C600C411B9 /* Assets.xcassets */; };
 		401A375C2876F7C600C411B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A37452876F7C600C411B9 /* Assets.xcassets */; };
+		401A37682877114D00C411B9 /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37672877114D00C411B9 /* ColourLoversRepository.swift */; };
+		401A37692877114D00C411B9 /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37672877114D00C411B9 /* ColourLoversRepository.swift */; };
 		401A376B287711B800C411B9 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376A287711B800C411B9 /* ColorModel.swift */; };
 		401A376C287711B800C411B9 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376A287711B800C411B9 /* ColorModel.swift */; };
+		401A376E287712E600C411B9 /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376D287712E600C411B9 /* DIManager.swift */; };
+		401A376F287712E600C411B9 /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376D287712E600C411B9 /* DIManager.swift */; };
+		401A3771287714F900C411B9 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3770287714F900C411B9 /* ApiCall.swift */; };
+		401A3772287714F900C411B9 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3770287714F900C411B9 /* ApiCall.swift */; };
+		401A37742877152B00C411B9 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37732877152B00C411B9 /* WebRepository.swift */; };
+		401A37752877152B00C411B9 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37732877152B00C411B9 /* WebRepository.swift */; };
+		401A3777287715B000C411B9 /* NetworkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3776287715B000C411B9 /* NetworkingHelpers.swift */; };
+		401A3778287715B000C411B9 /* NetworkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3776287715B000C411B9 /* NetworkingHelpers.swift */; };
+		401A377C2877171100C411B9 /* ColorApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A377B2877171100C411B9 /* ColorApiCalls.swift */; };
+		401A377D2877171100C411B9 /* ColorApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A377B2877171100C411B9 /* ColorApiCalls.swift */; };
+		401A378028771A4400C411B9 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A377F28771A4400C411B9 /* AppEnvironment.swift */; };
+		401A378128771A4400C411B9 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A377F28771A4400C411B9 /* AppEnvironment.swift */; };
+		401A378328771BBB00C411B9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378228771BBB00C411B9 /* DIContainer.swift */; };
+		401A378428771BBB00C411B9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378228771BBB00C411B9 /* DIContainer.swift */; };
+		401A378728771C3A00C411B9 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378628771C3A00C411B9 /* InteractorsContainer.swift */; };
+		401A378828771C3A00C411B9 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378628771C3A00C411B9 /* InteractorsContainer.swift */; };
+		401A378A28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378928771C6F00C411B9 /* ColourLoversInteractor.swift */; };
+		401A378B28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378928771C6F00C411B9 /* ColourLoversInteractor.swift */; };
 		401A378E28771E6E00C411B9 /* ColorTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378D28771E6E00C411B9 /* ColorTile.swift */; };
 		401A378F28771E6E00C411B9 /* ColorTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378D28771E6E00C411B9 /* ColorTile.swift */; };
 		401A379128771FAA00C411B9 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A379028771FAA00C411B9 /* ColorList.swift */; };
@@ -36,7 +56,17 @@
 		401A374A2876F7C600C411B9 /* swift-learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A37502876F7C600C411B9 /* swift-learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A37522876F7C600C411B9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		401A37672877114D00C411B9 /* ColourLoversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversRepository.swift; sourceTree = "<group>"; };
 		401A376A287711B800C411B9 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		401A376D287712E600C411B9 /* DIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
+		401A3770287714F900C411B9 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
+		401A37732877152B00C411B9 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
+		401A3776287715B000C411B9 /* NetworkingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelpers.swift; sourceTree = "<group>"; };
+		401A377B2877171100C411B9 /* ColorApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorApiCalls.swift; sourceTree = "<group>"; };
+		401A377F28771A4400C411B9 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		401A378228771BBB00C411B9 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		401A378628771C3A00C411B9 /* InteractorsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorsContainer.swift; sourceTree = "<group>"; };
+		401A378928771C6F00C411B9 /* ColourLoversInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversInteractor.swift; sourceTree = "<group>"; };
 		401A378D28771E6E00C411B9 /* ColorTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTile.swift; sourceTree = "<group>"; };
 		401A379028771FAA00C411B9 /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
 		401A37942877200400C411B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -72,6 +102,7 @@
 		401A373F2876F7C400C411B9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				401A37992877291A00C411B9 /* Clean code - for later */,
 				401A379328771FF700C411B9 /* Utils */,
 				401A378C28771E6500C411B9 /* Views */,
 				401A377E2877192A00C411B9 /* Models */,
@@ -109,12 +140,42 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		401A3779287715CF00C411B9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				401A377A287716FA00C411B9 /* Requests */,
+				401A3770287714F900C411B9 /* ApiCall.swift */,
+				401A37732877152B00C411B9 /* WebRepository.swift */,
+				401A3776287715B000C411B9 /* NetworkingHelpers.swift */,
+				401A37672877114D00C411B9 /* ColourLoversRepository.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		401A377A287716FA00C411B9 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				401A377B2877171100C411B9 /* ColorApiCalls.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		401A377E2877192A00C411B9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				401A376A287711B800C411B9 /* ColorModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		401A378528771C2A00C411B9 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				401A378228771BBB00C411B9 /* DIContainer.swift */,
+				401A378628771C3A00C411B9 /* InteractorsContainer.swift */,
+				401A378928771C6F00C411B9 /* ColourLoversInteractor.swift */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 		401A378C28771E6500C411B9 /* Views */ = {
@@ -132,6 +193,17 @@
 				401A37942877200400C411B9 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		401A37992877291A00C411B9 /* Clean code - for later */ = {
+			isa = PBXGroup;
+			children = (
+				401A376D287712E600C411B9 /* DIManager.swift */,
+				401A377F28771A4400C411B9 /* AppEnvironment.swift */,
+				401A3779287715CF00C411B9 /* API */,
+				401A378528771C2A00C411B9 /* Interactors */,
+			);
+			path = "Clean code - for later";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,13 +304,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401A378A28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
+				401A378728771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
+				401A37682877114D00C411B9 /* ColourLoversRepository.swift in Sources */,
 				401A37532876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
 				401A37592876F7C600C411B9 /* Persistence.swift in Sources */,
+				401A3777287715B000C411B9 /* NetworkingHelpers.swift in Sources */,
 				401A37552876F7C600C411B9 /* swift_learningApp.swift in Sources */,
 				401A378E28771E6E00C411B9 /* ColorTile.swift in Sources */,
+				401A378028771A4400C411B9 /* AppEnvironment.swift in Sources */,
+				401A378328771BBB00C411B9 /* DIContainer.swift in Sources */,
 				401A37572876F7C600C411B9 /* ContentView.swift in Sources */,
+				401A376E287712E600C411B9 /* DIManager.swift in Sources */,
+				401A3771287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A379128771FAA00C411B9 /* ColorList.swift in Sources */,
+				401A377C2877171100C411B9 /* ColorApiCalls.swift in Sources */,
 				401A376B287711B800C411B9 /* ColorModel.swift in Sources */,
+				401A37742877152B00C411B9 /* WebRepository.swift in Sources */,
 				401A37952877200400C411B9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,13 +329,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401A378B28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
+				401A378828771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
+				401A37692877114D00C411B9 /* ColourLoversRepository.swift in Sources */,
 				401A37542876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
 				401A375A2876F7C600C411B9 /* Persistence.swift in Sources */,
+				401A3778287715B000C411B9 /* NetworkingHelpers.swift in Sources */,
 				401A37562876F7C600C411B9 /* swift_learningApp.swift in Sources */,
 				401A378F28771E6E00C411B9 /* ColorTile.swift in Sources */,
+				401A378128771A4400C411B9 /* AppEnvironment.swift in Sources */,
+				401A378428771BBB00C411B9 /* DIContainer.swift in Sources */,
 				401A37582876F7C600C411B9 /* ContentView.swift in Sources */,
+				401A376F287712E600C411B9 /* DIManager.swift in Sources */,
+				401A3772287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A379228771FAA00C411B9 /* ColorList.swift in Sources */,
+				401A377D2877171100C411B9 /* ColorApiCalls.swift in Sources */,
 				401A376C287711B800C411B9 /* ColorModel.swift in Sources */,
+				401A37752877152B00C411B9 /* WebRepository.swift in Sources */,
 				401A37962877200400C411B9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
