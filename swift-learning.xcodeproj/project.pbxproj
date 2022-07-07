@@ -72,6 +72,8 @@
 		401A373F2876F7C400C411B9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				401A379328771FF700C411B9 /* Utils */,
+				401A378C28771E6500C411B9 /* Views */,
 				401A377E2877192A00C411B9 /* Models */,
 				401A37662877087300C411B9 /* Base */,
 				401A37422876F7C400C411B9 /* swift_learningApp.swift */,
