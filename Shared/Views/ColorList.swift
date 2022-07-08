@@ -12,6 +12,7 @@ struct ColorList: View {
     
     @State var model: [ColorModel]
     @State private var cancellable: AnyCancellable?
+    private let networkController = RealNetworkController<[ColorModel]>()
     
     init(model: [ColorModel] = []) {
         self.model = model
@@ -19,29 +20,54 @@ struct ColorList: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [Constants.defaultGridItem], alignment: .center) {
-                ForEach(model, id: \.id) { colorModel in
-                    ColorTile(viewModel: colorModel)
-                }
+            createView(baseOn: model)
+        }
+    }
+    
+    private func refreshModel() { // TODO: request should be somewhere else
+        let request = GetColorsRequest()
+        Task {
+            do {
+                self.model = try await networkController.sendRequest(request)
+            } catch(let error) {
+                print("Error: \(error)")
             }
-            .frame(maxWidth: .infinity, minHeight: Constants.defaultTileSize,
-                   alignment: .center)
-            .onAppear {
-                
-                let baseURL = URL(string: "https://www.colourlovers.com/api/colors")!
-                var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)!
-                let queryItems = [URLQueryItem(name: "format", value: "json")]
-                urlComponents.queryItems = queryItems
-                
-                cancellable = URLSession.shared.dataTaskPublisher(for: urlComponents.url!)
-                    .map { print($0.data); return $0.data }
-                    .decode(type: [ColorModel].self, decoder: JSONDecoder())
-                    .replaceError(with: [])
-                    .eraseToAnyPublisher()
-                    .sink(receiveValue: { colorModels in
-                        self.model = colorModels
-                    })
+        }
+    }
+}
+
+
+// MARK: View builders
+extension ColorList {
+    @ViewBuilder
+    private func createView(baseOn model: [ColorModel]) -> some View {
+        if model.isEmpty {
+            createInfoView()
+        } else {
+            createColorList(model: model)
+        }
+    }
+    
+    @ViewBuilder
+    private func createColorList(model: [ColorModel]) -> some View {
+        LazyVGrid(columns: [Constants.defaultGridItem], alignment: .center) {
+            ForEach(model, id: \.id) { colorModel in
+                ColorTile(viewModel: colorModel)
             }
+        }
+        .frame(maxWidth: .infinity, minHeight: Constants.defaultTileSize,
+               alignment: .center)
+    }
+    
+    @ViewBuilder
+    private func createInfoView() -> some View {
+        VStack(alignment: .center) {
+            Spacer()
+            Text("There are no colours to show!")
+            Spacer()
+        }
+        .onAppear() {
+            refreshModel()
         }
     }
 }
