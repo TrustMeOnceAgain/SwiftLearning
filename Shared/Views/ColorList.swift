@@ -12,7 +12,7 @@ struct ColorList: View {
     
     @State var model: [ColorModel]
     @State private var cancellable: AnyCancellable?
-    private let networkController = RealNetworkController<[ColorModel]>()
+    private let networkController = ColourLoversController(networkController: RealNetworkController())
     
     init(model: [ColorModel] = []) {
         self.model = model
@@ -24,11 +24,10 @@ struct ColorList: View {
         }
     }
     
-    private func refreshModel() { // TODO: request should be somewhere else
-        let request = GetColorsRequest()
+    private func refreshModel() {
         Task {
             do {
-                self.model = try await networkController.sendRequest(request)
+                self.model = try await networkController.getColors()
             } catch(let error) {
                 print("Error: \(error)")
             }

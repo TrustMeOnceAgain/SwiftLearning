@@ -12,6 +12,5 @@ struct GetColorsRequest: Request {
     var path: String = "/api/colors"
     var host: Host = .colourLovers
     var parameters: Parameters { .queryKeyValues([(key: "format", value: "json")]) }
-    var parametersEncoding: ParametersEncoding = .url
     var httpMethod: HTTPMethod = .GET
 }

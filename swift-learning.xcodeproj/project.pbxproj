@@ -55,6 +55,10 @@
 		401A37A728782A4B00C411B9 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A528782A4B00C411B9 /* NetworkController.swift */; };
 		401A37A928782E6D00C411B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A828782E6D00C411B9 /* RequestError.swift */; };
 		401A37AA28782E6D00C411B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A828782E6D00C411B9 /* RequestError.swift */; };
+		40B61A1C287C00B5001BD1AF /* ColourLoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */; };
+		40B61A1D287C00B5001BD1AF /* ColourLoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */; };
+		40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
+		40B61A20287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +89,8 @@
 		401A37A2287826C200C411B9 /* GetColorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColorsRequest.swift; sourceTree = "<group>"; };
 		401A37A528782A4B00C411B9 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		401A37A828782E6D00C411B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversController.swift; sourceTree = "<group>"; };
+		40B61A1E287C0E58001BD1AF /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,7 @@
 		401A379328771FF700C411B9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				401A376D287712E600C411B9 /* DIManager.swift */,
 				401A37942877200400C411B9 /* Constants.swift */,
 			);
 			path = Utils;
@@ -214,7 +221,6 @@
 		401A37992877291A00C411B9 /* Clean code - for later */ = {
 			isa = PBXGroup;
 			children = (
-				401A376D287712E600C411B9 /* DIManager.swift */,
 				401A377F28771A4400C411B9 /* AppEnvironment.swift */,
 				401A3779287715CF00C411B9 /* API */,
 				401A378528771C2A00C411B9 /* Interactors */,
@@ -229,7 +235,9 @@
 				401A379B28781BEE00C411B9 /* Request.swift */,
 				401A379E2878200C00C411B9 /* Host.swift */,
 				401A37A528782A4B00C411B9 /* NetworkController.swift */,
+				40B61A1E287C0E58001BD1AF /* Interpreter.swift */,
 				401A37A828782E6D00C411B9 /* RequestError.swift */,
+				40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -342,6 +350,7 @@
 			files = (
 				401A37A628782A4B00C411B9 /* NetworkController.swift in Sources */,
 				401A378A28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
+				40B61A1C287C00B5001BD1AF /* ColourLoversController.swift in Sources */,
 				401A378728771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
 				401A37682877114D00C411B9 /* ColourLoversRepository.swift in Sources */,
 				401A37532876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
@@ -358,6 +367,7 @@
 				401A3771287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A3287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				401A379128771FAA00C411B9 /* ColorList.swift in Sources */,
+				40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */,
 				401A37A928782E6D00C411B9 /* RequestError.swift in Sources */,
 				401A377C2877171100C411B9 /* ColorApiCalls.swift in Sources */,
 				401A376B287711B800C411B9 /* ColorModel.swift in Sources */,
@@ -372,6 +382,7 @@
 			files = (
 				401A37A728782A4B00C411B9 /* NetworkController.swift in Sources */,
 				401A378B28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
+				40B61A1D287C00B5001BD1AF /* ColourLoversController.swift in Sources */,
 				401A378828771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
 				401A37692877114D00C411B9 /* ColourLoversRepository.swift in Sources */,
 				401A37542876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
@@ -388,6 +399,7 @@
 				401A3772287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A4287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				401A379228771FAA00C411B9 /* ColorList.swift in Sources */,
+				40B61A20287C0E58001BD1AF /* Interpreter.swift in Sources */,
 				401A37AA28782E6D00C411B9 /* RequestError.swift in Sources */,
 				401A377D2877171100C411B9 /* ColorApiCalls.swift in Sources */,
 				401A376C287711B800C411B9 /* ColorModel.swift in Sources */,
