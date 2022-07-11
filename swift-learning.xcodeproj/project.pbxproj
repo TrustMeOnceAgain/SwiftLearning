@@ -59,6 +59,8 @@
 		40B61A1D287C00B5001BD1AF /* ColourLoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */; };
 		40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
 		40B61A20287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
+		40B61A22287C327D001BD1AF /* ColorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A21287C327D001BD1AF /* ColorDetails.swift */; };
+		40B61A23287C327D001BD1AF /* ColorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A21287C327D001BD1AF /* ColorDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,7 @@
 		401A37A828782E6D00C411B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversController.swift; sourceTree = "<group>"; };
 		40B61A1E287C0E58001BD1AF /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
+		40B61A21287C327D001BD1AF /* ColorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,7 @@
 		401A378C28771E6500C411B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				40B61A21287C327D001BD1AF /* ColorDetails.swift */,
 				401A378D28771E6E00C411B9 /* ColorTile.swift */,
 				401A379028771FAA00C411B9 /* ColorList.swift */,
 			);
@@ -364,6 +368,7 @@
 				401A379F2878200C00C411B9 /* Host.swift in Sources */,
 				401A376E287712E600C411B9 /* DIManager.swift in Sources */,
 				401A379C28781BEE00C411B9 /* Request.swift in Sources */,
+				40B61A22287C327D001BD1AF /* ColorDetails.swift in Sources */,
 				401A3771287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A3287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				401A379128771FAA00C411B9 /* ColorList.swift in Sources */,
@@ -396,6 +401,7 @@
 				401A37A02878200C00C411B9 /* Host.swift in Sources */,
 				401A376F287712E600C411B9 /* DIManager.swift in Sources */,
 				401A379D28781C7C00C411B9 /* Request.swift in Sources */,
+				40B61A23287C327D001BD1AF /* ColorDetails.swift in Sources */,
 				401A3772287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A4287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				401A379228771FAA00C411B9 /* ColorList.swift in Sources */,

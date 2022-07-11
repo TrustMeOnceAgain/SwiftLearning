@@ -12,16 +12,17 @@ struct ColorList: View {
     
     @State var model: [ColorModel]
     @State private var cancellable: AnyCancellable?
-    private let networkController = ColourLoversController(networkController: RealNetworkController())
+    private let networkController = DIManager.shared.colourLoversController
     
     init(model: [ColorModel] = []) {
         self.model = model
     }
     
     var body: some View {
-        ScrollView {
+        NavigationView {
             createView(baseOn: model)
         }
+        .navigationTitle("ColourLovers")
     }
     
     private func refreshModel() {
@@ -49,13 +50,30 @@ extension ColorList {
     
     @ViewBuilder
     private func createColorList(model: [ColorModel]) -> some View {
-        LazyVGrid(columns: [Constants.defaultGridItem], alignment: .center) {
-            ForEach(model, id: \.id) { colorModel in
+    #if os(iOS)
+        ScrollView {
+            LazyVGrid(columns: [Constants.defaultGridItem], alignment: .center) {
+                createColorTiles(model: model)
+            }
+            .frame(maxWidth: .infinity,
+                   minHeight: Constants.defaultTileSize,
+                   alignment: .center)
+        }
+    #else
+        List {
+            createColorTiles(model: model)
+        }
+    #endif
+        
+    }
+    
+    @ViewBuilder
+    private func createColorTiles(model: [ColorModel]) -> some View {
+        ForEach(model, id: \.id) { colorModel in
+            NavigationLink(destination: { ColorDetails(viewModel: colorModel)}) {
                 ColorTile(viewModel: colorModel)
             }
         }
-        .frame(maxWidth: .infinity, minHeight: Constants.defaultTileSize,
-               alignment: .center)
     }
     
     @ViewBuilder

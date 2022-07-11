@@ -15,7 +15,7 @@ struct ColorTile: View {
         RoundedRectangle(cornerRadius: 15)
             .fill()
             .foregroundColor(viewModel.color)
-            .frame(width: 100.0, height: 100.0, alignment: .center)
+            .frame(width: Constants.defaultTileSize, height: Constants.defaultTileSize, alignment: .center)
             .overlay(getView(for: viewModel))
             .overlay(
                 RoundedRectangle(cornerRadius: 15)

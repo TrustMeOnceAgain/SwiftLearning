@@ -10,4 +10,6 @@ import Foundation
 class DIManager {
     static var shared: DIManager = DIManager()
     private init() {}
+    
+    lazy private(set) var colourLoversController = ColourLoversController(networkController: RealNetworkController())
 }
