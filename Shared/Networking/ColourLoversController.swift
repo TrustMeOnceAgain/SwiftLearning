@@ -5,7 +5,7 @@
 //  Created by Filip Cybuch on 11/07/2022.
 //
 
-import Foundation
+import Combine
 
 class ColourLoversController {
     let networkController: NetworkController
@@ -17,5 +17,22 @@ class ColourLoversController {
     func getColors() async throws -> [ColorModel] {
         let request = GetColorsRequest()
         return try await networkController.sendRequest(request)
+    }
+    
+    func getColorsCombine() -> AnyPublisher<[ColorModel], RequestError> {
+        Deferred {
+            Future { promise in
+                Task {
+                    do {
+                        promise(.success(try await self.getColors()))
+                    } catch (let error as RequestError){
+                        promise(.failure(error))
+                    } catch {
+                        promise(.failure(.badRequest))
+                    }
+                }
+            }
+        }
+        .eraseToAnyPublisher()
     }
 }

@@ -10,8 +10,8 @@ import Combine
 
 struct ColorList: View {
     
-    @State var model: [ColorModel]
-    @State private var cancellable: AnyCancellable?
+    @State private var model: [ColorModel]
+    @State private var cancellable: Set<AnyCancellable> = []
     private let networkController = DIManager.shared.colourLoversController
     
     init(model: [ColorModel] = []) {
@@ -26,13 +26,14 @@ struct ColorList: View {
     }
     
     private func refreshModel() {
-        Task {
-            do {
-                self.model = try await networkController.getColors()
-            } catch(let error) {
-                print("Error: \(error)")
-            }
-        }
+        networkController.getColorsCombine()
+            .sink(receiveCompletion: { completion in
+                print("\(#function): \(completion)")
+            }, receiveValue: { model in
+                print("New Value!")
+                self.model = model
+            })
+            .store(in: &cancellable)
     }
 }
 
@@ -81,11 +82,10 @@ extension ColorList {
         VStack(alignment: .center) {
             Spacer()
             Text("There are no colours to show!")
+            Button("Refresh list", action: refreshModel)
             Spacer()
         }
-        .onAppear() {
-            refreshModel()
-        }
+        .onAppear(perform: refreshModel)
     }
 }
 
