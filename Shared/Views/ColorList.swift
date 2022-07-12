@@ -21,6 +21,7 @@ struct ColorList: View {
     var body: some View {
         NavigationView {
             createView(baseOn: model)
+                .frame(minWidth: 300)
         }
         .navigationTitle("ColourLovers")
     }
@@ -45,30 +46,14 @@ extension ColorList {
         if model.isEmpty {
             createInfoView()
         } else {
-            createColorList(model: model)
-        }
-    }
-    
-    @ViewBuilder
-    private func createColorList(model: [ColorModel]) -> some View {
-    #if os(iOS)
-        ScrollView {
-            LazyVGrid(columns: [Constants.defaultGridItem], alignment: .center) {
-                createColorTiles(model: model)
+            List {
+                createColorCells(model: model)
             }
-            .frame(maxWidth: .infinity,
-                   minHeight: Constants.defaultTileSize,
-                   alignment: .center)
+            .listStyle(.inset)
         }
-    #else
-        List {
-            createColorTiles(model: model)
-        }
-    #endif
-        
     }
     
-    @ViewBuilder
+    // Not used
     private func createColorTiles(model: [ColorModel]) -> some View {
         ForEach(model, id: \.id) { colorModel in
             NavigationLink(destination: { ColorDetails(viewModel: colorModel)}) {
@@ -77,7 +62,14 @@ extension ColorList {
         }
     }
     
-    @ViewBuilder
+    private func createColorCells(model: [ColorModel]) -> some View {
+        ForEach(model, id: \.id) { colorModel in
+            NavigationLink(destination: { ColorDetails(viewModel: colorModel)}) {
+                Cell(viewModel: CellViewModel(title: colorModel.title, subtitle: colorModel.userName, rightColor: colorModel.color))
+            }
+        }
+    }
+    
     private func createInfoView() -> some View {
         VStack(alignment: .center) {
             Spacer()

@@ -28,11 +28,11 @@ struct ColorTile: View {
         VStack {
             HStack {
                 Text(model.userName)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color(.mainLabel))
             }
             HStack {
                 Text(model.title)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(.secondaryLabel))
             }
         }
     }

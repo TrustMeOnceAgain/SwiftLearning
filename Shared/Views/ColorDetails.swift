@@ -23,17 +23,17 @@ struct ColorDetails: View {
                 HStack {
                     HStack {
                         Text("Color name:")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(.mainLabel))
                         Text(viewModel.title)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(.secondaryLabel))
                     }
                 }
                 HStack {
                     HStack {
                         Text("User name:")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(.mainLabel))
                         Text(viewModel.userName)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(.secondaryLabel))
                     }
                 }
             }
