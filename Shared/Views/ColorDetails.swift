@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorDetails: View {
     
-    @State var viewModel: ColorModel
+    @State var viewModel: ListColor
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -44,7 +44,7 @@ struct ColorDetails: View {
 
 struct ColorDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ColorDetails(viewModel: ColorModel(id: 123,
+        ColorDetails(viewModel: ListColor(id: 123,
                                            title: "Colorek",
                                            userName: "TrustMe",
                                            rgb: ColorModel.RGB(red: 200, green: 40, blue: 50)))

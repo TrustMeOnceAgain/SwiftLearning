@@ -6,8 +6,9 @@
 //
 
 import Combine
+import Foundation
 
-class ColourLoversController {
+class ColourLoversRepository {
     let networkController: NetworkController
     
     init(networkController: NetworkController) {
@@ -33,6 +34,7 @@ class ColourLoversController {
                 }
             }
         }
+        .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
     }
 }

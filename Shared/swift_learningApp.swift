@@ -13,7 +13,7 @@ struct swift_learningApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ColorList()
+            ColorList(viewModel: ColorListViewModel())
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

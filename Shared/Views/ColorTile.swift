@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorTile: View {
     
-    let viewModel: ColorModel
+    let viewModel: ListColor
     
     var body: some View {
         RoundedRectangle(cornerRadius: 15)
@@ -24,7 +24,7 @@ struct ColorTile: View {
     }
     
     @ViewBuilder
-    private func getView(for model: ColorModel) -> some View {
+    private func getView(for model: ListColor) -> some View {
         VStack {
             HStack {
                 Text(model.userName)
@@ -38,7 +38,7 @@ struct ColorTile: View {
     }
 }
 
-extension ColorModel {
+extension ListColor {
     var color: Color {
         Color(.sRGB, red: Double(rgb.red)/255, green: Double(rgb.green)/255, blue: Double(rgb.blue)/255, opacity: 1.0)
     }

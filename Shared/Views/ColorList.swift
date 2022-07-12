@@ -8,33 +8,79 @@
 import SwiftUI
 import Combine
 
+struct ListColor {
+    let id: Int
+    let title, userName: String
+    let rgb: ColorModel.RGB
+}
+
+class ColorListViewModel: ObservableObject {
+    
+    @Published var colors: [ListColor] = []
+    @Published var search: String = ""
+    @Published private var model: [ListColor]?
+    private var cancellable: Set<AnyCancellable> = []
+    private let networkController: ColourLoversRepository
+    
+    init(nController: ColourLoversRepository = DIManager.shared.colourLoversController) {
+        self.networkController = nController
+        setupSearch()
+    }
+    
+    func onAppear() {
+        fetchData()
+    }
+    
+    func onRefreshButtonTap() {
+        fetchData()
+    }
+    
+    private func setupSearch() {
+        $search
+            .combineLatest($model)
+            .map { (search, model) in
+                guard !search.isEmpty else { return model }
+                return model?.filter { $0.title.contains(search) }
+            }
+            .sink(receiveValue: { [weak self] in
+                self?.colors = $0 ?? []
+            })
+            .store(in: &cancellable)
+    }
+    
+    private func fetchData() {
+        networkController.getColorsCombine()
+            .map { models in
+                models.map {
+                    ListColor(id: $0.id, title: $0.title, userName: $0.userName, rgb: $0.rgb)
+                }
+            }
+            .sink(receiveCompletion: { completion in
+                print("\(#function): \(completion)")
+            }, receiveValue: { [weak self] model in
+                print("New Value!")
+                self?.model = model
+                
+            })
+            .store(in: &cancellable)
+    }
+}
+
 struct ColorList: View {
     
-    @State private var model: [ColorModel]
-    @State private var cancellable: Set<AnyCancellable> = []
     private let networkController = DIManager.shared.colourLoversController
+    @ObservedObject private var viewModel: ColorListViewModel
     
-    init(model: [ColorModel] = []) {
-        self.model = model
+    init(viewModel: ColorListViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
         NavigationView {
-            createView(baseOn: model)
+            createView(baseOn: viewModel.colors)
                 .frame(minWidth: 300)
         }
         .navigationTitle("ColourLovers")
-    }
-    
-    private func refreshModel() {
-        networkController.getColorsCombine()
-            .sink(receiveCompletion: { completion in
-                print("\(#function): \(completion)")
-            }, receiveValue: { model in
-                print("New Value!")
-                self.model = model
-            })
-            .store(in: &cancellable)
     }
 }
 
@@ -42,27 +88,21 @@ struct ColorList: View {
 // MARK: View builders
 extension ColorList {
     @ViewBuilder
-    private func createView(baseOn model: [ColorModel]) -> some View {
-        if model.isEmpty {
-            createInfoView()
-        } else {
-            List {
-                createColorCells(model: model)
-            }
-            .listStyle(.inset)
-        }
-    }
-    
-    // Not used
-    private func createColorTiles(model: [ColorModel]) -> some View {
-        ForEach(model, id: \.id) { colorModel in
-            NavigationLink(destination: { ColorDetails(viewModel: colorModel)}) {
-                ColorTile(viewModel: colorModel)
+    private func createView(baseOn model: [ListColor]) -> some View {
+        VStack {
+            TextField("Search", text: $viewModel.search)
+            if model.isEmpty {
+                createInfoView()
+            } else {
+                List {
+                    createColorCells(model: model)
+                }
+                .listStyle(.inset)
             }
         }
     }
     
-    private func createColorCells(model: [ColorModel]) -> some View {
+    private func createColorCells(model: [ListColor]) -> some View {
         ForEach(model, id: \.id) { colorModel in
             NavigationLink(destination: { ColorDetails(viewModel: colorModel)}) {
                 Cell(viewModel: CellViewModel(title: colorModel.title, subtitle: colorModel.userName, rightColor: colorModel.color))
@@ -74,15 +114,19 @@ extension ColorList {
         VStack(alignment: .center) {
             Spacer()
             Text("There are no colours to show!")
-            Button("Refresh list", action: refreshModel)
+            Button("Refresh list") {
+                viewModel.onRefreshButtonTap()
+            }
             Spacer()
         }
-        .onAppear(perform: refreshModel)
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 
-struct ColorList_Previews: PreviewProvider {
-    static var previews: some View {
-        ColorList(model: [ColorModel(id: 123, title: "Colorek", userName: "TrustMe", rgb: ColorModel.RGB(red: 200, green: 40, blue: 50))])
-    }
-}
+//struct ColorList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ColorList(presenter: )
+//    }
+//}

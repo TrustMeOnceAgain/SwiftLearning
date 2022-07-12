@@ -16,4 +16,5 @@ struct ColorModel: Codable {
     let id: Int
     let title, userName: String
     let rgb: RGB
+    let numViews: Int
 }
