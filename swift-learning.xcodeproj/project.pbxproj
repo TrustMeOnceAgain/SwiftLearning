@@ -55,6 +55,10 @@
 		401A37A728782A4B00C411B9 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A528782A4B00C411B9 /* NetworkController.swift */; };
 		401A37A928782E6D00C411B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A828782E6D00C411B9 /* RequestError.swift */; };
 		401A37AA28782E6D00C411B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A828782E6D00C411B9 /* RequestError.swift */; };
+		4064F51F2881887E00AC2B28 /* ColorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F51E2881887E00AC2B28 /* ColorListViewModel.swift */; };
+		4064F5202881887E00AC2B28 /* ColorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F51E2881887E00AC2B28 /* ColorListViewModel.swift */; };
+		4064F522288188A200AC2B28 /* ListColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ListColor.swift */; };
+		4064F523288188A200AC2B28 /* ListColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ListColor.swift */; };
 		40B61A1C287C00B5001BD1AF /* ColourLoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */; };
 		40B61A1D287C00B5001BD1AF /* ColourLoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */; };
 		40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
@@ -97,6 +101,8 @@
 		401A37A2287826C200C411B9 /* GetColorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColorsRequest.swift; sourceTree = "<group>"; };
 		401A37A528782A4B00C411B9 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		401A37A828782E6D00C411B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		4064F51E2881887E00AC2B28 /* ColorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListViewModel.swift; sourceTree = "<group>"; };
+		4064F521288188A200AC2B28 /* ListColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListColor.swift; sourceTree = "<group>"; };
 		40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversController.swift; sourceTree = "<group>"; };
 		40B61A1E287C0E58001BD1AF /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
 		40B61A21287C327D001BD1AF /* ColorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetails.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				401A379328771FF700C411B9 /* Utils */,
 				401A379A28781BDD00C411B9 /* Networking */,
 				401A377E2877192A00C411B9 /* Models */,
+				4064F51D2881886600AC2B28 /* ViewModels */,
 				401A378C28771E6500C411B9 /* Views */,
 				401A37422876F7C400C411B9 /* swift_learningApp.swift */,
 				401A37402876F7C400C411B9 /* swift_learning.xcdatamodeld */,
@@ -198,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				401A376A287711B800C411B9 /* ColorModel.swift */,
+				4064F521288188A200AC2B28 /* ListColor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +271,14 @@
 				401A37A2287826C200C411B9 /* GetColorsRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		4064F51D2881886600AC2B28 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4064F51E2881887E00AC2B28 /* ColorListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		40B61A2D287DB9B0001BD1AF /* Assets */ = {
@@ -387,6 +403,7 @@
 				401A378E28771E6E00C411B9 /* ColorTile.swift in Sources */,
 				401A378028771A4400C411B9 /* AppEnvironment.swift in Sources */,
 				401A378328771BBB00C411B9 /* DIContainer.swift in Sources */,
+				4064F51F2881887E00AC2B28 /* ColorListViewModel.swift in Sources */,
 				401A37572876F7C600C411B9 /* ContentView.swift in Sources */,
 				401A379F2878200C00C411B9 /* Host.swift in Sources */,
 				401A376E287712E600C411B9 /* DIManager.swift in Sources */,
@@ -394,6 +411,7 @@
 				40B61A22287C327D001BD1AF /* ColorDetails.swift in Sources */,
 				401A3771287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A3287826C200C411B9 /* GetColorsRequest.swift in Sources */,
+				4064F522288188A200AC2B28 /* ListColor.swift in Sources */,
 				40B61A2F287DBA08001BD1AF /* ClolorStyle.swift in Sources */,
 				401A379128771FAA00C411B9 /* ColorList.swift in Sources */,
 				40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */,
@@ -422,6 +440,7 @@
 				401A378F28771E6E00C411B9 /* ColorTile.swift in Sources */,
 				401A378128771A4400C411B9 /* AppEnvironment.swift in Sources */,
 				401A378428771BBB00C411B9 /* DIContainer.swift in Sources */,
+				4064F5202881887E00AC2B28 /* ColorListViewModel.swift in Sources */,
 				401A37582876F7C600C411B9 /* ContentView.swift in Sources */,
 				401A37A02878200C00C411B9 /* Host.swift in Sources */,
 				401A376F287712E600C411B9 /* DIManager.swift in Sources */,
@@ -429,6 +448,7 @@
 				40B61A23287C327D001BD1AF /* ColorDetails.swift in Sources */,
 				401A3772287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A4287826C200C411B9 /* GetColorsRequest.swift in Sources */,
+				4064F523288188A200AC2B28 /* ListColor.swift in Sources */,
 				40B61A30287DBA08001BD1AF /* ClolorStyle.swift in Sources */,
 				401A379228771FAA00C411B9 /* ColorList.swift in Sources */,
 				40B61A20287C0E58001BD1AF /* Interpreter.swift in Sources */,
