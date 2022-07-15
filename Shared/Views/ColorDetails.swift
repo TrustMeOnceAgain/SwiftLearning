@@ -39,6 +39,7 @@ struct ColorDetails: View {
             }
             Spacer()
         }
+        .background(Color(.backgroundColor))
     }
 }
 

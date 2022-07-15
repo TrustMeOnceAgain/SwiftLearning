@@ -20,9 +20,12 @@ struct ColorList: View {
     var body: some View {
         NavigationView {
             createView()
+            #if os(macOS)
                 .frame(minWidth: 300)
+            #endif
+                .background(Color(.backgroundColor))
+                .navigationTitle("ColourLovers") // TODO: Causes layout errors - check
         }
-        .navigationTitle("ColourLovers")
     }
 }
 
@@ -33,22 +36,17 @@ extension ColorList {
     private func createView() -> some View {
         VStack {
             TextField("Search", text: $viewModel.search)
+                .padding([.leading, .trailing], 15)
+                .padding([.top, .bottom], 5)
             if viewModel.colors.isEmpty {
                 InfoView(onAppearAction: { if viewModel.search == "" { viewModel.onAppear() } },
                          onButtonTapAction: { viewModel.onRefreshButtonTap() })
             } else {
-                List {
-                    createColorCells(model: viewModel.colors)
+                List(viewModel.colors, id: \.id) { colorModel in
+                    NavigationLink(destination: { ColorDetails(viewModel: colorModel)}) {
+                        Cell(viewModel: CellViewModel(title: colorModel.title, subtitle: colorModel.userName, rightColor: colorModel.color))
+                    }
                 }
-                .listStyle(.inset)
-            }
-        }
-    }
-    
-    private func createColorCells(model: [ListColor]) -> some View {
-        ForEach(model, id: \.id) { colorModel in
-            NavigationLink(destination: { ColorDetails(viewModel: colorModel)}) {
-                Cell(viewModel: CellViewModel(title: colorModel.title, subtitle: colorModel.userName, rightColor: colorModel.color))
             }
         }
     }
@@ -78,6 +76,15 @@ struct InfoView: View {
         }
     }
 }
+
+#if os(macOS)
+extension NSTableView { // Workaround for tableView on macOS - maybe not needed at the moment
+    open override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        backgroundColor = .clear
+    }
+}
+#endif
 
 //struct ColorList_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -11,6 +11,12 @@ import SwiftUI
 struct swift_learningApp: App {
     let persistenceController = PersistenceController.shared
 
+    init() {
+        #if os(iOS)
+        UITableView.appearance().backgroundColor = .clear
+        #endif
+    }
+    
     var body: some Scene {
         WindowGroup {
             ColorList(viewModel: ColorListViewModel())
