@@ -44,7 +44,7 @@ class ColorListViewModel: ObservableObject {
     
     private func fetchData() {
         repository
-            .getColorsCombine()
+            .getColors()
             .map { models in
                 models.map { ListColor(id: $0.id, title: $0.title, userName: $0.userName, rgb: $0.rgb) }
             }

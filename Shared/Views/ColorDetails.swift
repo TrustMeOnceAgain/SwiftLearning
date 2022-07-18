@@ -9,14 +9,18 @@ import SwiftUI
 
 struct ColorDetails: View {
     
-    @State var viewModel: ListColor
+    @State var viewModel: ListDetailsViewModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            Rectangle()
-                .fill()
-                .foregroundColor(viewModel.color)
-                .frame(height: 200.0, alignment: .center)
+            HStack(alignment: .center, spacing: 0) {
+                ForEach(viewModel.colors, id: \.hashValue) { color in
+                    Rectangle()
+                        .fill()
+                        .foregroundColor(color)
+                        .frame(height: 200.0, alignment: .center)
+                }
+            }
             Spacer()
                 .frame(height: 20)
             VStack {
@@ -45,9 +49,10 @@ struct ColorDetails: View {
 
 struct ColorDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ColorDetails(viewModel: ListColor(id: 123,
-                                           title: "Colorek",
-                                           userName: "TrustMe",
-                                           rgb: ColorModel.RGB(red: 200, green: 40, blue: 50)))
+        ColorDetails(viewModel: ListDetailsViewModel(title: "Colorek", userName: "TrustMe", colors: [.blue]))
+        
+        ColorDetails(viewModel: ListDetailsViewModel(title: "Paletka", userName: "TrustMe", colors: [.blue, .black]))
+        
+        ColorDetails(viewModel: ListDetailsViewModel(title: "Paletka2", userName: "TrustMe", colors: [.blue, .black, .red]))
     }
 }

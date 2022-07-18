@@ -5,10 +5,15 @@
 //  Created by Filip Cybuch on 15/07/2022.
 //
 
-import Foundation
+import SwiftUI
 
 struct ListColor {
     let id: Int
     let title, userName: String
     let rgb: ColorModel.RGB
+}
+
+struct ListDetailsViewModel { // TODO: change name
+    let title, userName: String
+    let colors: [Color]
 }

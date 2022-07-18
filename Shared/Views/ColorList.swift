@@ -45,8 +45,8 @@ extension ColorList {
                          onButtonTapAction: { viewModel.onRefreshButtonTap() })
             } else {
                 List(viewModel.colors, id: \.id) { colorModel in
-                    NavigationLink(destination: { ColorDetails(viewModel: colorModel)}) {
-                        Cell(viewModel: CellViewModel(title: colorModel.title, subtitle: colorModel.userName, rightColor: colorModel.color))
+                    NavigationLink(destination: { ColorDetails(viewModel: ListDetailsViewModel(title: colorModel.title, userName: colorModel.userName, colors: [colorModel.color]))}) {
+                        Cell(viewModel: CellViewModel(title: colorModel.title, subtitle: colorModel.userName, rightColors: [colorModel.color]))
                     }
                 }
             }

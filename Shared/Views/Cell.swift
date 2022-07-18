@@ -12,7 +12,7 @@ struct Cell: View {
     var viewModel: CellViewModel
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
                     Text(viewModel.title)
@@ -31,18 +31,22 @@ struct Cell: View {
                     .padding([.leading, .trailing, .bottom], 8)
                 }
             }
-            if let rightColor = viewModel.rightColor {
+            if let rightColors = viewModel.rightColors {
                 Spacer()
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(rightColor)
-                    .frame(width: 50, height: 50, alignment: .center)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(.borderColor), lineWidth: 1.5)
-                    )
-                    .padding(8)
+                HStack(alignment: .center, spacing: 0) {
+                    ForEach(rightColors, id: \.hashValue) { color in // TODO: There is a possibility of same colors in array
+                        Rectangle()
+                            .foregroundColor(color)
+                    }
+                }
+                .frame(width: 50, height: 50)
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(.borderColor), lineWidth: 1.5)
+                )
+                .padding(8)
             }
-            
         }
         .background(viewModel.backgroundColor)
         .cornerRadius(10)
@@ -57,20 +61,20 @@ struct CellViewModel {
     let subtitle: String?
     let subtitleColor: Color
     let backgroundColor: Color
-    let rightColor: Color?
+    let rightColors: [Color]?
     
-    init(title: String, titleColor: Color = Color(.mainLabel), subtitle: String? = nil, subtitleColor: Color = Color(.secondaryLabel), backgroundColor: Color = .clear, rightColor: Color?) {
+    init(title: String, titleColor: Color = Color(.mainLabel), subtitle: String? = nil, subtitleColor: Color = Color(.secondaryLabel), backgroundColor: Color = .clear, rightColors: [Color]?) {
         self.title = title
         self.titleColor = titleColor
         self.subtitle = subtitle
         self.subtitleColor = subtitleColor
         self.backgroundColor = backgroundColor
-        self.rightColor = rightColor
+        self.rightColors = rightColors
     }
 }
 
 struct Cell_Previews: PreviewProvider {
     static var previews: some View {
-        Cell(viewModel: CellViewModel(title: "Preview color", subtitle: "User name", backgroundColor: .white, rightColor: .blue))
+        Cell(viewModel: CellViewModel(title: "Preview color", subtitle: "User name", backgroundColor: .white, rightColors: [.blue]))
     }
 }

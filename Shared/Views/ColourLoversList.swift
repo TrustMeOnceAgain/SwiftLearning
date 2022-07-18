@@ -30,7 +30,7 @@ extension ColourLoversList {
         VStack {
             List(viewModel, id: \.rawValue) { position in
                 NavigationLink(destination: { destination(position: position)}) {
-                    Cell(viewModel: CellViewModel(title: position.rawValue, subtitle: nil, rightColor: nil))
+                    Cell(viewModel: CellViewModel(title: position.rawValue, subtitle: nil, rightColors: nil))
                     }
                 }
         }
@@ -42,7 +42,7 @@ extension ColourLoversList {
         case .colors:
             ColorList(viewModel: ColorListViewModel())
         case .palettes:
-            PaletteList()
+            PaletteList(viewModel: PaletteListViewModel())
         }
     }
 }

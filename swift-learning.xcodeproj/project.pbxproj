@@ -63,8 +63,14 @@
 		409F08732885773100512203 /* ColoursLoversListPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08712885773100512203 /* ColoursLoversListPosition.swift */; };
 		409F0875288578C600512203 /* PaletteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F0874288578C600512203 /* PaletteList.swift */; };
 		409F0876288578C600512203 /* PaletteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F0874288578C600512203 /* PaletteList.swift */; };
-		40B61A1C287C00B5001BD1AF /* ColourLoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */; };
-		40B61A1D287C00B5001BD1AF /* ColourLoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */; };
+		409F087828857BAE00512203 /* GetPalettesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087728857BAE00512203 /* GetPalettesRequest.swift */; };
+		409F087928857BAE00512203 /* GetPalettesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087728857BAE00512203 /* GetPalettesRequest.swift */; };
+		409F087B28857DC900512203 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087A28857DC900512203 /* Palette.swift */; };
+		409F087C28857DC900512203 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087A28857DC900512203 /* Palette.swift */; };
+		409F087E28857F4300512203 /* PaletteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087D28857F4300512203 /* PaletteListViewModel.swift */; };
+		409F087F28857F4300512203 /* PaletteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087D28857F4300512203 /* PaletteListViewModel.swift */; };
+		40B61A1C287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */; };
+		40B61A1D287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */; };
 		40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
 		40B61A20287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
 		40B61A22287C327D001BD1AF /* ColorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A21287C327D001BD1AF /* ColorDetails.swift */; };
@@ -109,7 +115,10 @@
 		409F086E288576D000512203 /* ColourLoversList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversList.swift; sourceTree = "<group>"; };
 		409F08712885773100512203 /* ColoursLoversListPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoursLoversListPosition.swift; sourceTree = "<group>"; };
 		409F0874288578C600512203 /* PaletteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteList.swift; sourceTree = "<group>"; };
-		40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversController.swift; sourceTree = "<group>"; };
+		409F087728857BAE00512203 /* GetPalettesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPalettesRequest.swift; sourceTree = "<group>"; };
+		409F087A28857DC900512203 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		409F087D28857F4300512203 /* PaletteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteListViewModel.swift; sourceTree = "<group>"; };
+		40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversRepository.swift; sourceTree = "<group>"; };
 		40B61A1E287C0E58001BD1AF /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
 		40B61A21287C327D001BD1AF /* ColorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetails.swift; sourceTree = "<group>"; };
 		40B61A27287DA3DC001BD1AF /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -212,6 +221,7 @@
 				401A376A287711B800C411B9 /* ColorModel.swift */,
 				4064F521288188A200AC2B28 /* ListColor.swift */,
 				409F08712885773100512203 /* ColoursLoversListPosition.swift */,
+				409F087A28857DC900512203 /* Palette.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,7 +278,7 @@
 				401A37A528782A4B00C411B9 /* NetworkController.swift */,
 				40B61A1E287C0E58001BD1AF /* Interpreter.swift */,
 				401A37A828782E6D00C411B9 /* RequestError.swift */,
-				40B61A1B287C00B5001BD1AF /* ColourLoversController.swift */,
+				40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -277,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				401A37A2287826C200C411B9 /* GetColorsRequest.swift */,
+				409F087728857BAE00512203 /* GetPalettesRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -285,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				4064F51E2881887E00AC2B28 /* ColorListViewModel.swift */,
+				409F087D28857F4300512203 /* PaletteListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -400,7 +412,7 @@
 			files = (
 				401A37A628782A4B00C411B9 /* NetworkController.swift in Sources */,
 				401A378A28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
-				40B61A1C287C00B5001BD1AF /* ColourLoversController.swift in Sources */,
+				40B61A1C287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */,
 				401A378728771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
 				40B61A28287DA3DC001BD1AF /* Cell.swift in Sources */,
 				401A37532876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
@@ -415,6 +427,7 @@
 				401A37572876F7C600C411B9 /* ContentView.swift in Sources */,
 				409F08722885773100512203 /* ColoursLoversListPosition.swift in Sources */,
 				401A379F2878200C00C411B9 /* Host.swift in Sources */,
+				409F087B28857DC900512203 /* Palette.swift in Sources */,
 				401A376E287712E600C411B9 /* DIManager.swift in Sources */,
 				401A379C28781BEE00C411B9 /* Request.swift in Sources */,
 				40B61A22287C327D001BD1AF /* ColorDetails.swift in Sources */,
@@ -426,8 +439,10 @@
 				401A379128771FAA00C411B9 /* ColorList.swift in Sources */,
 				40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */,
 				401A37A928782E6D00C411B9 /* RequestError.swift in Sources */,
+				409F087E28857F4300512203 /* PaletteListViewModel.swift in Sources */,
 				401A377C2877171100C411B9 /* ColorApiCalls.swift in Sources */,
 				401A376B287711B800C411B9 /* ColorModel.swift in Sources */,
+				409F087828857BAE00512203 /* GetPalettesRequest.swift in Sources */,
 				401A37742877152B00C411B9 /* WebRepository.swift in Sources */,
 				401A37952877200400C411B9 /* Constants.swift in Sources */,
 			);
@@ -439,7 +454,7 @@
 			files = (
 				401A37A728782A4B00C411B9 /* NetworkController.swift in Sources */,
 				401A378B28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
-				40B61A1D287C00B5001BD1AF /* ColourLoversController.swift in Sources */,
+				40B61A1D287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */,
 				401A378828771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
 				40B61A29287DA3DC001BD1AF /* Cell.swift in Sources */,
 				401A37542876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
@@ -454,6 +469,7 @@
 				401A37582876F7C600C411B9 /* ContentView.swift in Sources */,
 				409F08732885773100512203 /* ColoursLoversListPosition.swift in Sources */,
 				401A37A02878200C00C411B9 /* Host.swift in Sources */,
+				409F087C28857DC900512203 /* Palette.swift in Sources */,
 				401A376F287712E600C411B9 /* DIManager.swift in Sources */,
 				401A379D28781C7C00C411B9 /* Request.swift in Sources */,
 				40B61A23287C327D001BD1AF /* ColorDetails.swift in Sources */,
@@ -465,8 +481,10 @@
 				401A379228771FAA00C411B9 /* ColorList.swift in Sources */,
 				40B61A20287C0E58001BD1AF /* Interpreter.swift in Sources */,
 				401A37AA28782E6D00C411B9 /* RequestError.swift in Sources */,
+				409F087F28857F4300512203 /* PaletteListViewModel.swift in Sources */,
 				401A377D2877171100C411B9 /* ColorApiCalls.swift in Sources */,
 				401A376C287711B800C411B9 /* ColorModel.swift in Sources */,
+				409F087928857BAE00512203 /* GetPalettesRequest.swift in Sources */,
 				401A37752877152B00C411B9 /* WebRepository.swift in Sources */,
 				401A37962877200400C411B9 /* Constants.swift in Sources */,
 			);
