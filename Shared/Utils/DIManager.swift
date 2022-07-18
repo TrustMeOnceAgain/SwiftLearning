@@ -9,7 +9,12 @@ import Foundation
 
 class DIManager {
     static var shared: DIManager = DIManager()
-    private init() {}
     
-    lazy private(set) var colourLoversController = ColourLoversRepository(networkController: RealNetworkController())
+    private init() {
+        self.networkController = RealNetworkController() // TODO: add possibility to mock controller
+        self.colourLoversRepository = ColourLoversRepository(networkController: networkController)
+    }
+    
+    let networkController: NetworkController
+    let colourLoversRepository: ColourLoversRepository
 }

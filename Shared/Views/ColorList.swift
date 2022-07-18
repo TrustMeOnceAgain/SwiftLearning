@@ -10,7 +10,6 @@ import Combine
 
 struct ColorList: View {
     
-    private let networkController = DIManager.shared.colourLoversController
     @ObservedObject private var viewModel: ColorListViewModel
     
     init(viewModel: ColorListViewModel) {
@@ -24,8 +23,14 @@ struct ColorList: View {
                 .frame(minWidth: 300)
             #endif
                 .background(Color(.backgroundColor))
-                .navigationTitle("ColourLovers") // TODO: Causes layout errors - check
+                .navigationTitle("ColourLovers")
         }
+        #if os(macOS)
+        .navigationViewStyle(.columns)
+        #else
+        .navigationViewStyle(.stack)
+        #endif
+        
     }
 }
 
@@ -36,8 +41,13 @@ extension ColorList {
     private func createView() -> some View {
         VStack {
             TextField("Search", text: $viewModel.search)
+                .disableAutocorrection(true)
+            #if os(iOS)
+                .textInputAutocapitalization(.never)
+            #endif
                 .padding([.leading, .trailing], 15)
                 .padding([.top, .bottom], 5)
+            
             if viewModel.colors.isEmpty {
                 InfoView(onAppearAction: { if viewModel.search == "" { viewModel.onAppear() } },
                          onButtonTapAction: { viewModel.onRefreshButtonTap() })

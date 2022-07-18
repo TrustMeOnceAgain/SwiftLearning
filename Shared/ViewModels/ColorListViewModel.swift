@@ -11,12 +11,13 @@ class ColorListViewModel: ObservableObject {
     
     @Published var colors: [ListColor] = []
     @Published var search: String = ""
+    
     @Published private var model: [ListColor]?
     private var cancellable: Set<AnyCancellable> = []
-    private let networkController: ColourLoversRepository
+    private let repository: ColourLoversRepository
     
-    init(networkController: ColourLoversRepository = DIManager.shared.colourLoversController) {
-        self.networkController = networkController
+    init(repository: ColourLoversRepository = DIManager.shared.colourLoversRepository) {
+        self.repository = repository
         setupSearch()
     }
     
@@ -42,19 +43,15 @@ class ColorListViewModel: ObservableObject {
     }
     
     private func fetchData() {
-        networkController
+        repository
             .getColorsCombine()
             .map { models in
-                models.map {
-                    ListColor(id: $0.id, title: $0.title, userName: $0.userName, rgb: $0.rgb)
-                }
+                models.map { ListColor(id: $0.id, title: $0.title, userName: $0.userName, rgb: $0.rgb) }
             }
             .sink(receiveCompletion: { completion in
                 print("\(#function): \(completion)")
             }, receiveValue: { [weak self] model in
-                print("New Value!")
                 self?.model = model
-                
             })
             .store(in: &cancellable)
     }

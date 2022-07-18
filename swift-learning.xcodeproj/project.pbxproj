@@ -17,8 +17,6 @@
 		401A375A2876F7C600C411B9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37442876F7C400C411B9 /* Persistence.swift */; };
 		401A375B2876F7C600C411B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A37452876F7C600C411B9 /* Assets.xcassets */; };
 		401A375C2876F7C600C411B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A37452876F7C600C411B9 /* Assets.xcassets */; };
-		401A37682877114D00C411B9 /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37672877114D00C411B9 /* ColourLoversRepository.swift */; };
-		401A37692877114D00C411B9 /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37672877114D00C411B9 /* ColourLoversRepository.swift */; };
 		401A376B287711B800C411B9 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376A287711B800C411B9 /* ColorModel.swift */; };
 		401A376C287711B800C411B9 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376A287711B800C411B9 /* ColorModel.swift */; };
 		401A376E287712E600C411B9 /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376D287712E600C411B9 /* DIManager.swift */; };
@@ -82,7 +80,6 @@
 		401A374A2876F7C600C411B9 /* swift-learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A37502876F7C600C411B9 /* swift-learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A37522876F7C600C411B9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		401A37672877114D00C411B9 /* ColourLoversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversRepository.swift; sourceTree = "<group>"; };
 		401A376A287711B800C411B9 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		401A376D287712E600C411B9 /* DIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
 		401A3770287714F900C411B9 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
@@ -188,7 +185,6 @@
 				401A3770287714F900C411B9 /* ApiCall.swift */,
 				401A37732877152B00C411B9 /* WebRepository.swift */,
 				401A3776287715B000C411B9 /* NetworkingHelpers.swift */,
-				401A37672877114D00C411B9 /* ColourLoversRepository.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -394,7 +390,6 @@
 				401A378A28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
 				40B61A1C287C00B5001BD1AF /* ColourLoversController.swift in Sources */,
 				401A378728771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
-				401A37682877114D00C411B9 /* ColourLoversRepository.swift in Sources */,
 				40B61A28287DA3DC001BD1AF /* Cell.swift in Sources */,
 				401A37532876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
 				401A37592876F7C600C411B9 /* Persistence.swift in Sources */,
@@ -431,7 +426,6 @@
 				401A378B28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
 				40B61A1D287C00B5001BD1AF /* ColourLoversController.swift in Sources */,
 				401A378828771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
-				401A37692877114D00C411B9 /* ColourLoversRepository.swift in Sources */,
 				40B61A29287DA3DC001BD1AF /* Cell.swift in Sources */,
 				401A37542876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
 				401A375A2876F7C600C411B9 /* Persistence.swift in Sources */,

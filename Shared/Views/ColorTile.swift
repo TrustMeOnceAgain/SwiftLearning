@@ -38,7 +38,7 @@ struct ColorTile: View {
     }
 }
 
-extension ListColor {
+extension ListColor { // TODO: move
     var color: Color {
         Color(.sRGB, red: Double(rgb.red)/255, green: Double(rgb.green)/255, blue: Double(rgb.blue)/255, opacity: 1.0)
     }
