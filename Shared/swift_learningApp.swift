@@ -19,7 +19,14 @@ struct swift_learningApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ColorList(viewModel: ColorListViewModel())
+            NavigationView {
+                ColourLoversList()
+            }
+            #if os(macOS)
+            .navigationViewStyle(.columns)
+            #else
+            .navigationViewStyle(.stack)
+            #endif
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

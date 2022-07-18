@@ -17,20 +17,12 @@ struct ColorList: View {
     }
     
     var body: some View {
-        NavigationView {
-            createView()
-            #if os(macOS)
-                .frame(minWidth: 300)
-            #endif
-                .background(Color(.backgroundColor))
-                .navigationTitle("ColourLovers")
-        }
+        createView()
         #if os(macOS)
-        .navigationViewStyle(.columns)
-        #else
-        .navigationViewStyle(.stack)
+            .frame(minWidth: 300)
         #endif
-        
+            .background(Color(.backgroundColor))
+            .navigationTitle("Colors")
     }
 }
 
