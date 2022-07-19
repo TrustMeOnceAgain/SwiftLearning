@@ -11,6 +11,7 @@ import Combine
 protocol NetworkController {
     func sendRequest<T: Decodable>(_ request: Request) async throws -> T
     func sendRequest<T>(_ request: Request, interpreter: AnyInterpreter<T>) async throws -> T
+    func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError>
 }
 
 class RealNetworkController: NetworkController {
@@ -37,6 +38,24 @@ class RealNetworkController: NetworkController {
         } catch {
             throw RequestError.badRequest
         }
+    }
+    
+    func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError> {
+        Deferred {
+            Future { promise in
+                Task {
+                    do {
+                        promise(.success(try await asyncRequest()))
+                    } catch (let error as RequestError){
+                        promise(.failure(error))
+                    } catch {
+                        promise(.failure(.badRequest))
+                    }
+                }
+            }
+        }
+        .receive(on: queue)
+        .eraseToAnyPublisher()
     }
     
     private func baseRequest(_ request: Request) async throws -> (Data, URLResponse) {

@@ -1,15 +1,17 @@
 //
-//  GetPalettesRequest.swift
+//  GetColorRequest.swift
 //  swift-learning
 //
-//  Created by Filip Cybuch on 18/07/2022.
+//  Created by Filip Cybuch on 19/07/2022.
 //
 
 import Foundation
 
-struct GetPalettesRequest: Request {
+struct GetColorRequest: Request {
     
-    var path: String { "/api/palettes" }
+    let colorId: Int
+    
+    var path: String { "/api/color/\(colorId)" }
     var host: Host { .colourLovers }
     var parameters: Parameters { .queryKeyValues([(key: "format", value: "json")]) }
     var httpMethod: HTTPMethod { .GET }

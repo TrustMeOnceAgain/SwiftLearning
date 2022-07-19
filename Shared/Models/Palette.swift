@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Palette: Decodable {
+struct Palette: Codable, ColourLoversModel {
     let id: Int
     let title, userName: String
     let colorValues: [String]

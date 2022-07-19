@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListColor {
+struct ListColor { // TODO: remove?
     let id: Int
     let title, userName: String
     let rgb: ColorModel.RGB

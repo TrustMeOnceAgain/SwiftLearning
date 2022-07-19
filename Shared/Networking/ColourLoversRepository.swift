@@ -20,44 +20,20 @@ class ColourLoversRepository {
         return try await networkController.sendRequest(request)
     }
     
+    func getColor(withId id: Int) async throws -> ColorModel {
+        try await networkController.sendRequest(GetColorRequest(colorId: id))
+    }
+    
     func getPalettes() async throws -> [Palette] {
         let request = GetPalettesRequest()
         return try await networkController.sendRequest(request)
     }
     
     func getColors() -> AnyPublisher<[ColorModel], RequestError> {
-        Deferred {
-            Future { promise in
-                Task { [weak self] in
-                    do {
-                        promise(.success(try await self?.getColors() ?? []))
-                    } catch (let error as RequestError){
-                        promise(.failure(error))
-                    } catch {
-                        promise(.failure(.badRequest))
-                    }
-                }
-            }
-        }
-        .receive(on: DispatchQueue.main)
-        .eraseToAnyPublisher()
+        networkController.asyncRequestToCombine(getColors, queue: DispatchQueue.main)
     }
     
     func getPalettes() -> AnyPublisher<[Palette], RequestError>{
-        Deferred {
-            Future { promise in
-                Task { [weak self] in
-                    do {
-                        promise(.success(try await self?.getPalettes() ?? []))
-                    } catch (let error as RequestError){
-                        promise(.failure(error))
-                    } catch {
-                        promise(.failure(.badRequest))
-                    }
-                }
-            }
-        }
-        .receive(on: DispatchQueue.main)
-        .eraseToAnyPublisher()
+        networkController.asyncRequestToCombine(getPalettes, queue: DispatchQueue.main)
     }
 }

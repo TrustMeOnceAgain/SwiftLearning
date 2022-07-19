@@ -8,9 +8,14 @@
 import SwiftUI
 import Combine
 
-struct ColourLoversList: View {
+struct ColourLoversSectionList: View {
     
+    let coloursLoverRepository: ColourLoversRepository
     private var viewModel: [ColoursLoversListPosition] = ColoursLoversListPosition.allCases
+    
+    init(coloursLoverRepository: ColourLoversRepository = DIManager.shared.colourLoversRepository) {
+        self.coloursLoverRepository = coloursLoverRepository
+    }
     
     var body: some View {
             createView()
@@ -22,17 +27,16 @@ struct ColourLoversList: View {
     }
 }
 
-
 // MARK: View builders
-extension ColourLoversList {
+extension ColourLoversSectionList {
     @ViewBuilder
     private func createView() -> some View {
         VStack {
             List(viewModel, id: \.rawValue) { position in
                 NavigationLink(destination: { destination(position: position)}) {
                     Cell(viewModel: CellViewModel(title: position.rawValue, subtitle: nil, rightColors: nil))
-                    }
                 }
+            }
         }
     }
     
@@ -40,15 +44,15 @@ extension ColourLoversList {
     private func destination(position: ColoursLoversListPosition) -> some View {
         switch position {
         case .colors:
-            ColorList(viewModel: ColorListViewModel())
+            ColourLoversListView<ColorModel>(viewModel: ColourLoversListViewModel(repository: coloursLoverRepository))
         case .palettes:
-            PaletteList(viewModel: PaletteListViewModel())
+            ColourLoversListView<Palette>(viewModel: ColourLoversListViewModel(repository: coloursLoverRepository))
         }
     }
 }
 
-struct ColourLoversList_Previews: PreviewProvider {
-    static var previews: some View {
-        ColourLoversList()
-    }
-}
+//struct ColourLoversList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ColourLoversList()
+//    }
+//}

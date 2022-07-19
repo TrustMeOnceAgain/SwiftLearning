@@ -9,8 +9,8 @@ import Foundation
 
 struct GetColorsRequest: Request {
     
-    var path: String = "/api/colors"
-    var host: Host = .colourLovers
+    var path: String { "/api/colors" }
+    var host: Host { .colourLovers }
     var parameters: Parameters { .queryKeyValues([(key: "format", value: "json")]) }
-    var httpMethod: HTTPMethod = .GET
+    var httpMethod: HTTPMethod { .GET }
 }
