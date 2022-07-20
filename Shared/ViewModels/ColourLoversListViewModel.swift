@@ -15,6 +15,14 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
     private var cancellable: Set<AnyCancellable> = []
     private let repository: ColourLoversRepository
     
+    var navigationTitle: String {
+        switch ModelType.self {
+        case is ColorModel.Type: return "Colors"
+        case is Palette.Type: return "Palettes"
+        default: return ""
+        }
+    }
+    
     init(repository: ColourLoversRepository) {
         self.repository = repository
         setupModelAndSearch()

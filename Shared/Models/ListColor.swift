@@ -16,4 +16,5 @@ struct ListColor { // TODO: remove?
 struct ListDetailsViewModel { // TODO: change name
     let title, userName: String
     let colors: [Color]
+    let url: URL?
 }

@@ -10,8 +10,21 @@ import Combine
 
 struct ColourLoversSectionList: View {
     
+    enum ColourLoversListType: CaseIterable {
+        case colors, palettes
+        
+        var navigationTitle: String {
+            switch self {
+            case .colors:
+                return "Colors"
+            case .palettes:
+                return "Palettes"
+            }
+        }
+    }
+    
     let coloursLoverRepository: ColourLoversRepository
-    private var viewModel: [ColoursLoversListPosition] = ColoursLoversListPosition.allCases
+    private var viewModel: [ColourLoversListType] = ColourLoversListType.allCases
     
     init(coloursLoverRepository: ColourLoversRepository = DIManager.shared.colourLoversRepository) {
         self.coloursLoverRepository = coloursLoverRepository
@@ -32,21 +45,19 @@ extension ColourLoversSectionList {
     @ViewBuilder
     private func createView() -> some View {
         VStack {
-            List(viewModel, id: \.rawValue) { position in
-                NavigationLink(destination: { destination(position: position)}) {
-                    Cell(viewModel: CellViewModel(title: position.rawValue, subtitle: nil, rightColors: nil))
+            List(viewModel, id: \.navigationTitle) { position in
+                NavigationLink(destination: detinationView(for: position)) {
+                    Cell(viewModel: CellViewModel(title: position.navigationTitle, subtitle: nil, rightColors: nil))
                 }
             }
         }
     }
     
     @ViewBuilder
-    private func destination(position: ColoursLoversListPosition) -> some View {
-        switch position {
-        case .colors:
-            ColourLoversListView<ColorModel>(viewModel: ColourLoversListViewModel(repository: coloursLoverRepository))
-        case .palettes:
-            ColourLoversListView<Palette>(viewModel: ColourLoversListViewModel(repository: coloursLoverRepository))
+    private func detinationView(for listType: ColourLoversListType) -> some View {
+        switch listType {
+        case .colors: ColourLoversListView(viewModel: ColourLoversListViewModel<ColorModel>(repository: coloursLoverRepository))
+        case .palettes: ColourLoversListView(viewModel: ColourLoversListViewModel<Palette>(repository: coloursLoverRepository))
         }
     }
 }

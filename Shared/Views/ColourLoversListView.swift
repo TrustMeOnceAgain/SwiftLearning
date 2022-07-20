@@ -8,17 +8,9 @@
 import SwiftUI
 import Combine
 
-struct ColourLoversListView<ModelType: ColourLoversModel>: View {
+struct ColourLoversListView<ModelType: ColourLoversModel>: View { // TODO: add links in details for colours and palettes
     
     @ObservedObject private var viewModel: ColourLoversListViewModel<ModelType>
-    
-    private var dataType: DataType {
-        switch ModelType.self {
-        case is ColorModel.Type: return .colors
-        case is Palette.Type: return .palettes
-        default: return .unknown
-        }
-    }
     
     init(viewModel: ColourLoversListViewModel<ModelType>) {
         self.viewModel = viewModel
@@ -30,19 +22,7 @@ struct ColourLoversListView<ModelType: ColourLoversModel>: View {
             .frame(minWidth: 300)
         #endif
             .background(Color(.backgroundColor))
-            .navigationTitle(dataType.navigationTitle)
-    }
-    
-    private enum DataType {
-        case colors, palettes, unknown
-        
-        var navigationTitle: String {
-            switch self {
-            case .colors: return "Colors"
-            case .palettes: return "Palettes"
-            case .unknown: return "Unknown"
-            }
-        }
+            .navigationTitle(viewModel.navigationTitle)
     }
 }
 
@@ -51,60 +31,26 @@ extension ColourLoversListView {
     @ViewBuilder
     private func createView() -> some View {
         VStack {
-            TextField("Search", text: $viewModel.search)
-                .disableAutocorrection(true)
-            #if os(iOS)
-                .textInputAutocapitalization(.never)
-            #endif
-                .padding([.leading, .trailing], 15)
-                .padding([.top, .bottom], 5)
-            
-            if let model = viewModel.model, !model.isEmpty {
-                
-                List(model, id: \.id) { model in
-                    let rightColors: [Color] = {
-                        switch model {
-                        case let colorModel as ColorModel:
-                            return [colorModel.color]
-                        case let paletteModel as Palette:
-                            return paletteModel.colors
-                        default:
-                            return []
-                        }
-                    }()
-                    NavigationLink(destination: { ColorDetails(viewModel: ListDetailsViewModel(title: model.title, userName: model.userName, colors: rightColors))}) {
-                        Cell(viewModel: CellViewModel(title: model.title, subtitle: model.userName, rightColors: rightColors))
-                    }
+            SearchView(search: $viewModel.search)
+            if let model = viewModel.model {
+                if model.isEmpty {
+                    InfoView(text: "There is data to show!", onAppearAction: nil, onRefreshButtonTapAction: nil)
+                } else {
+                    loadedView(model: model)
                 }
             } else {
-                InfoView(onAppearAction: { if viewModel.search == "" { viewModel.onAppear() } },
-                         onButtonTapAction: { viewModel.onRefreshButtonTap() })
+                InfoView(text: "There is data to show!",
+                         onAppearAction: viewModel.onAppear,
+                         onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
             }
         }
     }
-}
-
-private struct InfoView: View {
     
-    let onAppearAction: (() -> ())?
-    let onButtonTapAction: (() -> ())?
-    
-    init(onAppearAction: (() -> ())?, onButtonTapAction: (() -> ())?) {
-        self.onAppearAction = onAppearAction
-        self.onButtonTapAction = onButtonTapAction
-    }
-    
-    var body: some View {
-        VStack(alignment: .center) {
-            Spacer()
-            Text("There is data to show!")
-            Button("Refresh list") {
-                onButtonTapAction?()
+    private func loadedView(model: [ColourLoversModel]) -> some View {
+        List(model, id: \.id) { model in
+            NavigationLink(destination: { ColorDetails(viewModel: ListDetailsViewModel(title: model.title, userName: model.userName, colors: model.colors, url: model.webUrl))}) {
+                Cell(viewModel: CellViewModel(title: model.title, subtitle: model.userName, rightColors: model.colors))
             }
-            Spacer()
-        }
-        .onAppear {
-            onAppearAction?()
         }
     }
 }

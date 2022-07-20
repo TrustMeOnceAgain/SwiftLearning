@@ -9,6 +9,7 @@ import Combine
 import Foundation
 
 class ColourLoversRepository {
+    
     let networkController: NetworkController
     
     init(networkController: NetworkController) {
@@ -31,6 +32,10 @@ class ColourLoversRepository {
     
     func getColors() -> AnyPublisher<[ColorModel], RequestError> {
         networkController.asyncRequestToCombine(getColors, queue: DispatchQueue.main)
+    }
+    
+    func getColor(withId id: Int) -> AnyPublisher<ColorModel, RequestError> {
+        networkController.asyncRequestToCombine({ try await self.getColor(withId: id) }, queue: DispatchQueue.main)
     }
     
     func getPalettes() -> AnyPublisher<[Palette], RequestError>{

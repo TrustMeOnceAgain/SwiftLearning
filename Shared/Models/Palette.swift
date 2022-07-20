@@ -12,14 +12,16 @@ struct Palette: Codable, ColourLoversModel {
     let title, userName: String
     let colorValues: [String]
     let numberOfViews: Int
+    private let url: String
     
     enum CodingKeys: String, CodingKey {
-        case id, title, userName
+        case id, title, userName, url
         case numberOfViews = "numViews"
         case colorValues = "colors"
     }
     
     var colors: [Color] { colorValues.map { Color(hex: $0) } }
+    var webUrl: URL? { URL(string: url.replacingOccurrences(of: "http", with: "https")) }
 }
 
 extension Color { // Stack
