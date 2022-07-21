@@ -20,7 +20,7 @@ struct swift_learningApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ColourLoversSectionList()
+                MainSectionList()
             }
             #if os(macOS)
             .navigationViewStyle(.columns)

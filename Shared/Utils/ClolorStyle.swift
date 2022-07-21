@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum ColorStyle {
-    case mainLabel, secondaryLabel, accentColor, borderColor, backgroundColor
+    case mainLabel, secondaryLabel, accentColor, borderColor, backgroundColor, tileColor
 }
 
 extension Color {
@@ -24,6 +24,8 @@ extension Color {
             self = Color("BorderColor")
         case .backgroundColor:
             self = Color("BackgroundColor")
+        case .tileColor:
+            self = Color("TileColor")
         }
     }
 }

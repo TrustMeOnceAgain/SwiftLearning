@@ -24,6 +24,18 @@ struct ColourLoversListView<ModelType: ColourLoversModel>: View { // TODO: add l
             .background(Color(.backgroundColor))
             .navigationTitle(viewModel.navigationTitle)
     }
+    
+//    #if os(macOS)
+//    @State private var currentSubview = AnyView(ContentView())
+//    @State private var showingSubview = false
+//
+//    private func showSubview(view: AnyView) {
+//        withAnimation(.easeOut(duration: 0.3)) {
+//            currentSubview = view
+//            showingSubview = true
+//        }
+//    }
+//    #endif
 }
 
 // MARK: View builders
