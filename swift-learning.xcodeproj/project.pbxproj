@@ -266,6 +266,7 @@
 				409F08AE2887E45A00512203 /* Common */,
 				409F08CF2889516900512203 /* ColourLovers */,
 				409F08D02889517100512203 /* Weather */,
+				409F086E288576D000512203 /* MainSectionList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,7 +328,6 @@
 		409F08AE2887E45A00512203 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				409F086E288576D000512203 /* MainSectionList.swift */,
 				40B61A27287DA3DC001BD1AF /* Cell.swift */,
 				409F08A52887DB4700512203 /* InfoView.swift */,
 				409F08A82887DBE000512203 /* SearchView.swift */,

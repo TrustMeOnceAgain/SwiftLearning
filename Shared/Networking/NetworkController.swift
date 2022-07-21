@@ -9,24 +9,18 @@ import Foundation
 import Combine
 
 protocol NetworkController {
-    func sendRequest<T: Decodable>(_ request: Request, dateFormatter: DateFormatter) async throws -> T
+    func sendRequest<T: Decodable>(_ request: Request) async throws -> T
     func sendRequest<T>(_ request: Request, interpreter: AnyInterpreter<T>) async throws -> T
     func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError>
 }
 
-extension NetworkController {
-    func sendRequest<T: Decodable>(_ request: Request, dateFormatter: DateFormatter = DateFormatter()) async throws -> T {
-        try await sendRequest(request, dateFormatter: dateFormatter)
-    }
-}
-
 class RealNetworkController: NetworkController {
     
-    func sendRequest<T: Decodable>(_ request: Request, dateFormatter: DateFormatter = DateFormatter()) async throws -> T {
+    func sendRequest<T: Decodable>(_ request: Request) async throws -> T {
         do {
             let (data, _) = try await baseRequest(request)
             let jsonDecoder = JSONDecoder()
-            jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
+            jsonDecoder.dateDecodingStrategy = .millisecondsSince1970
             guard let model = try? jsonDecoder.decode(T.self, from: data) else { throw RequestError.parsingFailure }
             return model
         } catch (let error as RequestError) {

@@ -9,7 +9,7 @@ import Foundation
 
 struct CurrentWeatherModel: Codable {
     
-    let date: Date
+    let updateTimestamp: TimeInterval
     let temperatureCelsius: Double
     let temperatureFahrenheit: Double
     let location: Location
@@ -24,13 +24,13 @@ struct CurrentWeatherModel: Codable {
     }
     
     enum CurrentCodingKeys: String, CodingKey {
-        case date = "last_updated"
+        case updateTimeStamp = "last_updated_epoch"
         case temperatureCelsius = "temp_c"
         case temperatureFahrenheit = "temp_f"
     }
     
-    init(date: Date, temperatureCelsius: Double, temperatureFahrenheit: Double, location: Location) {
-        self.date = date
+    init(updateTimestamp: TimeInterval, temperatureCelsius: Double, temperatureFahrenheit: Double, location: Location) {
+        self.updateTimestamp = updateTimestamp
         self.temperatureCelsius = temperatureCelsius
         self.temperatureFahrenheit = temperatureFahrenheit
         self.location = location
@@ -43,7 +43,7 @@ struct CurrentWeatherModel: Codable {
         let currentContainer = try container.nestedContainer(keyedBy: CurrentCodingKeys.self, forKey: .current)
         temperatureCelsius = try currentContainer.decode(Double.self, forKey: .temperatureCelsius)
         temperatureFahrenheit = try currentContainer.decode(Double.self, forKey: .temperatureFahrenheit)
-        date = try currentContainer.decode(Date.self, forKey: .date)
+        updateTimestamp = try currentContainer.decode(TimeInterval.self, forKey: .updateTimeStamp)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -53,6 +53,6 @@ struct CurrentWeatherModel: Codable {
         var currentContainer = container.nestedContainer(keyedBy: CurrentCodingKeys.self, forKey: .current)
         try currentContainer.encode(temperatureCelsius, forKey: .temperatureCelsius)
         try currentContainer.encode(temperatureFahrenheit, forKey: .temperatureFahrenheit)
-        try currentContainer.encode(date, forKey: .date)
+        try currentContainer.encode(updateTimestamp, forKey: .updateTimeStamp)
     }
 }

@@ -45,10 +45,10 @@ struct WeatherTile: View {
 struct WeatherTile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WeatherTile(viewModel: CurrentWeatherModel(date: Date(), temperatureCelsius: 30.4, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
+            WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 30.4, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
                 .preferredColorScheme(.light)
                 
-            WeatherTile(viewModel: CurrentWeatherModel(date: Date(), temperatureCelsius: 31.6, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
+            WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 31.6, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
                 .preferredColorScheme(.dark)
         }
         .previewLayout(.sizeThatFits)

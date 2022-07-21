@@ -11,18 +11,14 @@ import Combine
 class WeatherRepository {
     
     let networkController: NetworkController
-    let dateFormatter: DateFormatter
     
     init(networkController: NetworkController) {
         self.networkController = networkController
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm"
-        self.dateFormatter = dateFormatter
     }
     
     func getCurrentWeather(for location: String) async throws -> CurrentWeatherModel {
         let request = GetCurrentWeatherRequest(location: location)
-        return try await networkController.sendRequest(request, dateFormatter: dateFormatter)
+        return try await networkController.sendRequest(request)
     }
     
     func getCurrentWeather(for location: String) -> AnyPublisher<CurrentWeatherModel, RequestError> {
