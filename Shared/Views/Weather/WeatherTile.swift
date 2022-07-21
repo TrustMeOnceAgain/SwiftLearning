@@ -12,7 +12,7 @@ struct WeatherTile: View {
     let viewModel: CurrentWeatherModel
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 15)
+        RoundedRectangle(cornerRadius: Constants.defaultCornerRadius)
             .fill()
             .foregroundColor(Color(.tileColor))
             .frame(width: Constants.defaultTileSize,
@@ -20,7 +20,7 @@ struct WeatherTile: View {
                    alignment: .center)
             .overlay(getView())
             .overlay(
-                RoundedRectangle(cornerRadius: 15)
+                RoundedRectangle(cornerRadius: Constants.defaultCornerRadius)
                     .stroke(Color(.borderColor), lineWidth: 2)
             )
     }

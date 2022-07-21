@@ -89,8 +89,8 @@
 		40B61A1D287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */; };
 		40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
 		40B61A20287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
-		40B61A22287C327D001BD1AF /* ColorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A21287C327D001BD1AF /* ColorDetails.swift */; };
-		40B61A23287C327D001BD1AF /* ColorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A21287C327D001BD1AF /* ColorDetails.swift */; };
+		40B61A22287C327D001BD1AF /* ColourLoversDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A21287C327D001BD1AF /* ColourLoversDetails.swift */; };
+		40B61A23287C327D001BD1AF /* ColourLoversDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A21287C327D001BD1AF /* ColourLoversDetails.swift */; };
 		40B61A28287DA3DC001BD1AF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A27287DA3DC001BD1AF /* Cell.swift */; };
 		40B61A29287DA3DC001BD1AF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A27287DA3DC001BD1AF /* Cell.swift */; };
 		40B61A2B287DB8BC001BD1AF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B61A2A287DB8BC001BD1AF /* Colors.xcassets */; };
@@ -144,7 +144,7 @@
 		409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+temperatureSymbol.swift"; sourceTree = "<group>"; };
 		40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversRepository.swift; sourceTree = "<group>"; };
 		40B61A1E287C0E58001BD1AF /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
-		40B61A21287C327D001BD1AF /* ColorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetails.swift; sourceTree = "<group>"; };
+		40B61A21287C327D001BD1AF /* ColourLoversDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversDetails.swift; sourceTree = "<group>"; };
 		40B61A27287DA3DC001BD1AF /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		40B61A2A287DB8BC001BD1AF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		40B61A2E287DBA08001BD1AF /* ClolorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClolorStyle.swift; sourceTree = "<group>"; };
@@ -263,9 +263,9 @@
 		401A378C28771E6500C411B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				409F08AE2887E45A00512203 /* Common */,
 				409F08CF2889516900512203 /* ColourLovers */,
 				409F08D02889517100512203 /* Weather */,
-				409F08AE2887E45A00512203 /* Common */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,7 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				409F088C2886D07C00512203 /* ColourLoversListView.swift */,
-				40B61A21287C327D001BD1AF /* ColorDetails.swift */,
+				40B61A21287C327D001BD1AF /* ColourLoversDetails.swift */,
 			);
 			path = ColourLovers;
 			sourceTree = "<group>";
@@ -523,7 +523,7 @@
 				401A376E287712E600C411B9 /* DIManager.swift in Sources */,
 				409F08D32889595200512203 /* Numeric+temperatureSymbol.swift in Sources */,
 				401A379C28781BEE00C411B9 /* Request.swift in Sources */,
-				40B61A22287C327D001BD1AF /* ColorDetails.swift in Sources */,
+				40B61A22287C327D001BD1AF /* ColourLoversDetails.swift in Sources */,
 				401A3771287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A3287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F522288188A200AC2B28 /* ListColor.swift in Sources */,
@@ -573,7 +573,7 @@
 				401A376F287712E600C411B9 /* DIManager.swift in Sources */,
 				409F08D42889595200512203 /* Numeric+temperatureSymbol.swift in Sources */,
 				401A379D28781C7C00C411B9 /* Request.swift in Sources */,
-				40B61A23287C327D001BD1AF /* ColorDetails.swift in Sources */,
+				40B61A23287C327D001BD1AF /* ColourLoversDetails.swift in Sources */,
 				401A3772287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A4287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F523288188A200AC2B28 /* ListColor.swift in Sources */,

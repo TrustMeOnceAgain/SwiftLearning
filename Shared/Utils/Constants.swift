@@ -15,4 +15,5 @@ class Constants {
                                                      maximum: Constants.defaultTileSize),
                                            spacing: Constants.defaultTileSpacing,
                                            alignment: .center)
+    static let defaultCornerRadius: CGFloat = 10
 }

@@ -41,6 +41,6 @@ struct WeatherView: View {
 
 //struct WeatherView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw", "Paris"], repository: ))
+//        WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw", "Paris"], repository: WeatherRepository(networkController: RealNetworkController()) ))
 //    }
 //}

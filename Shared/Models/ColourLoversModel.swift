@@ -13,4 +13,5 @@ protocol ColourLoversModel {
     var userName: String { get }
     var colors: [Color] { get }
     var webUrl: URL? { get }
+    var numberOfViews: Int { get }
 }

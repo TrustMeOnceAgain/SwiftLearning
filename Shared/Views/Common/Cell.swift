@@ -48,9 +48,8 @@ struct Cell: View {
                 .padding(8)
             }
         }
-        .padding([.leading, .trailing], 8)
         .background(viewModel.backgroundColor)
-        .cornerRadius(10)
+        .cornerRadius(Constants.defaultCornerRadius)
     }
     
     var shuldSubtitleBeVisible: Bool { viewModel.subtitle != nil }
@@ -76,6 +75,6 @@ struct CellViewModel {
 
 struct Cell_Previews: PreviewProvider {
     static var previews: some View {
-        Cell(viewModel: CellViewModel(title: "Preview color", subtitle: "User name", backgroundColor: .white, rightColors: [.blue]))
+        Cell(viewModel: CellViewModel(title: "Preview color", subtitle: "User name", backgroundColor: Color(.backgroundColor), rightColors: [.blue]))
     }
 }
