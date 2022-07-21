@@ -15,7 +15,9 @@ struct WeatherTile: View {
         RoundedRectangle(cornerRadius: 15)
             .fill()
             .foregroundColor(Color(.tileColor))
-            .frame(width: Constants.defaultTileSize, height: Constants.defaultTileSize, alignment: .center)
+            .frame(width: Constants.defaultTileSize,
+                   height: Constants.defaultTileSize,
+                   alignment: .center)
             .overlay(getView())
             .overlay(
                 RoundedRectangle(cornerRadius: 15)
@@ -30,9 +32,11 @@ struct WeatherTile: View {
                 Text(viewModel.location.name)
                     .foregroundColor(Color(.mainLabel))
             }
-            HStack {
-                Text(String(viewModel.temperatureCelsius))
-                    .foregroundColor(Color(.secondaryLabel))
+            if let temperature = Int(exactly: viewModel.temperatureCelsius.rounded()) {
+                HStack {
+                    Text(temperature.withCelsiusSymbol)
+                        .foregroundColor(Color(.secondaryLabel))
+                }
             }
         }
     }
@@ -40,12 +44,13 @@ struct WeatherTile: View {
 
 struct WeatherTile_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherTile(viewModel: CurrentWeatherModel(date: Date(), temperatureCelsius: 30.5, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
-            .preferredColorScheme(.light)
-            .previewLayout(.sizeThatFits)
-        
-        WeatherTile(viewModel: CurrentWeatherModel(date: Date(), temperatureCelsius: 30.5, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
-            .preferredColorScheme(.dark)
-            .previewLayout(.sizeThatFits)
+        Group {
+            WeatherTile(viewModel: CurrentWeatherModel(date: Date(), temperatureCelsius: 30.4, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
+                .preferredColorScheme(.light)
+                
+            WeatherTile(viewModel: CurrentWeatherModel(date: Date(), temperatureCelsius: 31.6, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
+                .preferredColorScheme(.dark)
+        }
+        .previewLayout(.sizeThatFits)
     }
 }

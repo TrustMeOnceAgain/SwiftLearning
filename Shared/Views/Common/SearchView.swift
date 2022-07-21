@@ -21,3 +21,22 @@ struct SearchView: View {
             .padding([.top, .bottom], 5)
     }
 }
+
+struct SearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            Group {
+                SearchView(search: .constant("entered text"))
+                SearchView(search: .constant("entered text"))
+            }
+            .preferredColorScheme(.light)
+            
+            Group {
+                SearchView(search: .constant(""))
+                SearchView(search: .constant(""))
+            }
+            .preferredColorScheme(.dark)
+        }
+        .previewLayout(.sizeThatFits)
+    }
+}

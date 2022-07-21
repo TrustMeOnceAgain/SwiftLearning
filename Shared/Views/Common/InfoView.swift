@@ -10,22 +10,43 @@ import SwiftUI
 struct InfoView: View {
     
     let text: String
+    let backgroundColor: Color
     let onAppearAction: (() -> ())?
     let onRefreshButtonTapAction: (() -> ())?
     
+    init(text: String, backgroundColor: Color = Color(.backgroundColor), onAppearAction: (() -> ())?, onRefreshButtonTapAction: (() -> ())?) {
+        self.text = text
+        self.backgroundColor = backgroundColor
+        self.onAppearAction = onAppearAction
+        self.onRefreshButtonTapAction = onRefreshButtonTapAction
+    }
+    
     var body: some View {
         VStack(alignment: .center) {
-            Spacer()
             Text(text)
             if let tapAction = onRefreshButtonTapAction {
                 Button("Refresh") {
                     tapAction()
                 }
             }
-            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(backgroundColor)
         .onAppear {
             onAppearAction?()
         }
+    }
+}
+
+struct InfoView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            InfoView(text: "Info view text", backgroundColor: Color(.backgroundColor), onAppearAction: nil, onRefreshButtonTapAction: { })
+                .preferredColorScheme(.dark)
+            
+            InfoView(text: "Info view text", backgroundColor: Color(.backgroundColor), onAppearAction: nil, onRefreshButtonTapAction: nil)
+                .preferredColorScheme(.light)
+        }
+        .previewLayout(.sizeThatFits)
     }
 }

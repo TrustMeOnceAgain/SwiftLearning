@@ -48,6 +48,7 @@ struct Cell: View {
                 .padding(8)
             }
         }
+        .padding([.leading, .trailing], 8)
         .background(viewModel.backgroundColor)
         .cornerRadius(10)
     }

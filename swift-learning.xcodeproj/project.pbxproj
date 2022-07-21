@@ -83,6 +83,8 @@
 		409F08CB28893D8600512203 /* WeatherTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08C928893D8600512203 /* WeatherTile.swift */; };
 		409F08CD28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08CC28893F4D00512203 /* CurrentWeatherViewModel.swift */; };
 		409F08CE28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08CC28893F4D00512203 /* CurrentWeatherViewModel.swift */; };
+		409F08D32889595200512203 /* Numeric+temperatureSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */; };
+		409F08D42889595200512203 /* Numeric+temperatureSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */; };
 		40B61A1C287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */; };
 		40B61A1D287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */; };
 		40B61A1F287C0E58001BD1AF /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1E287C0E58001BD1AF /* Interpreter.swift */; };
@@ -139,6 +141,7 @@
 		409F08C628893D7500512203 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		409F08C928893D8600512203 /* WeatherTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTile.swift; sourceTree = "<group>"; };
 		409F08CC28893F4D00512203 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
+		409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+temperatureSymbol.swift"; sourceTree = "<group>"; };
 		40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversRepository.swift; sourceTree = "<group>"; };
 		40B61A1E287C0E58001BD1AF /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
 		40B61A21287C327D001BD1AF /* ColorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetails.swift; sourceTree = "<group>"; };
@@ -260,8 +263,8 @@
 		401A378C28771E6500C411B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				409F08D02889517100512203 /* Weather */,
 				409F08CF2889516900512203 /* ColourLovers */,
+				409F08D02889517100512203 /* Weather */,
 				409F08AE2887E45A00512203 /* Common */,
 			);
 			path = Views;
@@ -270,6 +273,7 @@
 		401A379328771FF700C411B9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				409F08D12889593F00512203 /* Extensions */,
 				401A376D287712E600C411B9 /* DIManager.swift */,
 				401A37942877200400C411B9 /* Constants.swift */,
 				40B61A2E287DBA08001BD1AF /* ClolorStyle.swift */,
@@ -367,6 +371,14 @@
 				409F08C928893D8600512203 /* WeatherTile.swift */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		409F08D12889593F00512203 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		40B61A2D287DB9B0001BD1AF /* Assets */ = {
@@ -509,6 +521,7 @@
 				401A379F2878200C00C411B9 /* Host.swift in Sources */,
 				409F087B28857DC900512203 /* Palette.swift in Sources */,
 				401A376E287712E600C411B9 /* DIManager.swift in Sources */,
+				409F08D32889595200512203 /* Numeric+temperatureSymbol.swift in Sources */,
 				401A379C28781BEE00C411B9 /* Request.swift in Sources */,
 				40B61A22287C327D001BD1AF /* ColorDetails.swift in Sources */,
 				401A3771287714F900C411B9 /* ApiCall.swift in Sources */,
@@ -558,6 +571,7 @@
 				401A37A02878200C00C411B9 /* Host.swift in Sources */,
 				409F087C28857DC900512203 /* Palette.swift in Sources */,
 				401A376F287712E600C411B9 /* DIManager.swift in Sources */,
+				409F08D42889595200512203 /* Numeric+temperatureSymbol.swift in Sources */,
 				401A379D28781C7C00C411B9 /* Request.swift in Sources */,
 				40B61A23287C327D001BD1AF /* ColorDetails.swift in Sources */,
 				401A3772287714F900C411B9 /* ApiCall.swift in Sources */,

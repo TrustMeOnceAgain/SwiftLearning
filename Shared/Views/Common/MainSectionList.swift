@@ -92,13 +92,7 @@ extension MainSectionList {
         switch position {
         case .colors: ColourLoversListView(viewModel: ColourLoversListViewModel<ColorModel>(repository: coloursLoverRepository))
         case .palettes: ColourLoversListView(viewModel: ColourLoversListViewModel<Palette>(repository: coloursLoverRepository))
-        case .currentWeather: WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw"], repository: weatherRepository))
+        case .currentWeather: WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw", "London", "Brasilia"], repository: weatherRepository))
         }
     }
 }
-
-//struct ColourLoversList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ColourLoversList()
-//    }
-//}

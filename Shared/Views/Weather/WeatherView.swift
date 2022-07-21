@@ -13,9 +13,9 @@ struct WeatherView: View {
     
     var body: some View {
         contentView
+            .padding()
             .background(Color(.backgroundColor))
             .navigationTitle(viewModel.navigationTitle)
-            .padding()
     }
     
     @ViewBuilder
