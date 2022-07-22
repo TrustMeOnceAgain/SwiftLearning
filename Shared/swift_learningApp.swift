@@ -15,6 +15,7 @@ struct swift_learningApp: App {
         #if os(iOS)
         UITableView.appearance().backgroundColor = .clear
         #endif
+        DIManager.shared.appEnvironment = .realData
     }
     
     var body: some Scene {

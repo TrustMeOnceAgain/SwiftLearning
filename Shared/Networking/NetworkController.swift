@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol NetworkController {
+protocol NetworkController { // TODO: create mocked version
     func sendRequest<T: Decodable>(_ request: Request) async throws -> T
     func sendRequest<T>(_ request: Request, interpreter: AnyInterpreter<T>) async throws -> T
     func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError>

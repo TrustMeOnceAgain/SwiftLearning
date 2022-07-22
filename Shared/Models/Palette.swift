@@ -7,24 +7,35 @@
 
 import SwiftUI
 
-struct Palette: Codable, ColourLoversModel {
+struct Palette: ColourLoversModel {
     let id: Int
     let title, userName: String
     let colorValues: [String]
     let numberOfViews: Int
-    private let url: String
+    let urlString: String
     
+    var colors: [Color] { colorValues.map { Color(hex: $0) } }
+    
+    init(id: Int, title: String, userName: String, colorValues: [String], numberOfViews: Int, url: String) {
+        self.id = id
+        self.title = title
+        self.userName = userName
+        self.colorValues = colorValues
+        self.numberOfViews = numberOfViews
+        self.urlString = url
+    }
+}
+
+extension Palette: Codable {
     enum CodingKeys: String, CodingKey {
-        case id, title, userName, url
+        case id, title, userName
+        case urlString = "url"
         case numberOfViews = "numViews"
         case colorValues = "colors"
     }
-    
-    var colors: [Color] { colorValues.map { Color(hex: $0) } }
-    var webUrl: URL? { URL(string: url.replacingOccurrences(of: "http", with: "https")) }
 }
 
-extension Color { // Stack
+private extension Color { // Stack
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0

@@ -13,5 +13,20 @@ protocol ColourLoversModel {
     var userName: String { get }
     var colors: [Color] { get }
     var webUrl: URL? { get }
+    var urlString: String { get }
     var numberOfViews: Int { get }
+}
+
+extension ColourLoversModel {
+    var webUrl: URL? {
+        let url: String = {
+            if self.urlString.contains("https") {
+                return self.urlString
+            } else {
+                return self.urlString.replacingOccurrences(of: "http", with: "https")
+            }
+        }()
+        
+        return URL(string: url)
+    }
 }

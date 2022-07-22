@@ -7,16 +7,26 @@
 
 import Foundation
 
-struct CurrentWeatherModel: Codable {
+struct CurrentWeatherModel {
+    
+    struct Location: Codable {
+        let name, country: String
+    }
     
     let updateTimestamp: TimeInterval
     let temperatureCelsius: Double
     let temperatureFahrenheit: Double
     let location: Location
     
-    struct Location: Codable {
-        let name, country: String
+    init(updateTimestamp: TimeInterval, temperatureCelsius: Double, temperatureFahrenheit: Double, location: Location) {
+        self.updateTimestamp = updateTimestamp
+        self.temperatureCelsius = temperatureCelsius
+        self.temperatureFahrenheit = temperatureFahrenheit
+        self.location = location
     }
+}
+
+extension CurrentWeatherModel: Codable {
     
     enum CodingKeys: String, CodingKey {
         case location
@@ -27,13 +37,6 @@ struct CurrentWeatherModel: Codable {
         case updateTimeStamp = "last_updated_epoch"
         case temperatureCelsius = "temp_c"
         case temperatureFahrenheit = "temp_f"
-    }
-    
-    init(updateTimestamp: TimeInterval, temperatureCelsius: Double, temperatureFahrenheit: Double, location: Location) {
-        self.updateTimestamp = updateTimestamp
-        self.temperatureCelsius = temperatureCelsius
-        self.temperatureFahrenheit = temperatureFahrenheit
-        self.location = location
     }
     
     init(from decoder: Decoder) throws {

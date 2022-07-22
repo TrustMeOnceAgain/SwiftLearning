@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColorModel: Codable, ColourLoversModel {
+struct ColorModel: ColourLoversModel {
     
     struct RGB: Codable {
         let red, green, blue: Int
@@ -17,14 +17,25 @@ struct ColorModel: Codable, ColourLoversModel {
     let title, userName: String
     let rgb: RGB
     let numberOfViews: Int
-    private let url: String
+    let urlString: String
     
     var color: Color { Color(.sRGB, red: Double(rgb.red)/255, green: Double(rgb.green)/255, blue: Double(rgb.blue)/255, opacity: 1.0) }
     var colors: [Color] { [color] }
-    var webUrl: URL? { URL(string: url.replacingOccurrences(of: "http", with: "https")) }
     
+    init(id: Int, title: String, userName: String, rgb: RGB, numberOfViews: Int, url: String) {
+        self.id = id
+        self.title = title
+        self.userName = userName
+        self.rgb = rgb
+        self.numberOfViews = numberOfViews
+        self.urlString = url
+    }
+}
+
+extension ColorModel: Codable {
     enum CodingKeys: String, CodingKey {
-        case id, title, userName, rgb, url
+        case id, title, userName, rgb
+        case urlString = "url"
         case numberOfViews = "numViews"
     }
 }
