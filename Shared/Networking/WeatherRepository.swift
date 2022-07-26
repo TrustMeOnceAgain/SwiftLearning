@@ -53,7 +53,7 @@ class MockedWeatherRepository: WeatherRepository {
     }
     
     private let currentWeatherModels: [CurrentWeatherModel] = [
-        CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 25.8, temperatureFahrenheit: 89.1, location: .init(name: "Tokyo", country: "Japan")),
+        CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 25.8, temperatureFahrenheit: 89.1, location: .init(name: "Tokyo", country: "Japan"), condition: .init(text: "Sunny", imageUrlString: "Sunny", code: 1000)),
         CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 18.3, temperatureFahrenheit: 50.9, location: .init(name: "London", country: "England")),
         CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 23.1, temperatureFahrenheit: 60.9, location: .init(name: "Paris", country: "France")),
         CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: -8.3, temperatureFahrenheit: 40.9, location: .init(name: "Sydney", country: "Australia")),

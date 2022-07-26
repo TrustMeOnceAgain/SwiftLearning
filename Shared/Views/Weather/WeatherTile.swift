@@ -27,13 +27,22 @@ struct WeatherTile: View {
     
     @ViewBuilder
     private func getView() -> some View {
-        VStack {
+        VStack(spacing: 0) {
+            
             HStack {
                 Text(viewModel.location.name)
                     .foregroundColor(Color(.mainLabel))
             }
             if let temperature = Int(exactly: viewModel.temperatureCelsius.rounded()) {
-                HStack {
+                HStack(spacing: 2) {
+                    if let imageURL = viewModel.condition?.imageURL {
+                            AsyncImage(url: imageURL,
+                                       content: { $0.resizable() },
+                                       placeholder: { Rectangle()
+                                .fill(Color(.backgroundColor))
+                                .frame(width: 32, height: 32) })
+                            .frame(width: 32, height: 32)
+                    }
                     Text(temperature.withCelsiusSymbol)
                         .foregroundColor(Color(.secondaryLabel))
                 }
@@ -45,7 +54,7 @@ struct WeatherTile: View {
 struct WeatherTile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 30.4, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
+            WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 30.4, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland"), condition: .init(text: "Sunny", imageUrlString: "Sunny", code: 1000)))
                 .preferredColorScheme(.light)
                 
             WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 31.6, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))

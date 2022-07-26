@@ -32,7 +32,7 @@ struct ColorModel: ColourLoversModel, Identifiable {
     }
 }
 
-extension ColorModel: Codable {
+extension ColorModel: Decodable {
     enum CodingKeys: String, CodingKey {
         case id, title, userName, rgb
         case urlString = "url"

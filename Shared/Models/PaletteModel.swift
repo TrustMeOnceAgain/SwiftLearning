@@ -26,7 +26,7 @@ struct PaletteModel: ColourLoversModel, Identifiable {
     }
 }
 
-extension PaletteModel: Codable {
+extension PaletteModel: Decodable {
     enum CodingKeys: String, CodingKey {
         case id, title, userName
         case urlString = "url"

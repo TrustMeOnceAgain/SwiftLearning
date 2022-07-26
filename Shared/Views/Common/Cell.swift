@@ -34,7 +34,7 @@ struct Cell: View {
             if let rightColors = viewModel.rightColors {
                 Spacer()
                 HStack(alignment: .center, spacing: 0) {
-                    ForEach(rightColors, id: \.hashValue) { color in // TODO: There is a possibility of same colors in array
+                    ForEach(rightColors, id: \.hashValue) { color in
                         Rectangle()
                             .foregroundColor(color)
                     }

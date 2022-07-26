@@ -31,6 +31,10 @@
 		4064F523288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */; };
 		40719C52288FC4F8005E9E59 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C51288FC4F8005E9E59 /* CustomButtonView.swift */; };
 		40719C53288FC4F8005E9E59 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C51288FC4F8005E9E59 /* CustomButtonView.swift */; };
+		40719C55288FEC02005E9E59 /* MockedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40719C54288FEC02005E9E59 /* MockedAssets.xcassets */; };
+		40719C56288FEC02005E9E59 /* MockedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40719C54288FEC02005E9E59 /* MockedAssets.xcassets */; };
+		40719C5E288FF38D005E9E59 /* URL+localURLForXCAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C5D288FF38D005E9E59 /* URL+localURLForXCAssets.swift */; };
+		40719C5F288FF38D005E9E59 /* URL+localURLForXCAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C5D288FF38D005E9E59 /* URL+localURLForXCAssets.swift */; };
 		409F086F288576D000512203 /* MainSectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F086E288576D000512203 /* MainSectionList.swift */; };
 		409F0870288576D000512203 /* MainSectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F086E288576D000512203 /* MainSectionList.swift */; };
 		409F087828857BAE00512203 /* GetPalettesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087728857BAE00512203 /* GetPalettesRequest.swift */; };
@@ -95,6 +99,8 @@
 		401A37A828782E6D00C411B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversDetailsViewModel.swift; sourceTree = "<group>"; };
 		40719C51288FC4F8005E9E59 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		40719C54288FEC02005E9E59 /* MockedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MockedAssets.xcassets; sourceTree = "<group>"; };
+		40719C5D288FF38D005E9E59 /* URL+localURLForXCAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+localURLForXCAssets.swift"; sourceTree = "<group>"; };
 		409F086E288576D000512203 /* MainSectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionList.swift; sourceTree = "<group>"; };
 		409F087728857BAE00512203 /* GetPalettesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPalettesRequest.swift; sourceTree = "<group>"; };
 		409F087A28857DC900512203 /* PaletteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteModel.swift; sourceTree = "<group>"; };
@@ -297,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */,
+				40719C5D288FF38D005E9E59 /* URL+localURLForXCAssets.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +313,7 @@
 			children = (
 				401A37452876F7C600C411B9 /* Assets.xcassets */,
 				40B61A2A287DB8BC001BD1AF /* Colors.xcassets */,
+				40719C54288FEC02005E9E59 /* MockedAssets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -396,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				401A375B2876F7C600C411B9 /* Assets.xcassets in Resources */,
+				40719C55288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
 				40B61A2B287DB8BC001BD1AF /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				401A375C2876F7C600C411B9 /* Assets.xcassets in Resources */,
+				40719C56288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
 				40B61A2C287DB8BC001BD1AF /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +459,7 @@
 				409F08CD28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */,
 				409F087828857BAE00512203 /* GetPalettesRequest.swift in Sources */,
 				401A37952877200400C411B9 /* Constants.swift in Sources */,
+				40719C5E288FF38D005E9E59 /* URL+localURLForXCAssets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +500,7 @@
 				409F08CE28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */,
 				409F087928857BAE00512203 /* GetPalettesRequest.swift in Sources */,
 				401A37962877200400C411B9 /* Constants.swift in Sources */,
+				40719C5F288FF38D005E9E59 /* URL+localURLForXCAssets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
