@@ -50,7 +50,7 @@ extension ColourLoversListView {
         #if os(macOS)
         .sheet(item: $selectedItem, onDismiss: { selectedItem = nil }, content: { model in
             ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: model.title, userName: model.userName, colors: model.colors, url: model.webUrl, numberOfViews: model.numberOfViews))
-                .frame(minWidth: 720, minHeight: 480, alignment: .center)
+                .frame(minWidth: 480, minHeight: 480, alignment: .center)
         })
         #endif
     }
