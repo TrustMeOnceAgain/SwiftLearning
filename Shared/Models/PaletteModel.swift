@@ -1,5 +1,5 @@
 //
-//  Palette.swift
+//  PaletteModel.swift
 //  swift-learning
 //
 //  Created by Filip Cybuch on 18/07/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Palette: ColourLoversModel {
+struct PaletteModel: ColourLoversModel {
     let id: Int
     let title, userName: String
     let colorValues: [String]
@@ -26,7 +26,7 @@ struct Palette: ColourLoversModel {
     }
 }
 
-extension Palette: Codable {
+extension PaletteModel: Codable {
     enum CodingKeys: String, CodingKey {
         case id, title, userName
         case urlString = "url"
@@ -35,7 +35,8 @@ extension Palette: Codable {
     }
 }
 
-private extension Color { // Stack
+// https://stackoverflow.com/questions/24263007/how-to-use-hex-color-values
+private extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0

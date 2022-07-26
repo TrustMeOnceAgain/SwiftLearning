@@ -18,7 +18,7 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
     var navigationTitle: String {
         switch ModelType.self {
         case is ColorModel.Type: return "Colors"
-        case is Palette.Type: return "Palettes"
+        case is PaletteModel.Type: return "Palettes"
         default: return ""
         }
     }
@@ -48,7 +48,7 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
                     self?.data = data
                 })
                 .store(in: &cancellable)
-        case is Palette.Type:
+        case is PaletteModel.Type:
             repository
                 .getPalettes()
                 .sink(receiveCompletion: { completion in

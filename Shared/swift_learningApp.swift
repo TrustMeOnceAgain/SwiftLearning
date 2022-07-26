@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct swift_learningApp: App {
-    let persistenceController = PersistenceController.shared
 
     init() {
         #if os(iOS)
@@ -28,8 +27,6 @@ struct swift_learningApp: App {
             #else
             .navigationViewStyle(.stack)
             #endif
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

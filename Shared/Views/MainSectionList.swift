@@ -91,7 +91,7 @@ extension MainSectionList {
     private func detinationView(for position: Position) -> some View {
         switch position {
         case .colors: ColourLoversListView(viewModel: ColourLoversListViewModel<ColorModel>(repository: coloursLoverRepository))
-        case .palettes: ColourLoversListView(viewModel: ColourLoversListViewModel<Palette>(repository: coloursLoverRepository))
+        case .palettes: ColourLoversListView(viewModel: ColourLoversListViewModel<PaletteModel>(repository: coloursLoverRepository))
         case .currentWeather: WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw", "London", "Sydney", "Paris", "Tokyo"], repository: weatherRepository))
         }
     }

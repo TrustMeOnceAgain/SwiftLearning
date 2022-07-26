@@ -15,8 +15,8 @@ protocol ColourLoversRepository {
     func getColor(withId id: Int) async throws -> ColorModel?
     func getColor(withId id: Int) -> AnyPublisher<ColorModel?, RequestError>
     
-    func getPalettes() async throws -> [Palette]
-    func getPalettes() -> AnyPublisher<[Palette], RequestError>
+    func getPalettes() async throws -> [PaletteModel]
+    func getPalettes() -> AnyPublisher<[PaletteModel], RequestError>
 }
 
 class RealColourLoversRepository: ColourLoversRepository {
@@ -45,12 +45,12 @@ class RealColourLoversRepository: ColourLoversRepository {
         networkController.asyncRequestToCombine({ try await self.getColor(withId: id) }, queue: DispatchQueue.main)
     }
     
-    func getPalettes() async throws -> [Palette] {
+    func getPalettes() async throws -> [PaletteModel] {
         let request = GetPalettesRequest()
         return try await networkController.sendRequest(request)
     }
     
-    func getPalettes() -> AnyPublisher<[Palette], RequestError> {
+    func getPalettes() -> AnyPublisher<[PaletteModel], RequestError> {
         networkController.asyncRequestToCombine(getPalettes, queue: DispatchQueue.main)
     }
 }
@@ -79,11 +79,11 @@ class MockedColourLoversRepository: ColourLoversRepository {
         .eraseToAnyPublisher()
     }
     
-    func getPalettes() async throws -> [Palette] {
+    func getPalettes() async throws -> [PaletteModel] {
         paletteModels
     }
     
-    func getPalettes() -> AnyPublisher<[Palette], RequestError> {
+    func getPalettes() -> AnyPublisher<[PaletteModel], RequestError> {
         Future { promise in
             promise(.success(self.paletteModels))
         }
@@ -93,5 +93,5 @@ class MockedColourLoversRepository: ColourLoversRepository {
     // TODO: get model from init maybe?
     private let colorModels: [ColorModel] = [ColorModel(id: 1, title: "Colorek", userName: "TrustMe", rgb: .init(red: 30, green: 45, blue: 10), numberOfViews: 1000, url: "https://google.com"),
                                              ColorModel(id: 2, title: "SecondColorek", userName: "ColorCreator", rgb: .init(red: 80, green: 150, blue: 200), numberOfViews: 10500, url: "https://google.com")]
-    private let paletteModels: [Palette] = [Palette(id: 1, title: "Palette", userName: "TrustMe", colorValues: ["DFDFDF", "454545", "904010"], numberOfViews: 890, url: "http://google.com")]
+    private let paletteModels: [PaletteModel] = [PaletteModel(id: 1, title: "Palette", userName: "TrustMe", colorValues: ["DFDFDF", "454545", "904010"], numberOfViews: 890, url: "http://google.com")]
 }
