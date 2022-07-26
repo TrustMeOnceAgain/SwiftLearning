@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol NetworkController { // TODO: create mocked version
+protocol NetworkController {
     func sendRequest<T: Decodable>(_ request: Request) async throws -> T
     func sendRequest<T>(_ request: Request, interpreter: AnyInterpreter<T>) async throws -> T
     func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError>
@@ -43,16 +43,14 @@ class RealNetworkController: NetworkController {
     }
     
     func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError> {
-        Deferred { // TODO: not needed?
-            Future { promise in
-                Task {
-                    do {
-                        promise(.success(try await asyncRequest()))
-                    } catch (let error as RequestError){
-                        promise(.failure(error))
-                    } catch {
-                        promise(.failure(.badRequest))
-                    }
+        Future { promise in
+            Task {
+                do {
+                    promise(.success(try await asyncRequest()))
+                } catch (let error as RequestError){
+                    promise(.failure(error))
+                } catch {
+                    promise(.failure(.badRequest))
                 }
             }
         }
