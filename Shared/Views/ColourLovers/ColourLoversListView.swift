@@ -59,7 +59,7 @@ extension ColourLoversListView {
     }
     
     private func loadedView(model: [ColourLoversModel]) -> some View {
-        List(model, id: \.id) { model in
+        List(model, id: \.id) { model in // use popover or something similar for macOS?
             NavigationLink(destination: { ColourLoversDetails(viewModel: ListDetailsViewModel(title: model.title, userName: model.userName, colors: model.colors, url: model.webUrl, numberOfViews: model.numberOfViews))}) {
                 Cell(viewModel: CellViewModel(title: model.title, subtitle: model.userName, rightColors: model.colors))
             }

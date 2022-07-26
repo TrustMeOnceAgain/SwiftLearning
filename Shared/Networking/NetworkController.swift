@@ -43,7 +43,7 @@ class RealNetworkController: NetworkController {
     }
     
     func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError> {
-        Deferred {
+        Deferred { // TODO: not needed?
             Future { promise in
                 Task {
                     do {

@@ -20,10 +20,10 @@ protocol ColourLoversModel {
 extension ColourLoversModel {
     var webUrl: URL? {
         let url: String = {
-            if self.urlString.contains("https") {
-                return self.urlString
+            if urlString.contains("https") {
+                return urlString
             } else {
-                return self.urlString.replacingOccurrences(of: "http", with: "https")
+                return urlString.replacingOccurrences(of: "http", with: "https")
             }
         }()
         

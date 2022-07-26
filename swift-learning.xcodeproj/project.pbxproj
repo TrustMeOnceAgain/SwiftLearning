@@ -21,20 +21,6 @@
 		401A376C287711B800C411B9 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376A287711B800C411B9 /* ColorModel.swift */; };
 		401A376E287712E600C411B9 /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376D287712E600C411B9 /* DIManager.swift */; };
 		401A376F287712E600C411B9 /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376D287712E600C411B9 /* DIManager.swift */; };
-		401A3771287714F900C411B9 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3770287714F900C411B9 /* ApiCall.swift */; };
-		401A3772287714F900C411B9 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3770287714F900C411B9 /* ApiCall.swift */; };
-		401A3777287715B000C411B9 /* NetworkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3776287715B000C411B9 /* NetworkingHelpers.swift */; };
-		401A3778287715B000C411B9 /* NetworkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3776287715B000C411B9 /* NetworkingHelpers.swift */; };
-		401A377C2877171100C411B9 /* ColorApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A377B2877171100C411B9 /* ColorApiCalls.swift */; };
-		401A377D2877171100C411B9 /* ColorApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A377B2877171100C411B9 /* ColorApiCalls.swift */; };
-		401A378028771A4400C411B9 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A377F28771A4400C411B9 /* AppEnvironment.swift */; };
-		401A378128771A4400C411B9 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A377F28771A4400C411B9 /* AppEnvironment.swift */; };
-		401A378328771BBB00C411B9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378228771BBB00C411B9 /* DIContainer.swift */; };
-		401A378428771BBB00C411B9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378228771BBB00C411B9 /* DIContainer.swift */; };
-		401A378728771C3A00C411B9 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378628771C3A00C411B9 /* InteractorsContainer.swift */; };
-		401A378828771C3A00C411B9 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378628771C3A00C411B9 /* InteractorsContainer.swift */; };
-		401A378A28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378928771C6F00C411B9 /* ColourLoversInteractor.swift */; };
-		401A378B28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A378928771C6F00C411B9 /* ColourLoversInteractor.swift */; };
 		401A37952877200400C411B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37942877200400C411B9 /* Constants.swift */; };
 		401A37962877200400C411B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37942877200400C411B9 /* Constants.swift */; };
 		401A379C28781BEE00C411B9 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A379B28781BEE00C411B9 /* Request.swift */; };
@@ -110,13 +96,6 @@
 		401A37522876F7C600C411B9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		401A376A287711B800C411B9 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		401A376D287712E600C411B9 /* DIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
-		401A3770287714F900C411B9 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
-		401A3776287715B000C411B9 /* NetworkingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelpers.swift; sourceTree = "<group>"; };
-		401A377B2877171100C411B9 /* ColorApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorApiCalls.swift; sourceTree = "<group>"; };
-		401A377F28771A4400C411B9 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		401A378228771BBB00C411B9 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
-		401A378628771C3A00C411B9 /* InteractorsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorsContainer.swift; sourceTree = "<group>"; };
-		401A378928771C6F00C411B9 /* ColourLoversInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversInteractor.swift; sourceTree = "<group>"; };
 		401A37942877200400C411B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		401A379B28781BEE00C411B9 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		401A379E2878200C00C411B9 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
@@ -189,7 +168,6 @@
 				401A37422876F7C400C411B9 /* swift_learningApp.swift */,
 				401A37402876F7C400C411B9 /* swift_learning.xcdatamodeld */,
 				401A37662877087300C411B9 /* Base */,
-				401A37992877291A00C411B9 /* Clean code - for later */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -220,24 +198,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		401A3779287715CF00C411B9 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				401A377A287716FA00C411B9 /* Requests */,
-				401A3770287714F900C411B9 /* ApiCall.swift */,
-				401A3776287715B000C411B9 /* NetworkingHelpers.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		401A377A287716FA00C411B9 /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				401A377B2877171100C411B9 /* ColorApiCalls.swift */,
-			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
 		401A377E2877192A00C411B9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,16 +208,6 @@
 				409F08C32889371B00512203 /* CurrentWeatherModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		401A378528771C2A00C411B9 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				401A378228771BBB00C411B9 /* DIContainer.swift */,
-				401A378628771C3A00C411B9 /* InteractorsContainer.swift */,
-				401A378928771C6F00C411B9 /* ColourLoversInteractor.swift */,
-			);
-			path = Interactors;
 			sourceTree = "<group>";
 		};
 		401A378C28771E6500C411B9 /* Views */ = {
@@ -280,16 +230,6 @@
 				40B61A2E287DBA08001BD1AF /* ClolorStyle.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		401A37992877291A00C411B9 /* Clean code - for later */ = {
-			isa = PBXGroup;
-			children = (
-				401A377F28771A4400C411B9 /* AppEnvironment.swift */,
-				401A3779287715CF00C411B9 /* API */,
-				401A378528771C2A00C411B9 /* Interactors */,
-			);
-			path = "Clean code - for later";
 			sourceTree = "<group>";
 		};
 		401A379A28781BDD00C411B9 /* Networking */ = {
@@ -499,20 +439,15 @@
 				409F08C12889350A00512203 /* WeatherRepository.swift in Sources */,
 				409F08872886B40700512203 /* GetPaletteRequest.swift in Sources */,
 				401A37A628782A4B00C411B9 /* NetworkController.swift in Sources */,
-				401A378A28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
 				409F08BE2889341100512203 /* GetCurrentWeatherRequest.swift in Sources */,
 				40B61A1C287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */,
-				401A378728771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
 				40B61A28287DA3DC001BD1AF /* Cell.swift in Sources */,
 				401A37532876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
 				409F086F288576D000512203 /* MainSectionList.swift in Sources */,
 				401A37592876F7C600C411B9 /* Persistence.swift in Sources */,
-				401A3777287715B000C411B9 /* NetworkingHelpers.swift in Sources */,
 				401A37552876F7C600C411B9 /* swift_learningApp.swift in Sources */,
 				409F08C42889371B00512203 /* CurrentWeatherModel.swift in Sources */,
-				401A378028771A4400C411B9 /* AppEnvironment.swift in Sources */,
 				409F08A92887DBE000512203 /* SearchView.swift in Sources */,
-				401A378328771BBB00C411B9 /* DIContainer.swift in Sources */,
 				409F08C728893D7500512203 /* WeatherView.swift in Sources */,
 				409F08812886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */,
 				409F08CA28893D8600512203 /* WeatherTile.swift in Sources */,
@@ -524,7 +459,6 @@
 				409F08D32889595200512203 /* Numeric+temperatureSymbol.swift in Sources */,
 				401A379C28781BEE00C411B9 /* Request.swift in Sources */,
 				40B61A22287C327D001BD1AF /* ColourLoversDetails.swift in Sources */,
-				401A3771287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A3287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F522288188A200AC2B28 /* ListColor.swift in Sources */,
 				40B61A2F287DBA08001BD1AF /* ClolorStyle.swift in Sources */,
@@ -534,7 +468,6 @@
 				409F088D2886D07C00512203 /* ColourLoversListView.swift in Sources */,
 				401A37A928782E6D00C411B9 /* RequestError.swift in Sources */,
 				409F08A62887DB4700512203 /* InfoView.swift in Sources */,
-				401A377C2877171100C411B9 /* ColorApiCalls.swift in Sources */,
 				401A376B287711B800C411B9 /* ColorModel.swift in Sources */,
 				409F08CD28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */,
 				409F087828857BAE00512203 /* GetPalettesRequest.swift in Sources */,
@@ -549,20 +482,15 @@
 				409F08C22889350A00512203 /* WeatherRepository.swift in Sources */,
 				409F08882886B40700512203 /* GetPaletteRequest.swift in Sources */,
 				401A37A728782A4B00C411B9 /* NetworkController.swift in Sources */,
-				401A378B28771C6F00C411B9 /* ColourLoversInteractor.swift in Sources */,
 				409F08BF2889341100512203 /* GetCurrentWeatherRequest.swift in Sources */,
 				40B61A1D287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */,
-				401A378828771C3A00C411B9 /* InteractorsContainer.swift in Sources */,
 				40B61A29287DA3DC001BD1AF /* Cell.swift in Sources */,
 				401A37542876F7C600C411B9 /* swift_learning.xcdatamodeld in Sources */,
 				409F0870288576D000512203 /* MainSectionList.swift in Sources */,
 				401A375A2876F7C600C411B9 /* Persistence.swift in Sources */,
-				401A3778287715B000C411B9 /* NetworkingHelpers.swift in Sources */,
 				401A37562876F7C600C411B9 /* swift_learningApp.swift in Sources */,
 				409F08C52889371B00512203 /* CurrentWeatherModel.swift in Sources */,
-				401A378128771A4400C411B9 /* AppEnvironment.swift in Sources */,
 				409F08AA2887DBE000512203 /* SearchView.swift in Sources */,
-				401A378428771BBB00C411B9 /* DIContainer.swift in Sources */,
 				409F08C828893D7500512203 /* WeatherView.swift in Sources */,
 				409F08822886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */,
 				409F08CB28893D8600512203 /* WeatherTile.swift in Sources */,
@@ -574,7 +502,6 @@
 				409F08D42889595200512203 /* Numeric+temperatureSymbol.swift in Sources */,
 				401A379D28781C7C00C411B9 /* Request.swift in Sources */,
 				40B61A23287C327D001BD1AF /* ColourLoversDetails.swift in Sources */,
-				401A3772287714F900C411B9 /* ApiCall.swift in Sources */,
 				401A37A4287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F523288188A200AC2B28 /* ListColor.swift in Sources */,
 				40B61A30287DBA08001BD1AF /* ClolorStyle.swift in Sources */,
@@ -584,7 +511,6 @@
 				409F088E2886D07C00512203 /* ColourLoversListView.swift in Sources */,
 				401A37AA28782E6D00C411B9 /* RequestError.swift in Sources */,
 				409F08A72887DB4700512203 /* InfoView.swift in Sources */,
-				401A377D2877171100C411B9 /* ColorApiCalls.swift in Sources */,
 				401A376C287711B800C411B9 /* ColorModel.swift in Sources */,
 				409F08CE28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */,
 				409F087928857BAE00512203 /* GetPalettesRequest.swift in Sources */,
