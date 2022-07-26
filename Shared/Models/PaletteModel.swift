@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PaletteModel: ColourLoversModel {
+struct PaletteModel: ColourLoversModel, Identifiable {
     let id: Int
     let title, userName: String
     let colorValues: [String]

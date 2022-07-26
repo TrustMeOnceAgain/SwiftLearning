@@ -8,9 +8,12 @@
 import SwiftUI
 import Combine
 
-struct ColourLoversListView<ModelType: ColourLoversModel>: View {
+struct ColourLoversListView<ModelType: Identifiable & ColourLoversModel>: View {
     
     @ObservedObject private var viewModel: ColourLoversListViewModel<ModelType>
+    #if os(macOS)
+    @State private var selectedItem: ModelType?
+    #endif
     
     init(viewModel: ColourLoversListViewModel<ModelType>) {
         self.viewModel = viewModel
@@ -24,18 +27,6 @@ struct ColourLoversListView<ModelType: ColourLoversModel>: View {
             .background(Color(.backgroundColor))
             .navigationTitle(viewModel.navigationTitle)
     }
-    
-//    #if os(macOS)
-//    @State private var currentSubview = AnyView(ContentView())
-//    @State private var showingSubview = false
-//
-//    private func showSubview(view: AnyView) {
-//        withAnimation(.easeOut(duration: 0.3)) {
-//            currentSubview = view
-//            showingSubview = true
-//        }
-//    }
-//    #endif
 }
 
 // MARK: View builders
@@ -56,13 +47,29 @@ extension ColourLoversListView {
                          onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
             }
         }
+        #if os(macOS)
+        .sheet(item: $selectedItem, onDismiss: { selectedItem = nil }, content: { model in
+            ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: model.title, userName: model.userName, colors: model.colors, url: model.webUrl, numberOfViews: model.numberOfViews))
+                .frame(minWidth: 720, minHeight: 480, alignment: .center)
+        })
+        #endif
     }
     
-    private func loadedView(model: [ColourLoversModel]) -> some View {
-        List(model, id: \.id) { model in // use popover or something similar for macOS?
+    private func loadedView(model: [ModelType]) -> some View {
+        #if os(iOS)
+        List(model, id: \.id) { model in
             NavigationLink(destination: { ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: model.title, userName: model.userName, colors: model.colors, url: model.webUrl, numberOfViews: model.numberOfViews))}) {
                 Cell(viewModel: CellViewModel(title: model.title, subtitle: model.userName, rightColors: model.colors))
             }
         }
+        #elseif os(macOS)
+        List(model, id: \.id) { model in
+            Cell(viewModel: CellViewModel(title: model.title, subtitle: model.userName, rightColors: model.colors))
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    selectedItem = model
+                }
+        }
+        #endif
     }
 }

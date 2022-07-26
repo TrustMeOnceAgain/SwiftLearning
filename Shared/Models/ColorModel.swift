@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColorModel: ColourLoversModel {
+struct ColorModel: ColourLoversModel, Identifiable {
     
     struct RGB: Codable {
         let red, green, blue: Int
