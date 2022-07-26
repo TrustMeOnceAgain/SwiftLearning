@@ -68,7 +68,7 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
             .CombineLatest($data, $search)
             .map { (data, search) in
                 guard !search.isEmpty else { return data }
-                return data?.filter { $0.title.range(of: search, options: .caseInsensitive) != nil }
+                return data?.filter { $0.title.range(of: search, options: .caseInsensitive) != nil || $0.userName.range(of: search, options: .caseInsensitive) != nil }
             }
             .sink(receiveValue: { [weak self] model in
                 self?.model = model
