@@ -45,35 +45,39 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
         case is ColorModel.Type:
             repository
                 .getColors()
-                .sink(receiveCompletion: { [weak self] completion in
-                    switch completion {
-                    case .finished:
-                        self?.dataStatus = .loaded
-                    case .failure(let error):
-                        self?.dataStatus = .error(error)
-                    }
-                },
-                      receiveValue: { [weak self] in
-                    guard let data = $0 as? [ModelType] else { return }
-                    self?.data = data
-                })
+                .sink(
+                    receiveCompletion: { [weak self] completion in
+                        switch completion {
+                        case .finished:
+                            self?.dataStatus = .loaded
+                        case .failure(let error):
+                            self?.dataStatus = .error(error)
+                        }
+                    },
+                    receiveValue: { [weak self] in
+                        guard let data = $0 as? [ModelType] else { return }
+                        self?.data = data
+                    })
                 .store(in: &cancellable)
+            
         case is PaletteModel.Type:
             repository
                 .getPalettes()
-                .sink(receiveCompletion:{ [weak self] completion in
-                    switch completion {
-                    case .finished:
-                        self?.dataStatus = .loaded
-                    case .failure(let error):
-                        self?.dataStatus = .error(error)
-                    }
-                },
-                      receiveValue: { [weak self] in
-                    guard let data = $0 as? [ModelType] else { return }
-                    self?.data = data
-                })
+                .sink(
+                    receiveCompletion:{ [weak self] completion in
+                        switch completion {
+                        case .finished:
+                            self?.dataStatus = .loaded
+                        case .failure(let error):
+                            self?.dataStatus = .error(error)
+                        }
+                    },
+                    receiveValue: { [weak self] in
+                        guard let data = $0 as? [ModelType] else { return }
+                        self?.data = data
+                    })
                 .store(in: &cancellable)
+            
         default:
             fatalError("Not implemented or not supported!")
         }

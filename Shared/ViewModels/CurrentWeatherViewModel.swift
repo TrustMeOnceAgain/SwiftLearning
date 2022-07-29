@@ -42,17 +42,18 @@ class CurrentWeatherViewModel: ObservableObject {
                 }
                 .eraseToAnyPublisher()
             }
-            .sink(receiveCompletion: { [weak self] completion in
-                switch completion {
-                case .finished:
-                    self?.dataStatus = .loaded
-                case .failure(let error):
-                    self?.dataStatus = .error(error)
-                }
-            },
-                  receiveValue: { [weak self] in
-                self?.weathers = $0
-            })
+            .sink(
+                receiveCompletion: { [weak self] completion in
+                    switch completion {
+                    case .finished:
+                        self?.dataStatus = .loaded
+                    case .failure(let error):
+                        self?.dataStatus = .error(error)
+                    }
+                },
+                receiveValue: { [weak self] in
+                    self?.weathers = $0
+                })
             .store(in: &cancellable)
     }
 }
