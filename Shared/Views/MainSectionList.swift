@@ -96,3 +96,18 @@ extension MainSectionList {
         }
     }
 }
+
+struct MainSectionList_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                NavigationView {
+                    MainSectionList(coloursLoverRepository: MockedColourLoversRepository(),
+                                    weatherRepository: MockedWeatherRepository())
+                }
+                .preferredColorScheme(colorScheme)
+            }
+        }
+        .previewLayout(.device)
+    }
+}

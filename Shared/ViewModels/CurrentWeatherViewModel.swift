@@ -17,8 +17,8 @@ class CurrentWeatherViewModel: ObservableObject {
     private var cancellable: Set<AnyCancellable> = []
     
     init(locationNames: [String], repository: WeatherRepository) {
-        self.repository = repository
         self.locationNames = locationNames
+        self.repository = repository
     }
     
     func onAppear() {

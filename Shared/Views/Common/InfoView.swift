@@ -41,11 +41,13 @@ struct InfoView: View {
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            InfoView(text: "Info view text", backgroundColor: Color(.backgroundColor), onAppearAction: nil, onRefreshButtonTapAction: { })
-                .preferredColorScheme(.dark)
-            
-            InfoView(text: "Info view text", backgroundColor: Color(.backgroundColor), onAppearAction: nil, onRefreshButtonTapAction: nil)
-                .preferredColorScheme(.light)
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                InfoView(text: "Info view text",
+                         backgroundColor: Color(.backgroundColor),
+                         onAppearAction: nil,
+                         onRefreshButtonTapAction: { })
+                    .preferredColorScheme(colorScheme)
+            }
         }
         .previewLayout(.sizeThatFits)
     }

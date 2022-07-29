@@ -52,8 +52,7 @@ struct CustomButtonView: View {
                             .accessibilityIdentifier(identifier)
                     }
                 }
-//                .background(backgroundColor)
-                .cornerRadius(5)
+                .cornerRadius(Constants.defaultCornerRadius)
             }
         )
         .buttonStyle(CustomButtonStyle(backgroundColor: backgroundColor, justImage: justImage))
@@ -78,8 +77,21 @@ struct CustomButtonStyle: ButtonStyle {
 
 struct CustomButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButtonView(text: nil, imageString: "xmark")
-        CustomButtonView(text: "Test Text", imageString: nil)
-        CustomButtonView(text: "Test Text", imageString: "xmark", imageSize: 15, backgroundColor: .accentColor)
+        Group {
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                Group {
+                    CustomButtonView(text: nil,
+                                     imageString: "xmark")
+                    CustomButtonView(text: "Test Text",
+                                     imageString: nil)
+                    CustomButtonView(text: "Test Text",
+                                     imageString: "xmark",
+                                     imageSize: 15,
+                                     backgroundColor: .accentColor)
+                }
+                .preferredColorScheme(colorScheme)
+            }
+        }
+        .previewLayout(.sizeThatFits)
     }
 }

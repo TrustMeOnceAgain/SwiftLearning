@@ -31,7 +31,7 @@ struct Cell: View {
                     .padding([.leading, .trailing, .bottom], 8)
                 }
             }
-            if let rightColors = viewModel.rightColors {
+            if let rightColors = viewModel.rightColors, !rightColors.isEmpty  {
                 Spacer()
                 HStack(alignment: .center, spacing: 0) {
                     ForEach(rightColors, id: \.hashValue) { color in
@@ -75,6 +75,16 @@ struct CellViewModel {
 
 struct Cell_Previews: PreviewProvider {
     static var previews: some View {
-        Cell(viewModel: CellViewModel(title: "Preview color", subtitle: "User name", backgroundColor: Color(.backgroundColor), rightColors: [.blue]))
+        Group {
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                Group {
+                    Cell(viewModel: CellViewModel(title: "Preview color", subtitle: "Some text", backgroundColor: Color(.backgroundColor), rightColors: [.blue]))
+                    Cell(viewModel: CellViewModel(title: "Preview without color", subtitle: "User name", backgroundColor: Color(.backgroundColor), rightColors: []))
+                    Cell(viewModel: CellViewModel(title: "Preview palette", subtitle: "User name", backgroundColor: Color(.backgroundColor), rightColors: [.blue, .gray, .green]))
+                }
+                .preferredColorScheme(colorScheme)
+            }
+        }
+        .previewLayout(.sizeThatFits)
     }
 }

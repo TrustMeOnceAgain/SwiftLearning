@@ -25,17 +25,13 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            Group {
-                SearchView(search: .constant("entered text"))
-                SearchView(search: .constant("entered text"))
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                Group {
+                    SearchView(search: .constant("entered text"))
+                    SearchView(search: .constant(""))
+                }
+                .preferredColorScheme(colorScheme)
             }
-            .preferredColorScheme(.light)
-            
-            Group {
-                SearchView(search: .constant(""))
-                SearchView(search: .constant(""))
-            }
-            .preferredColorScheme(.dark)
         }
         .previewLayout(.sizeThatFits)
     }

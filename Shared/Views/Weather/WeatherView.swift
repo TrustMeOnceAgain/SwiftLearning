@@ -26,16 +26,16 @@ struct WeatherView: View {
                 if let model = viewModel.weathers {
                     loadedView(model: model)
                 } else {
-                    InfoView(text: "There is data to show!",
+                    InfoView(text: "There is no data to show!",
                              onAppearAction: nil,
                              onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
                 }
             case .loading:
                 ProgressView()
-                    .progressViewStyle(.linear)
+                    .progressViewStyle(.circular)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             case .notLoaded:
-                InfoView(text: "There is data to show!",
+                InfoView(text: "There is no data to show!",
                          onAppearAction: viewModel.onAppear,
                          onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
             case .error(_):
@@ -58,8 +58,25 @@ struct WeatherView: View {
     }
 }
 
-//struct WeatherView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw", "Paris"], repository: WeatherRepository(networkController: RealNetworkController()) ))
-//    }
-//}
+struct WeatherView_Previews: PreviewProvider {
+    
+    static let locations = ["Tokyo", "London", "Wroclaw"]
+    
+    static var previews: some View {
+        Group {
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                #if os(iOS)
+                NavigationView {
+                    WeatherView(viewModel: CurrentWeatherViewModel(locationNames: WeatherView_Previews.locations, repository: MockedWeatherRepository()))
+                }
+                .preferredColorScheme(colorScheme)
+                
+                #elseif os(macOS)
+                WeatherView(viewModel: CurrentWeatherViewModel(locationNames: WeatherView_Previews.locations, repository: MockedWeatherRepository()))
+                    .preferredColorScheme(colorScheme)
+                #endif
+            }
+        }
+        .previewLayout(.device)
+    }
+}

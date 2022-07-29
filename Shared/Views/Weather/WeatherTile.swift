@@ -54,11 +54,14 @@ struct WeatherTile: View {
 struct WeatherTile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 30.4, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland"), condition: .init(text: "Sunny", imageUrlString: "Sunny", code: 1000)))
-                .preferredColorScheme(.light)
-                
-            WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 31.6, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
-                .preferredColorScheme(.dark)
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                Group {
+                    WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 30.4, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland"), condition: .init(text: "Sunny", imageUrlString: "Sunny", code: 1000)))
+                        
+                    WeatherTile(viewModel: CurrentWeatherModel(updateTimestamp: Date().timeIntervalSince1970, temperatureCelsius: 31.6, temperatureFahrenheit: 70.0, location: .init(name: "Wroclaw", country: "Poland")))
+                }
+                .preferredColorScheme(colorScheme)
+            }
         }
         .previewLayout(.sizeThatFits)
     }

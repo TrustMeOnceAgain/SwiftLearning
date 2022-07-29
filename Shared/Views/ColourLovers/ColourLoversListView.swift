@@ -40,15 +40,16 @@ extension ColourLoversListView {
                 if let model = viewModel.model {
                     loadedView(model: model)
                 } else {
-                    InfoView(text: "There is data to show!",
+                    InfoView(text: "There is no data to show!",
                              onAppearAction: nil,
                              onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
                 }
             case .loading:
                 ProgressView()
+                    .progressViewStyle(.circular)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             case .notLoaded:
-                InfoView(text: "There is data to show!",
+                InfoView(text: "There is no data to show!",
                          onAppearAction: viewModel.onAppear,
                          onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
             case .error(_):
@@ -83,5 +84,27 @@ extension ColourLoversListView {
                 }
         }
         #endif
+    }
+}
+
+struct ColourLoversListView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        Group {
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                #if os(iOS)
+                NavigationView {
+                    ColourLoversListView<ColorModel>(viewModel: ColourLoversListViewModel(repository: MockedColourLoversRepository()))
+                        
+                }
+                .preferredColorScheme(colorScheme)
+                
+                #elseif os(macOS)
+                ColourLoversListView<ColorModel>(viewModel: ColourLoversListViewModel(repository: MockedColourLoversRepository()))
+                    .preferredColorScheme(colorScheme)
+                #endif
+            }
+        }
+        .previewLayout(.device)
     }
 }
