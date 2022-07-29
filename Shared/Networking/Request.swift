@@ -10,30 +10,32 @@ import Foundation
 protocol Request {
     var path: String { get }
     var host: Host { get }
-    var parameters: Parameters { get }
+    var parameters: Parameters? { get }
+    var parametersEncoding: ParameteresEncoding { get }
     var httpMethod: HTTPMethod { get }
     var urlRequest: URLRequest? { get }
 }
 
 extension Request {
+    
+    var parametersEncoding: ParameteresEncoding { httpMethod == .GET ? .url : .json }
+    
     var urlRequest: URLRequest? {
-        guard var url = URL(string: host.value + path),
-              var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        else { return nil }
+        
+        guard var url = URL(string: host.value + path) else { return nil }
         
         let bodyData: Data?
         let headers: [String: String]?
         
-        switch parameters {
-        case .queryKeyValues:
-            urlComponents.queryItems = parameters.createQueryItems()
-            if let urlWithParameters = urlComponents.url {
+        switch parametersEncoding {
+        case .url:
+            if let urlWithParameters = url.withParameters(parameters) {
                 url = urlWithParameters
             }
             bodyData = nil
             headers = nil
-        case .jsonDictionary:
-            bodyData = parameters.createJsonBodyData()
+        case .json:
+            bodyData = parameters?.encode()
             headers = ["Accept": "application/json"]
         }
         
@@ -45,28 +47,35 @@ extension Request {
     }
 }
 
+typealias Parameters = [String: Any]
+
 enum HTTPMethod: String {
     case GET, POST, PUT, DELETE, PATCH
 }
 
-enum Parameters {
-    case queryKeyValues([KeyValues])
-    case jsonDictionary(JsonDictionary)
-    
-    typealias JsonDictionary = [String: Any]
-    typealias KeyValues = (key: String, value: String?)
-    
-    func createJsonBodyData() -> Data? {
-        guard case .jsonDictionary(let jsonDictionary) = self else { assertionFailure("Wrong parameters type!"); return nil }
-        return try? JSONSerialization.data(withJSONObject: jsonDictionary)
+enum ParameteresEncoding {
+    case url, json
+}
+
+private extension Parameters {
+    func encode() -> Data? {
+        try? JSONSerialization.data(withJSONObject: self)
     }
     
-    func createQueryItems() -> [URLQueryItem] {
-        guard case .queryKeyValues(let keyValues) = self else { assertionFailure("Wrong parameters type!"); return [] }
-        let queryItems: [URLQueryItem] = keyValues.map { (key, value) in
-            return URLQueryItem(name: key, value: value)
+    func encode() -> [URLQueryItem] {
+        let queryItems: [URLQueryItem] = self.map { (key, value) in
+            URLQueryItem(name: key, value: String(describing: value))
         }.compactMap { $0 }
         
         return queryItems
+    }
+}
+
+private extension URL {
+    func withParameters(_ parameters: Parameters?) -> URL? {
+        guard let parameters = parameters else { return self }
+        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return nil }
+        urlComponents.queryItems = parameters.encode()
+        return urlComponents.url
     }
 }

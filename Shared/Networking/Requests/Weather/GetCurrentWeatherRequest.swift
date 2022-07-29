@@ -13,8 +13,8 @@ struct GetCurrentWeatherRequest: Request {
     
     var path: String { "/v1/current.json" }
     var host: Host { .weatherAPI }
-    var parameters: Parameters { .queryKeyValues([(key: "key", value: "2a54b379abaa48aaa1070253222107"),
-                                                  (key: "q", value: location),
-                                                  (key: "aqi", value: "no")]) }
+    var parameters: Parameters? { ["key": "2a54b379abaa48aaa1070253222107",
+                                   "q": location,
+                                   "aqi": "no"] }
     var httpMethod: HTTPMethod { .GET }
 }

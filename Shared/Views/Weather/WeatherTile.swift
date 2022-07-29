@@ -28,7 +28,6 @@ struct WeatherTile: View {
     @ViewBuilder
     private func getView() -> some View {
         VStack(spacing: 0) {
-            
             HStack {
                 Text(viewModel.location.name)
                     .foregroundColor(Color(.mainLabel))
@@ -40,8 +39,8 @@ struct WeatherTile: View {
                                        content: { $0.resizable() },
                                        placeholder: { Rectangle()
                                 .fill(Color(.backgroundColor))
-                                .frame(width: 32, height: 32) })
-                            .frame(width: 32, height: 32)
+                                .frame(width: Constants.smallIconSize, height: Constants.smallIconSize) })
+                            .frame(width: Constants.smallIconSize, height: Constants.smallIconSize)
                     }
                     Text(temperature.withCelsiusSymbol)
                         .foregroundColor(Color(.secondaryLabel))

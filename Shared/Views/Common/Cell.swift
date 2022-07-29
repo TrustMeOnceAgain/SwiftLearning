@@ -40,9 +40,9 @@ struct Cell: View {
                     }
                 }
                 .frame(width: 50, height: 50)
-                .cornerRadius(10)
+                .cornerRadius(Constants.defaultCornerRadius)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: Constants.defaultCornerRadius)
                         .stroke(Color(.borderColor), lineWidth: 1.5)
                 )
                 .padding(8)
