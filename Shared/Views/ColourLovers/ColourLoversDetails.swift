@@ -84,11 +84,18 @@ extension ColourLoversDetails {
 
 struct ColourLoversDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: "Colorek", userName: "TrustMe", colors: [.blue], url: nil, numberOfViews: 10))
-        
-        ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: "Paletka", userName: "TrustMe", colors: [.blue, .black], url: URL(string: "google.com")!, numberOfViews: 2000))
-            .preferredColorScheme(.dark)
-        
-        ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: "Paletka2", userName: "TrustMe", colors: [.blue, .black, .red], url: nil, numberOfViews: 10000))
+        Group {
+            ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
+                Group {
+                    ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: "Some color", userName: "TrustMe", colors: [.blue], url: nil, numberOfViews: 10))
+                    
+                    ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: "Some palette with link", userName: "TrustMe", colors: [.blue, .black], url: URL(string: "google.com")!, numberOfViews: 2000))
+                    
+                    ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: "Some palette without link", userName: "TrustMe", colors: [.blue, .black, .red], url: nil, numberOfViews: 10000))
+                }
+                .preferredColorScheme(colorScheme)
+            }
+        }
+        .previewLayout(.device)
     }
 }
