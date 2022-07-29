@@ -8,9 +8,11 @@
 import Combine
 
 class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject {
+    
     @Published var model: [ModelType]?
     @Published var search: String = ""
     
+    @Published var dataStatus: ViewDataStatus = .notLoaded
     @Published private var data: [ModelType]?
     private var cancellable: Set<AnyCancellable> = []
     private let repository: ColourLoversRepository
@@ -37,12 +39,20 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
     }
     
     private func fetchData() {
+        dataStatus = .loading
+        
         switch ModelType.self {
         case is ColorModel.Type:
             repository
                 .getColors()
-                .sink(receiveCompletion: { completion in
-                    print("GetColors: \(completion)") },
+                .sink(receiveCompletion: { [weak self] completion in
+                    switch completion {
+                    case .finished:
+                        self?.dataStatus = .loaded
+                    case .failure(let error):
+                        self?.dataStatus = .error(error)
+                    }
+                },
                       receiveValue: { [weak self] in
                     guard let data = $0 as? [ModelType] else { return }
                     self?.data = data
@@ -51,8 +61,14 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
         case is PaletteModel.Type:
             repository
                 .getPalettes()
-                .sink(receiveCompletion: { completion in
-                    print("GetPalettes: \(completion)") },
+                .sink(receiveCompletion:{ [weak self] completion in
+                    switch completion {
+                    case .finished:
+                        self?.dataStatus = .loaded
+                    case .failure(let error):
+                        self?.dataStatus = .error(error)
+                    }
+                },
                       receiveValue: { [weak self] in
                     guard let data = $0 as? [ModelType] else { return }
                     self?.data = data

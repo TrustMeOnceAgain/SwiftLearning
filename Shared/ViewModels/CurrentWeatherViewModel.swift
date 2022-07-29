@@ -11,6 +11,7 @@ class CurrentWeatherViewModel: ObservableObject {
     @Published var weathers: [CurrentWeatherModel]?
     let navigationTitle: String = "Current Weather"
     
+    @Published var dataStatus: ViewDataStatus = .notLoaded
     private let repository: WeatherRepository
     private let locationNames: [String]
     private var cancellable: Set<AnyCancellable> = []
@@ -24,11 +25,12 @@ class CurrentWeatherViewModel: ObservableObject {
         fetchData()
     }
     
-    func onRefreshButton() {
+    func onRefreshButtonTap() {
         fetchData()
     }
     
     private func fetchData() {
+        dataStatus = .loading
         let publishers = locationNames.map { repository.getCurrentWeather(for: $0) }
         
         publishers
@@ -37,9 +39,17 @@ class CurrentWeatherViewModel: ObservableObject {
                 result, object in
                 result = result.zip(object) {
                     $0 + [$1]
-                }.eraseToAnyPublisher()
+                }
+                .eraseToAnyPublisher()
             }
-            .sink(receiveCompletion: { print("\(#function): \($0)") },
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .finished:
+                    self?.dataStatus = .loaded
+                case .failure(let error):
+                    self?.dataStatus = .error(error)
+                }
+            },
                   receiveValue: { [weak self] in
                 self?.weathers = $0
             })

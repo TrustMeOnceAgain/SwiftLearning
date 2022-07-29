@@ -35,20 +35,32 @@ extension ColourLoversListView {
     private func createView() -> some View {
         VStack {
             SearchView(search: $viewModel.search)
-            if let model = viewModel.model {
-                if model.isEmpty {
-                    InfoView(text: "There is data to show!", onAppearAction: nil, onRefreshButtonTapAction: nil)
-                } else {
+            switch viewModel.dataStatus {
+            case .loaded:
+                if let model = viewModel.model {
                     loadedView(model: model)
+                } else {
+                    InfoView(text: "There is data to show!",
+                             onAppearAction: nil,
+                             onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
                 }
-            } else {
+            case .loading:
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            case .notLoaded:
                 InfoView(text: "There is data to show!",
                          onAppearAction: viewModel.onAppear,
+                         onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
+            case .error(_):
+                InfoView(text: "Error during loading data!",
+                         onAppearAction: nil,
                          onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
             }
         }
         #if os(macOS)
-        .sheet(item: $selectedItem, onDismiss: { selectedItem = nil }, content: { model in
+        .sheet(item: $selectedItem,
+               onDismiss: { selectedItem = nil },
+               content: { model in
             ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: model.title, userName: model.userName, colors: model.colors, url: model.webUrl, numberOfViews: model.numberOfViews))
                 .frame(minWidth: 480, minHeight: 480, alignment: .center)
         })
