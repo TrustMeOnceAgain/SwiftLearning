@@ -21,8 +21,8 @@ struct CurrentWeatherModel {
         var imageURL: URL? {
             let webURL = CurrentWeatherModel.getURL(from: imageUrlString)
             let localURL = URL.localURLForXCAssets(imageName: imageUrlString) // for mocked cases
-            return localURL ?? webURL 
-            }
+            return localURL ?? webURL
+        }
         
         enum CodingKeys: String, CodingKey {
             case imageUrlString = "icon"

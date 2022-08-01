@@ -26,6 +26,11 @@ struct ColourLoversListView<ModelType: Identifiable & ColourLoversModel>: View {
         #endif
             .background(Color(.backgroundColor))
             .navigationTitle(viewModel.navigationTitle)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    CustomButtonView(text: nil, imageString: "arrow.clockwise.circle", imageSize: 25, action: { viewModel.onRefreshButtonTap() })
+                }
+            }
     }
 }
 

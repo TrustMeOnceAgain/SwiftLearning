@@ -15,6 +15,14 @@ protocol NetworkController {
 
 class RealNetworkController: NetworkController {
     
+    private let urlSession: URLSession
+    
+    init(timeout: TimeInterval = 10.0) {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = timeout
+        self.urlSession = URLSession(configuration: configuration)
+    }
+    
     func sendRequest<T: Decodable>(_ request: Request) async throws -> T {
         do {
             let (data, _) = try await baseRequest(request)
@@ -47,7 +55,7 @@ class RealNetworkController: NetworkController {
     
     private func baseRequest(_ request: Request) async throws -> (Data, URLResponse) {
         guard let urlRequest = request.urlRequest else { throw RequestError.badURL }
-        guard let (data, response) = try? await URLSession.shared.data(for: urlRequest) else { throw RequestError.badRequest }
+        guard let (data, response) = try? await urlSession.data(for: urlRequest) else { throw RequestError.badRequest }
         return (data, response)
     }
 }
