@@ -13,6 +13,24 @@ protocol NetworkController {
     func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError>
 }
 
+extension NetworkController {
+    func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError> {
+        Future { promise in
+            Task {
+                do {
+                    promise(.success(try await asyncRequest()))
+                } catch (let error as RequestError){
+                    promise(.failure(error))
+                } catch {
+                    promise(.failure(.badRequest))
+                }
+            }
+        }
+        .receive(on: queue)
+        .eraseToAnyPublisher()
+    }
+}
+
 class RealNetworkController: NetworkController {
     
     private let urlSession: URLSession
@@ -35,22 +53,6 @@ class RealNetworkController: NetworkController {
         } catch {
             throw RequestError.badRequest
         }
-    }
-    
-    func asyncRequestToCombine<T>(_ asyncRequest: @escaping () async throws -> T, queue: DispatchQueue) -> AnyPublisher<T, RequestError> {
-        Future { promise in
-            Task {
-                do {
-                    promise(.success(try await asyncRequest()))
-                } catch (let error as RequestError){
-                    promise(.failure(error))
-                } catch {
-                    promise(.failure(.badRequest))
-                }
-            }
-        }
-        .receive(on: queue)
-        .eraseToAnyPublisher()
     }
     
     private func baseRequest(_ request: Request) async throws -> (Data, URLResponse) {

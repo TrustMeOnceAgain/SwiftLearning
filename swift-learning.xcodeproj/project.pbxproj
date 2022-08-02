@@ -27,6 +27,9 @@
 		401A37A728782A4B00C411B9 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A528782A4B00C411B9 /* NetworkController.swift */; };
 		401A37A928782E6D00C411B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A828782E6D00C411B9 /* RequestError.swift */; };
 		401A37AA28782E6D00C411B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A828782E6D00C411B9 /* RequestError.swift */; };
+		402748CE28993E1600837217 /* swift_learningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748CD28993E1600837217 /* swift_learningTests.swift */; };
+		402748D428993E5000837217 /* WeatherRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748C428993D9A00837217 /* WeatherRepositoryTests.swift */; };
+		402748D8289946D400837217 /* Publisher+sinkToResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748D5289946BC00837217 /* Publisher+sinkToResult.swift */; };
 		4064F522288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */; };
 		4064F523288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */; };
 		40719C52288FC4F8005E9E59 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C51288FC4F8005E9E59 /* CustomButtonView.swift */; };
@@ -83,6 +86,16 @@
 		40B61A30287DBA08001BD1AF /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A2E287DBA08001BD1AF /* ColorStyle.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		402748CF28993E1600837217 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A373B2876F7C400C411B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 401A37492876F7C600C411B9;
+			remoteInfo = "swift-learning (iOS)";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		401A37422876F7C400C411B9 /* swift_learningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_learningApp.swift; sourceTree = "<group>"; };
 		401A37452876F7C600C411B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +110,10 @@
 		401A37A2287826C200C411B9 /* GetColorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColorsRequest.swift; sourceTree = "<group>"; };
 		401A37A528782A4B00C411B9 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		401A37A828782E6D00C411B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		402748C428993D9A00837217 /* WeatherRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryTests.swift; sourceTree = "<group>"; };
+		402748CB28993E1600837217 /* swift-learningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-learningTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		402748CD28993E1600837217 /* swift_learningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_learningTests.swift; sourceTree = "<group>"; };
+		402748D5289946BC00837217 /* Publisher+sinkToResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+sinkToResult.swift"; sourceTree = "<group>"; };
 		4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversDetailsViewModel.swift; sourceTree = "<group>"; };
 		40719C51288FC4F8005E9E59 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		40719C54288FEC02005E9E59 /* MockedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MockedAssets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +158,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		402748C828993E1600837217 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -149,6 +173,7 @@
 			children = (
 				401A373F2876F7C400C411B9 /* Shared */,
 				401A37512876F7C600C411B9 /* macOS */,
+				402748CC28993E1600837217 /* swift-learningTests */,
 				401A374B2876F7C600C411B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,6 +197,7 @@
 			children = (
 				401A374A2876F7C600C411B9 /* swift-learning.app */,
 				401A37502876F7C600C411B9 /* swift-learning.app */,
+				402748CB28993E1600837217 /* swift-learningTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +264,40 @@
 				409F08BB288933EC00512203 /* ColourLovers */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		402748C228993D6100837217 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				402748C328993D7100837217 /* Repositiories */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		402748C328993D7100837217 /* Repositiories */ = {
+			isa = PBXGroup;
+			children = (
+				402748C428993D9A00837217 /* WeatherRepositoryTests.swift */,
+			);
+			path = Repositiories;
+			sourceTree = "<group>";
+		};
+		402748CC28993E1600837217 /* swift-learningTests */ = {
+			isa = PBXGroup;
+			children = (
+				402748D92899485E00837217 /* Extensions */,
+				402748C228993D6100837217 /* UnitTests */,
+				402748CD28993E1600837217 /* swift_learningTests.swift */,
+			);
+			path = "swift-learningTests";
+			sourceTree = "<group>";
+		};
+		402748D92899485E00837217 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				402748D5289946BC00837217 /* Publisher+sinkToResult.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4064F51D2881886600AC2B28 /* ViewModels */ = {
@@ -367,6 +427,24 @@
 			productReference = 401A37502876F7C600C411B9 /* swift-learning.app */;
 			productType = "com.apple.product-type.application";
 		};
+		402748CA28993E1600837217 /* swift-learningTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 402748D128993E1600837217 /* Build configuration list for PBXNativeTarget "swift-learningTests" */;
+			buildPhases = (
+				402748C728993E1600837217 /* Sources */,
+				402748C828993E1600837217 /* Frameworks */,
+				402748C928993E1600837217 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				402748D028993E1600837217 /* PBXTargetDependency */,
+			);
+			name = "swift-learningTests";
+			productName = "swift-learningTests";
+			productReference = 402748CB28993E1600837217 /* swift-learningTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -382,6 +460,10 @@
 					};
 					401A374F2876F7C600C411B9 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					402748CA28993E1600837217 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 401A37492876F7C600C411B9;
 					};
 				};
 			};
@@ -402,6 +484,7 @@
 			targets = (
 				401A37492876F7C600C411B9 /* swift-learning (iOS) */,
 				401A374F2876F7C600C411B9 /* swift-learning (macOS) */,
+				402748CA28993E1600837217 /* swift-learningTests */,
 			);
 		};
 /* End PBXProject section */
@@ -424,6 +507,13 @@
 				401A375C2876F7C600C411B9 /* Assets.xcassets in Resources */,
 				40719C56288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
 				40B61A2C287DB8BC001BD1AF /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		402748C928993E1600837217 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,7 +602,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		402748C728993E1600837217 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				402748D8289946D400837217 /* Publisher+sinkToResult.swift in Sources */,
+				402748D428993E5000837217 /* WeatherRepositoryTests.swift in Sources */,
+				402748CE28993E1600837217 /* swift_learningTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		402748D028993E1600837217 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 401A37492876F7C600C411B9 /* swift-learning (iOS) */;
+			targetProxy = 402748CF28993E1600837217 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		401A375D2876F7C600C411B9 /* Debug */ = {
@@ -741,6 +849,47 @@
 			};
 			name = Release;
 		};
+		402748D228993E1600837217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6R2CATDYP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trustme.swift-learningTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-learning.app/swift-learning";
+			};
+			name = Debug;
+		};
+		402748D328993E1600837217 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6R2CATDYP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trustme.swift-learningTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-learning.app/swift-learning";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -767,6 +916,15 @@
 			buildConfigurations = (
 				401A37632876F7C600C411B9 /* Debug */,
 				401A37642876F7C600C411B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		402748D128993E1600837217 /* Build configuration list for PBXNativeTarget "swift-learningTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				402748D228993E1600837217 /* Debug */,
+				402748D328993E1600837217 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
