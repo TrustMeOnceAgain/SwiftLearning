@@ -14,14 +14,15 @@ struct swift_learningApp: App {
         #if os(iOS)
         UITableView.appearance().backgroundColor = .clear
         #endif
-        // Change to use mock data insetad of a real one
+        // Change to use mock data instead of a real one
         DIManager.shared.appEnvironment = .realData
     }
     
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MainSectionList()
+                MainSectionList(coloursLoverRepository: DIManager.shared.colourLoversRepository,
+                                weatherRepository: DIManager.shared.weatherRepository)
             }
             #if os(macOS)
             .navigationViewStyle(.columns)

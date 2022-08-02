@@ -51,7 +51,7 @@ struct MainSectionList: View {
     private let weatherRepository: WeatherRepository
     private var viewModel: [Position] = Position.allCases
     
-    init(coloursLoverRepository: ColourLoversRepository = DIManager.shared.colourLoversRepository, weatherRepository: WeatherRepository = DIManager.shared.weatherRepository) {
+    init(coloursLoverRepository: ColourLoversRepository, weatherRepository: WeatherRepository) {
         self.coloursLoverRepository = coloursLoverRepository
         self.weatherRepository = weatherRepository
     }
@@ -90,8 +90,10 @@ extension MainSectionList {
     @ViewBuilder
     private func detinationView(for position: Position) -> some View {
         switch position {
-        case .colors: ColourLoversListView(viewModel: ColourLoversListViewModel<ColorModel>(repository: coloursLoverRepository))
-        case .palettes: ColourLoversListView(viewModel: ColourLoversListViewModel<PaletteModel>(repository: coloursLoverRepository))
+        case .colors: ColourLoversListView<ColorModel>()
+                .environmentObject(ColourLoversListViewModel<ColorModel>(repository: coloursLoverRepository))
+        case .palettes: ColourLoversListView<PaletteModel>()
+                .environmentObject(ColourLoversListViewModel<PaletteModel>(repository: coloursLoverRepository))
         case .currentWeather: WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw", "London", "Sydney", "Paris", "Tokyo"], repository: weatherRepository)) // TODO: Read from defaults and add possibility to change that
         }
     }

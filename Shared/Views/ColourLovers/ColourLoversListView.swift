@@ -10,14 +10,10 @@ import Combine
 
 struct ColourLoversListView<ModelType: Identifiable & ColourLoversModel>: View {
     
-    @ObservedObject private var viewModel: ColourLoversListViewModel<ModelType>
+    @EnvironmentObject private var viewModel: ColourLoversListViewModel<ModelType>
     #if os(macOS)
     @State private var selectedItem: ModelType?
     #endif
-    
-    init(viewModel: ColourLoversListViewModel<ModelType>) {
-        self.viewModel = viewModel
-    }
     
     var body: some View {
         createView()
@@ -110,13 +106,15 @@ struct ColourLoversListView_Previews: PreviewProvider {
             ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
                 #if os(iOS)
                 NavigationView {
-                    ColourLoversListView<ColorModel>(viewModel: ColourLoversListViewModel(repository: MockedColourLoversRepository()))
+                    ColourLoversListView<ColorModel>()
+                        .environmentObject(ColourLoversListViewModel<ColorModel>(repository: MockedColourLoversRepository()))
                         
                 }
                 .preferredColorScheme(colorScheme)
                 
                 #elseif os(macOS)
-                ColourLoversListView<ColorModel>(viewModel: ColourLoversListViewModel(repository: MockedColourLoversRepository()))
+                ColourLoversListView<ColorModel>()
+                    .environmentObject(ColourLoversListViewModel<ColorModel>(repository: MockedColourLoversRepository()))
                     .preferredColorScheme(colorScheme)
                 #endif
             }

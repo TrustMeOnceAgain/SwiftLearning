@@ -10,41 +10,27 @@ import Foundation
 class DIManager {
     static var shared: DIManager = DIManager()
     
-    private init() {
-        self.networkController = RealNetworkController()
-        
-        self.realColourRepository = RealColourLoversRepository(networkController: networkController)
-        self.mockedColourRepository = MockedColourLoversRepository()
-        
-        self.realWeatherRepository = RealWeatherRepository(networkController: networkController)
-        self.mockedWeatherRepository = MockedWeatherRepository()
-    }
-    
     var appEnvironment: AppEnvironment = .realData
-    let networkController: NetworkController
+    
+    lazy var networkController: NetworkController = RealNetworkController()
     
     var colourLoversRepository: ColourLoversRepository {
         switch appEnvironment {
         case .realData:
-            return realColourRepository
+            return RealColourLoversRepository(networkController: networkController)
         case .mocked:
-            return mockedColourRepository
+            return MockedColourLoversRepository()
         }
     }
     
     var weatherRepository: WeatherRepository {
         switch appEnvironment {
         case .realData:
-            return realWeatherRepository
+            return RealWeatherRepository(networkController: networkController)
         case .mocked:
-            return mockedWeatherRepository
+            return MockedWeatherRepository()
         }
     }
-    
-    private let realColourRepository: RealColourLoversRepository
-    private let mockedColourRepository: MockedColourLoversRepository
-    private let realWeatherRepository: RealWeatherRepository
-    private let mockedWeatherRepository: MockedWeatherRepository
 }
 
 enum AppEnvironment {
