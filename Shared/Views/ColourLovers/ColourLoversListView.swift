@@ -41,14 +41,8 @@ extension ColourLoversListView {
         VStack {
             SearchView(search: $viewModel.search)
             switch viewModel.dataStatus {
-            case .loaded:
-                if let model = viewModel.model {
-                    loadedView(model: model)
-                } else {
-                    InfoView(text: "There is no data to show!",
-                             onAppearAction: nil,
-                             onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
-                }
+            case .loaded(let model):
+                loadedView(model: model)
             case .loading:
                 ProgressView()
                     .progressViewStyle(.circular)
@@ -64,31 +58,48 @@ extension ColourLoversListView {
             }
         }
         #if os(macOS)
-        .sheet(item: $selectedItem,
-               onDismiss: { selectedItem = nil },
-               content: { model in
-            ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: model.title, userName: model.userName, colors: model.colors, url: model.webUrl, numberOfViews: model.numberOfViews))
-                .frame(minWidth: 480, minHeight: 480, alignment: .center)
-        })
+        .sheet(
+            item: $selectedItem,
+            onDismiss: { selectedItem = nil },
+            content: { model in
+                detailsView(basedOn: model)
+                    .frame(minWidth: 480, minHeight: 480, alignment: .center)
+            })
         #endif
     }
     
     private func loadedView(model: [ModelType]) -> some View {
         #if os(iOS)
         List(model, id: \.id) { model in
-            NavigationLink(destination: { ColourLoversDetails(viewModel: ColourLoversDetailsViewModel(title: model.title, userName: model.userName, colors: model.colors, url: model.webUrl, numberOfViews: model.numberOfViews))}) {
-                Cell(viewModel: CellViewModel(title: model.title, subtitle: model.userName, rightColors: model.colors))
+            NavigationLink(destination: { detailsView(basedOn: model) }) {
+                cell(basedOn: model)
             }
         }
         #elseif os(macOS)
         List(model, id: \.id) { model in
-            Cell(viewModel: CellViewModel(title: model.title, subtitle: model.userName, rightColors: model.colors))
+            cell(basedOn: model)
                 .contentShape(Rectangle())
                 .onTapGesture {
                     selectedItem = model
                 }
         }
         #endif
+    }
+    
+    private func cell(basedOn model: ColourLoversModel) -> Cell {
+        let viewModel = CellViewModel(title: model.title,
+                                      subtitle: model.userName,
+                                      rightColors: model.colors)
+        return Cell(viewModel: viewModel)
+    }
+    
+    private func detailsView(basedOn model: ColourLoversModel) -> ColourLoversDetails {
+        let viewModel = ColourLoversDetailsViewModel(title: model.title,
+                                                     userName: model.userName,
+                                                     colors: model.colors,
+                                                     url: model.webUrl,
+                                                     numberOfViews: model.numberOfViews)
+        return ColourLoversDetails(viewModel: viewModel)
     }
 }
 

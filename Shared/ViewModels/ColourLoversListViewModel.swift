@@ -9,10 +9,10 @@ import Combine
 
 class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject {
     
-    @Published var model: [ModelType]?
     @Published var search: String = ""
+    @Published var dataStatus: ViewDataStatus<[ModelType]> = .notLoaded
     
-    @Published var dataStatus: ViewDataStatus = .notLoaded
+    @Published private var model: [ModelType]? // TODO: change name
     @Published private var data: [ModelType]?
     private var cancellable: Set<AnyCancellable> = []
     private let repository: ColourLoversRepository
@@ -28,6 +28,7 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
     init(repository: ColourLoversRepository) {
         self.repository = repository
         setupModelAndSearch()
+        setupDataStatus()
     }
     
     func onAppear() {
@@ -46,17 +47,14 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
             repository
                 .getColors()
                 .sink(
-                    receiveCompletion: { [weak self] completion in
-                        switch completion {
-                        case .finished:
-                            self?.dataStatus = .loaded
-                        case .failure(let error):
-                            self?.dataStatus = .error(error)
-                        }
+                    receiveCompletion: { [weak self] in
+                        guard case .failure(let error) = $0 else { return }
+                        self?.dataStatus = .error(error)
                     },
                     receiveValue: { [weak self] in
                         guard let data = $0 as? [ModelType] else { return }
                         self?.data = data
+                        self?.dataStatus = .loaded(data: data)
                     })
                 .store(in: &cancellable)
             
@@ -64,17 +62,14 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
             repository
                 .getPalettes()
                 .sink(
-                    receiveCompletion:{ [weak self] completion in
-                        switch completion {
-                        case .finished:
-                            self?.dataStatus = .loaded
-                        case .failure(let error):
-                            self?.dataStatus = .error(error)
-                        }
+                    receiveCompletion:{ [weak self] in
+                        guard case .failure(let error) = $0 else { return }
+                        self?.dataStatus = .error(error)
                     },
                     receiveValue: { [weak self] in
                         guard let data = $0 as? [ModelType] else { return }
                         self?.data = data
+                        self?.dataStatus = .loaded(data: data)
                     })
                 .store(in: &cancellable)
             
@@ -93,6 +88,17 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
             .sink(receiveValue: { [weak self] model in
                 self?.model = model
             })
+            .store(in: &cancellable)
+    }
+    
+    private func setupDataStatus() {
+        $model
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [weak self] result in
+                    guard let newData = result, case .loaded(_) = self?.dataStatus else { return }
+                    self?.dataStatus = .loaded(data: newData)
+                })
             .store(in: &cancellable)
     }
 }

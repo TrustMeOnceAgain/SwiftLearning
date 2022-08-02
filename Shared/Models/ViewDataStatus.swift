@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum ViewDataStatus {
-    case notLoaded, loading, loaded, error(_ error: RequestError)
+enum ViewDataStatus<T> {
+    case notLoaded, loading, loaded(data: T), error(_ error: RequestError)
 }

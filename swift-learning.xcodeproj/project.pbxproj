@@ -79,8 +79,8 @@
 		40B61A29287DA3DC001BD1AF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A27287DA3DC001BD1AF /* Cell.swift */; };
 		40B61A2B287DB8BC001BD1AF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B61A2A287DB8BC001BD1AF /* Colors.xcassets */; };
 		40B61A2C287DB8BC001BD1AF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B61A2A287DB8BC001BD1AF /* Colors.xcassets */; };
-		40B61A2F287DBA08001BD1AF /* ClolorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A2E287DBA08001BD1AF /* ClolorStyle.swift */; };
-		40B61A30287DBA08001BD1AF /* ClolorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A2E287DBA08001BD1AF /* ClolorStyle.swift */; };
+		40B61A2F287DBA08001BD1AF /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A2E287DBA08001BD1AF /* ColorStyle.swift */; };
+		40B61A30287DBA08001BD1AF /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A2E287DBA08001BD1AF /* ColorStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,7 +123,7 @@
 		40B61A21287C327D001BD1AF /* ColourLoversDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversDetails.swift; sourceTree = "<group>"; };
 		40B61A27287DA3DC001BD1AF /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		40B61A2A287DB8BC001BD1AF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		40B61A2E287DBA08001BD1AF /* ClolorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClolorStyle.swift; sourceTree = "<group>"; };
+		40B61A2E287DBA08001BD1AF /* ColorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +213,7 @@
 				409F08D12889593F00512203 /* Extensions */,
 				401A376D287712E600C411B9 /* DIManager.swift */,
 				401A37942877200400C411B9 /* Constants.swift */,
-				40B61A2E287DBA08001BD1AF /* ClolorStyle.swift */,
+				40B61A2E287DBA08001BD1AF /* ColorStyle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -457,7 +457,7 @@
 				40B61A22287C327D001BD1AF /* ColourLoversDetails.swift in Sources */,
 				401A37A3287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F522288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */,
-				40B61A2F287DBA08001BD1AF /* ClolorStyle.swift in Sources */,
+				40B61A2F287DBA08001BD1AF /* ColorStyle.swift in Sources */,
 				409F08842886B3FC00512203 /* GetColorRequest.swift in Sources */,
 				409F088A2886BE4000512203 /* ColourLoversModel.swift in Sources */,
 				409F088D2886D07C00512203 /* ColourLoversListView.swift in Sources */,
@@ -498,7 +498,7 @@
 				40B61A23287C327D001BD1AF /* ColourLoversDetails.swift in Sources */,
 				401A37A4287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F523288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */,
-				40B61A30287DBA08001BD1AF /* ClolorStyle.swift in Sources */,
+				40B61A30287DBA08001BD1AF /* ColorStyle.swift in Sources */,
 				409F08852886B3FC00512203 /* GetColorRequest.swift in Sources */,
 				409F088B2886BE4000512203 /* ColourLoversModel.swift in Sources */,
 				409F088E2886D07C00512203 /* ColourLoversListView.swift in Sources */,

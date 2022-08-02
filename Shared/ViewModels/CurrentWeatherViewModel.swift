@@ -8,10 +8,10 @@
 import Combine
 
 class CurrentWeatherViewModel: ObservableObject {
-    @Published var weathers: [CurrentWeatherModel]?
     let navigationTitle: String = "Current Weather"
+    @Published var dataStatus: ViewDataStatus<[CurrentWeatherModel]> = .notLoaded
     
-    @Published var dataStatus: ViewDataStatus = .notLoaded
+    @Published private var weathers: [CurrentWeatherModel]?
     private let repository: WeatherRepository
     private let locationNames: [String]
     private var cancellable: Set<AnyCancellable> = []
@@ -43,16 +43,13 @@ class CurrentWeatherViewModel: ObservableObject {
                 .eraseToAnyPublisher()
             }
             .sink(
-                receiveCompletion: { [weak self] completion in
-                    switch completion {
-                    case .finished:
-                        self?.dataStatus = .loaded
-                    case .failure(let error):
-                        self?.dataStatus = .error(error)
-                    }
+                receiveCompletion: { [weak self] in
+                    guard case .failure(let error) = $0 else { return }
+                    self?.dataStatus = .error(error)
                 },
                 receiveValue: { [weak self] in
                     self?.weathers = $0
+                    self?.dataStatus = .loaded(data: $0)
                 })
             .store(in: &cancellable)
     }

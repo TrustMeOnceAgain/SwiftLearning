@@ -16,7 +16,7 @@ struct WeatherView: View {
             .padding()
             .background(Color(.backgroundColor))
             .navigationTitle(viewModel.navigationTitle)
-            .toolbar {
+            .toolbar { // TODO: fix for macOS
                 ToolbarItem(placement: .primaryAction) {
                     CustomButtonView(text: nil, imageString: "arrow.clockwise.circle", imageSize: 25, action: { viewModel.onRefreshButtonTap() })
                 }
@@ -27,14 +27,8 @@ struct WeatherView: View {
     var contentView: some View {
         VStack {
             switch viewModel.dataStatus {
-            case .loaded:
-                if let model = viewModel.weathers {
-                    loadedView(model: model)
-                } else {
-                    InfoView(text: "There is no data to show!",
-                             onAppearAction: nil,
-                             onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
-                }
+            case .loaded(let weathers):
+                loadedView(model: weathers)
             case .loading:
                 ProgressView()
                     .progressViewStyle(.circular)

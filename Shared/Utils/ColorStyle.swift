@@ -1,5 +1,5 @@
 //
-//  ClolorStyle.swift
+//  ColorStyle.swift
 //  swift-learning
 //
 //  Created by Filip Cybuch on 12/07/2022.
