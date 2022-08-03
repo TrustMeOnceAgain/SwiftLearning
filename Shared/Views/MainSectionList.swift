@@ -60,6 +60,7 @@ struct MainSectionList: View {
             createView()
             #if os(macOS)
                 .frame(minWidth: 200)
+                .toolbar(content: { Text("")}) // Prevents toolbar movement on macOS
             #endif
                 .background(Color(.backgroundColor))
                 .navigationTitle("Main list")

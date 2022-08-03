@@ -18,7 +18,9 @@ struct WeatherView: View {
             .navigationTitle(viewModel.navigationTitle)
             .toolbar { // TODO: fix for macOS
                 ToolbarItem(placement: .primaryAction) {
-                    CustomButtonView(text: nil, imageString: "arrow.clockwise.circle", imageSize: 25, action: { viewModel.onRefreshButtonTap() })
+                    Button("Refresh") {
+                        viewModel.onRefreshButtonTap()
+                    }
                 }
             }
     }
@@ -36,11 +38,11 @@ struct WeatherView: View {
             case .notLoaded:
                 InfoView(text: "There is no data to show!",
                          onAppearAction: viewModel.onAppear,
-                         onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
+                         onRefreshButtonTapAction: nil)
             case .error(_):
                 InfoView(text: "Error during loading data!",
                          onAppearAction: nil,
-                         onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
+                         onRefreshButtonTapAction: nil)
             }
         }
     }

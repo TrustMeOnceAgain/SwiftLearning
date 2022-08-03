@@ -23,10 +23,19 @@ struct ColourLoversListView<ModelType: Identifiable & ColourLoversModel>: View {
             .background(Color(.backgroundColor))
             .navigationTitle(viewModel.navigationTitle)
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    CustomButtonView(text: nil, imageString: "arrow.clockwise.circle", imageSize: 25, action: { viewModel.onRefreshButtonTap() })
+                ToolbarItem(placement: .automatic) {
+                    Button("Refresh") {
+                        viewModel.onRefreshButtonTap()
+                    }
                 }
             }
+        #if os(iOS)
+            .searchable(text: $viewModel.search, placement: .navigationBarDrawer(displayMode: .always))
+            .disableAutocorrection(true)
+        #elseif os(macOS)
+            .searchable(text: $viewModel.search, placement: .toolbar)
+        #endif
+            
     }
 }
 
@@ -35,7 +44,6 @@ extension ColourLoversListView {
     @ViewBuilder
     private func createView() -> some View {
         VStack {
-            SearchView(search: $viewModel.search)
             switch viewModel.dataStatus {
             case .loaded(let model):
                 loadedView(model: model)
@@ -46,11 +54,11 @@ extension ColourLoversListView {
             case .notLoaded:
                 InfoView(text: "There is no data to show!",
                          onAppearAction: viewModel.onAppear,
-                         onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
+                         onRefreshButtonTapAction: nil)
             case .error(_):
                 InfoView(text: "Error during loading data!",
                          onAppearAction: nil,
-                         onRefreshButtonTapAction: viewModel.onRefreshButtonTap)
+                         onRefreshButtonTapAction: nil)
             }
         }
         #if os(macOS)

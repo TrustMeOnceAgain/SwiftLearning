@@ -17,7 +17,7 @@
         "is_day": 1,
         "condition": {
             "text": "Sunny",
-            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            "icon": "Sunny",
             "code": 1000
         },
         "wind_mph": 4.3,
