@@ -30,6 +30,19 @@
 		402748CE28993E1600837217 /* swift_learningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748CD28993E1600837217 /* swift_learningTests.swift */; };
 		402748D428993E5000837217 /* WeatherRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748C428993D9A00837217 /* WeatherRepositoryTests.swift */; };
 		402748D8289946D400837217 /* Publisher+sinkToResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748D5289946BC00837217 /* Publisher+sinkToResult.swift */; };
+		402748DC289A43A900837217 /* NetworkControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748DB289A43A900837217 /* NetworkControllerTests.swift */; };
+		402748E1289A463D00837217 /* GetColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E0289A463D00837217 /* GetColors.json */; };
+		402748E4289A4CC900837217 /* MockedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748E2289A4CB900837217 /* MockedRequest.swift */; };
+		402748E5289A4CC900837217 /* MockedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748E2289A4CB900837217 /* MockedRequest.swift */; };
+		402748E7289A4DF300837217 /* GetPalettes.json in Sources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
+		402748E9289A4F2A00837217 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748E8289A4F2A00837217 /* MockedData.swift */; };
+		402748EA289A4F2A00837217 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748E8289A4F2A00837217 /* MockedData.swift */; };
+		402748EB289A4F8100837217 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748DD289A45B300837217 /* JsonLoader.swift */; };
+		402748EC289A4F8200837217 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748DD289A45B300837217 /* JsonLoader.swift */; };
+		402748ED289A50BF00837217 /* GetColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E0289A463D00837217 /* GetColors.json */; };
+		402748EE289A50BF00837217 /* GetColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E0289A463D00837217 /* GetColors.json */; };
+		402748EF289A50C200837217 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
+		402748F0289A50C200837217 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
 		4064F522288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */; };
 		4064F523288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */; };
 		40719C52288FC4F8005E9E59 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C51288FC4F8005E9E59 /* CustomButtonView.swift */; };
@@ -114,6 +127,12 @@
 		402748CB28993E1600837217 /* swift-learningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-learningTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		402748CD28993E1600837217 /* swift_learningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_learningTests.swift; sourceTree = "<group>"; };
 		402748D5289946BC00837217 /* Publisher+sinkToResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+sinkToResult.swift"; sourceTree = "<group>"; };
+		402748DB289A43A900837217 /* NetworkControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerTests.swift; sourceTree = "<group>"; };
+		402748DD289A45B300837217 /* JsonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
+		402748E0289A463D00837217 /* GetColors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetColors.json; sourceTree = "<group>"; };
+		402748E2289A4CB900837217 /* MockedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedRequest.swift; sourceTree = "<group>"; };
+		402748E6289A4DF300837217 /* GetPalettes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetPalettes.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		402748E8289A4F2A00837217 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversDetailsViewModel.swift; sourceTree = "<group>"; };
 		40719C51288FC4F8005E9E59 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		40719C54288FEC02005E9E59 /* MockedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MockedAssets.xcassets; sourceTree = "<group>"; };
@@ -217,7 +236,6 @@
 				401A376A287711B800C411B9 /* ColorModel.swift */,
 				409F087A28857DC900512203 /* PaletteModel.swift */,
 				409F08C32889371B00512203 /* CurrentWeatherModel.swift */,
-				40719C602893C20D005E9E59 /* ViewDataStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,6 +258,8 @@
 				401A376D287712E600C411B9 /* DIManager.swift */,
 				401A37942877200400C411B9 /* Constants.swift */,
 				40B61A2E287DBA08001BD1AF /* ColorStyle.swift */,
+				402748E8289A4F2A00837217 /* MockedData.swift */,
+				402748DD289A45B300837217 /* JsonLoader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -251,6 +271,7 @@
 				401A37A1287826A400C411B9 /* Requests */,
 				401A379E2878200C00C411B9 /* Host.swift */,
 				401A379B28781BEE00C411B9 /* Request.swift */,
+				402748E2289A4CB900837217 /* MockedRequest.swift */,
 				401A37A828782E6D00C411B9 /* RequestError.swift */,
 				401A37A528782A4B00C411B9 /* NetworkController.swift */,
 			);
@@ -269,6 +290,8 @@
 		402748C228993D6100837217 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				402748DF289A462900837217 /* Mocks */,
+				402748DA289A439B00837217 /* Networking */,
 				402748C328993D7100837217 /* Repositiories */,
 			);
 			path = UnitTests;
@@ -300,9 +323,27 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		402748DA289A439B00837217 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				402748DB289A43A900837217 /* NetworkControllerTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		402748DF289A462900837217 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				402748E0289A463D00837217 /* GetColors.json */,
+				402748E6289A4DF300837217 /* GetPalettes.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		4064F51D2881886600AC2B28 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				40719C602893C20D005E9E59 /* ViewDataStatus.swift */,
 				409F08802886ACFE00512203 /* ColourLoversListViewModel.swift */,
 				4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */,
 				409F08CC28893F4D00512203 /* CurrentWeatherViewModel.swift */,
@@ -494,9 +535,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402748ED289A50BF00837217 /* GetColors.json in Resources */,
 				401A375B2876F7C600C411B9 /* Assets.xcassets in Resources */,
 				40719C55288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
 				40B61A2B287DB8BC001BD1AF /* Colors.xcassets in Resources */,
+				402748EF289A50C200837217 /* GetPalettes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,9 +547,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402748EE289A50BF00837217 /* GetColors.json in Resources */,
 				401A375C2876F7C600C411B9 /* Assets.xcassets in Resources */,
 				40719C56288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
 				40B61A2C287DB8BC001BD1AF /* Colors.xcassets in Resources */,
+				402748F0289A50C200837217 /* GetPalettes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402748E1289A463D00837217 /* GetColors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +583,7 @@
 				409F08A92887DBE000512203 /* SearchView.swift in Sources */,
 				409F08C728893D7500512203 /* WeatherView.swift in Sources */,
 				409F08812886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */,
+				402748E4289A4CC900837217 /* MockedRequest.swift in Sources */,
 				409F08CA28893D8600512203 /* WeatherTile.swift in Sources */,
 				401A379F2878200C00C411B9 /* Host.swift in Sources */,
 				409F087B28857DC900512203 /* PaletteModel.swift in Sources */,
@@ -545,6 +592,7 @@
 				409F08D32889595200512203 /* Numeric+temperatureSymbol.swift in Sources */,
 				401A379C28781BEE00C411B9 /* Request.swift in Sources */,
 				40B61A22287C327D001BD1AF /* ColourLoversDetails.swift in Sources */,
+				402748EB289A4F8100837217 /* JsonLoader.swift in Sources */,
 				401A37A3287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F522288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */,
 				40B61A2F287DBA08001BD1AF /* ColorStyle.swift in Sources */,
@@ -555,6 +603,7 @@
 				409F08A62887DB4700512203 /* InfoView.swift in Sources */,
 				401A376B287711B800C411B9 /* ColorModel.swift in Sources */,
 				409F08CD28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */,
+				402748E9289A4F2A00837217 /* MockedData.swift in Sources */,
 				409F087828857BAE00512203 /* GetPalettesRequest.swift in Sources */,
 				401A37952877200400C411B9 /* Constants.swift in Sources */,
 				40719C5E288FF38D005E9E59 /* URL+localURLForXCAssets.swift in Sources */,
@@ -578,6 +627,7 @@
 				409F08AA2887DBE000512203 /* SearchView.swift in Sources */,
 				409F08C828893D7500512203 /* WeatherView.swift in Sources */,
 				409F08822886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */,
+				402748E5289A4CC900837217 /* MockedRequest.swift in Sources */,
 				409F08CB28893D8600512203 /* WeatherTile.swift in Sources */,
 				401A37A02878200C00C411B9 /* Host.swift in Sources */,
 				409F087C28857DC900512203 /* PaletteModel.swift in Sources */,
@@ -586,6 +636,7 @@
 				409F08D42889595200512203 /* Numeric+temperatureSymbol.swift in Sources */,
 				401A379D28781C7C00C411B9 /* Request.swift in Sources */,
 				40B61A23287C327D001BD1AF /* ColourLoversDetails.swift in Sources */,
+				402748EC289A4F8200837217 /* JsonLoader.swift in Sources */,
 				401A37A4287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F523288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */,
 				40B61A30287DBA08001BD1AF /* ColorStyle.swift in Sources */,
@@ -596,6 +647,7 @@
 				409F08A72887DB4700512203 /* InfoView.swift in Sources */,
 				401A376C287711B800C411B9 /* ColorModel.swift in Sources */,
 				409F08CE28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */,
+				402748EA289A4F2A00837217 /* MockedData.swift in Sources */,
 				409F087928857BAE00512203 /* GetPalettesRequest.swift in Sources */,
 				401A37962877200400C411B9 /* Constants.swift in Sources */,
 				40719C5F288FF38D005E9E59 /* URL+localURLForXCAssets.swift in Sources */,
@@ -606,9 +658,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402748DC289A43A900837217 /* NetworkControllerTests.swift in Sources */,
 				402748D8289946D400837217 /* Publisher+sinkToResult.swift in Sources */,
 				402748D428993E5000837217 /* WeatherRepositoryTests.swift in Sources */,
 				402748CE28993E1600837217 /* swift_learningTests.swift in Sources */,
+				402748E7289A4DF300837217 /* GetPalettes.json in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

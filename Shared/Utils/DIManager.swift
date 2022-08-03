@@ -12,25 +12,17 @@ class DIManager {
     
     var appEnvironment: AppEnvironment = .realData
     
-    lazy var networkController: NetworkController = RealNetworkController()
-    
-    var colourLoversRepository: ColourLoversRepository {
+    var networkController: NetworkController {
         switch appEnvironment {
         case .realData:
-            return RealColourLoversRepository(networkController: networkController)
+            return RealNetworkController()
         case .mocked:
-            return MockedColourLoversRepository()
+            return MockedNetworkController(mockedRequests: [MockedData.getColorsRequest, MockedData.getPalettesRequest])
         }
     }
     
-    var weatherRepository: WeatherRepository {
-        switch appEnvironment {
-        case .realData:
-            return RealWeatherRepository(networkController: networkController)
-        case .mocked:
-            return MockedWeatherRepository()
-        }
-    }
+    var colourLoversRepository: ColourLoversRepository { RealColourLoversRepository(networkController: networkController) }
+    var weatherRepository: WeatherRepository { RealWeatherRepository(networkController: networkController) }
 }
 
 enum AppEnvironment {

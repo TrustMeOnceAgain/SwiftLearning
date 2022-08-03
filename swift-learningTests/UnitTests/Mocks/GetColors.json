@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "SuchColor",
+        "userName" : "TrustMe",
+        "rgb": {
+            "red": 10,
+            "green": 30,
+            "blue": 150
+        },
+        "numViews": 154384,
+        "url": "http:\/\/www.colourlovers.com\/color\/000000\/SuchColor"
+    },
+    {
+        "id": 2,
+        "title": "SuchSecondColor",
+        "userName" : "TrustedOnce",
+        "rgb": {
+            "red": 50,
+            "green": 4,
+            "blue": 14
+        },
+        "numViews": 450,
+        "url": "http:\/\/www.colourlovers.com\/color\/000000\/SuchSecondColor"
+    }
+]

@@ -61,3 +61,27 @@ class RealNetworkController: NetworkController {
         return (data, response)
     }
 }
+
+class MockedNetworkController: NetworkController {
+    
+    var mockedRequests: [MockedRequest]
+    
+    init(mockedRequests: [MockedRequest]) {
+        self.mockedRequests = mockedRequests
+    }
+    
+    func sendRequest<T>(_ request: Request) async throws -> T where T : Decodable {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .millisecondsSince1970
+        
+        guard let mockedRequest = mockedRequests.last(where: { $0.request.urlRequest == request.urlRequest }) else { throw RequestError.badRequest }
+        
+        switch mockedRequest.response {
+        case .success(let data):
+            guard let model = try? jsonDecoder.decode(T.self, from: data) else { throw RequestError.parsingFailure }
+            return model
+        case .failure(let error):
+            throw error
+        }
+    }
+}

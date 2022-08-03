@@ -35,6 +35,12 @@ extension PaletteModel: Decodable {
     }
 }
 
+extension PaletteModel: Equatable {
+    static func == (lhs: PaletteModel, rhs: PaletteModel) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
 // https://stackoverflow.com/questions/24263007/how-to-use-hex-color-values
 private extension Color {
     init(hex: String) {

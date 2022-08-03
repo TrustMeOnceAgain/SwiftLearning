@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetColorRequest: Request {
+struct GetColorRequest: Request { // TODO: delete
     
     let colorId: Int
     

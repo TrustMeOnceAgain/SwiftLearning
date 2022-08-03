@@ -39,3 +39,9 @@ extension ColorModel: Decodable {
         case numberOfViews = "numViews"
     }
 }
+
+extension ColorModel: Equatable {
+    static func == (lhs: ColorModel, rhs: ColorModel) -> Bool {
+        lhs.id == rhs.id
+    }
+}
