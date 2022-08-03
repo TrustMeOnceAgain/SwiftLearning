@@ -101,20 +101,22 @@ extension ColourLoversListView {
 
 struct ColourLoversListView_Previews: PreviewProvider {
     
+    private static let viewModel = ColourLoversListViewModel<ColorModel>(repository: RealColourLoversRepository(networkController: MockedNetworkController()))
+    
     static var previews: some View {
         Group {
             ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
                 #if os(iOS)
                 NavigationView {
                     ColourLoversListView<ColorModel>()
-                        .environmentObject(ColourLoversListViewModel<ColorModel>(repository: MockedColourLoversRepository()))
+                        .environmentObject(viewModel)
                         
                 }
                 .preferredColorScheme(colorScheme)
                 
                 #elseif os(macOS)
                 ColourLoversListView<ColorModel>()
-                    .environmentObject(ColourLoversListViewModel<ColorModel>(repository: MockedColourLoversRepository()))
+                    .environmentObject(viewModel)
                     .preferredColorScheme(colorScheme)
                 #endif
             }

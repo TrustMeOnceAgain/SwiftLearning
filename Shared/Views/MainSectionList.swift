@@ -94,18 +94,19 @@ extension MainSectionList {
                 .environmentObject(ColourLoversListViewModel<ColorModel>(repository: coloursLoverRepository))
         case .palettes: ColourLoversListView<PaletteModel>()
                 .environmentObject(ColourLoversListViewModel<PaletteModel>(repository: coloursLoverRepository))
-        case .currentWeather: WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw", "London", "Sydney", "Paris", "Tokyo"], repository: weatherRepository)) // TODO: Read from defaults and add possibility to change that
+        case .currentWeather: WeatherView(viewModel: CurrentWeatherViewModel(locationNames: ["Wroclaw", "London", "Sydney", "Tokyo"], repository: weatherRepository)) // TODO: Read from defaults and add possibility to change that
         }
     }
 }
 
 struct MainSectionList_Previews: PreviewProvider {
+    
     static var previews: some View {
         Group {
             ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
                 NavigationView {
-                    MainSectionList(coloursLoverRepository: MockedColourLoversRepository(),
-                                    weatherRepository: MockedWeatherRepository())
+                    MainSectionList(coloursLoverRepository: RealColourLoversRepository(networkController: MockedNetworkController()),
+                                    weatherRepository: RealWeatherRepository(networkController: MockedNetworkController()))
                 }
                 .preferredColorScheme(colorScheme)
             }

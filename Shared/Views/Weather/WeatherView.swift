@@ -59,19 +59,20 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     
-    static let locations = ["Tokyo", "London", "Wroclaw"]
+    private static let locations = ["Sydney", "London", "Wroclaw", "Tokyo"]
+    private static let viewModel = CurrentWeatherViewModel(locationNames: WeatherView_Previews.locations, repository: RealWeatherRepository(networkController: MockedNetworkController()))
     
     static var previews: some View {
         Group {
             ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
                 #if os(iOS)
                 NavigationView {
-                    WeatherView(viewModel: CurrentWeatherViewModel(locationNames: WeatherView_Previews.locations, repository: MockedWeatherRepository()))
+                    WeatherView(viewModel: viewModel)
                 }
                 .preferredColorScheme(colorScheme)
                 
                 #elseif os(macOS)
-                WeatherView(viewModel: CurrentWeatherViewModel(locationNames: WeatherView_Previews.locations, repository: MockedWeatherRepository()))
+                WeatherView(viewModel: viewModel)
                     .preferredColorScheme(colorScheme)
                 #endif
             }

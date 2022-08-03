@@ -43,6 +43,18 @@
 		402748EE289A50BF00837217 /* GetColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E0289A463D00837217 /* GetColors.json */; };
 		402748EF289A50C200837217 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
 		402748F0289A50C200837217 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
+		402748F2289A984400837217 /* GetCurrentWeather_wroclaw.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F1289A984400837217 /* GetCurrentWeather_wroclaw.json */; };
+		402748F3289A984800837217 /* GetCurrentWeather_wroclaw.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F1289A984400837217 /* GetCurrentWeather_wroclaw.json */; };
+		402748F4289A984800837217 /* GetCurrentWeather_wroclaw.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F1289A984400837217 /* GetCurrentWeather_wroclaw.json */; };
+		402748F6289A990700837217 /* GetCurrentWeather_london.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F5289A990700837217 /* GetCurrentWeather_london.json */; };
+		402748F7289A990700837217 /* GetCurrentWeather_london.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F5289A990700837217 /* GetCurrentWeather_london.json */; };
+		402748F8289A990700837217 /* GetCurrentWeather_london.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F5289A990700837217 /* GetCurrentWeather_london.json */; };
+		402748FA289A992400837217 /* GetCurrentWeather_sydney.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F9289A992400837217 /* GetCurrentWeather_sydney.json */; };
+		402748FB289A992400837217 /* GetCurrentWeather_sydney.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F9289A992400837217 /* GetCurrentWeather_sydney.json */; };
+		402748FC289A992400837217 /* GetCurrentWeather_sydney.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F9289A992400837217 /* GetCurrentWeather_sydney.json */; };
+		402748FE289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748FD289A9B5400837217 /* GetCurrentWeather_tokyo.json */; };
+		402748FF289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748FD289A9B5400837217 /* GetCurrentWeather_tokyo.json */; };
+		40274900289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748FD289A9B5400837217 /* GetCurrentWeather_tokyo.json */; };
 		4064F522288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */; };
 		4064F523288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */; };
 		40719C52288FC4F8005E9E59 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C51288FC4F8005E9E59 /* CustomButtonView.swift */; };
@@ -61,8 +73,6 @@
 		409F087C28857DC900512203 /* PaletteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087A28857DC900512203 /* PaletteModel.swift */; };
 		409F08812886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08802886ACFE00512203 /* ColourLoversListViewModel.swift */; };
 		409F08822886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08802886ACFE00512203 /* ColourLoversListViewModel.swift */; };
-		409F08842886B3FC00512203 /* GetColorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08832886B3FC00512203 /* GetColorRequest.swift */; };
-		409F08852886B3FC00512203 /* GetColorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08832886B3FC00512203 /* GetColorRequest.swift */; };
 		409F08872886B40700512203 /* GetPaletteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08862886B40700512203 /* GetPaletteRequest.swift */; };
 		409F08882886B40700512203 /* GetPaletteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08862886B40700512203 /* GetPaletteRequest.swift */; };
 		409F088A2886BE4000512203 /* ColourLoversModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08892886BE4000512203 /* ColourLoversModel.swift */; };
@@ -133,6 +143,10 @@
 		402748E2289A4CB900837217 /* MockedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedRequest.swift; sourceTree = "<group>"; };
 		402748E6289A4DF300837217 /* GetPalettes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetPalettes.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		402748E8289A4F2A00837217 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
+		402748F1289A984400837217 /* GetCurrentWeather_wroclaw.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetCurrentWeather_wroclaw.json; sourceTree = "<group>"; };
+		402748F5289A990700837217 /* GetCurrentWeather_london.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetCurrentWeather_london.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		402748F9289A992400837217 /* GetCurrentWeather_sydney.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetCurrentWeather_sydney.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		402748FD289A9B5400837217 /* GetCurrentWeather_tokyo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetCurrentWeather_tokyo.json; sourceTree = "<group>"; };
 		4064F521288188A200AC2B28 /* ColourLoversDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversDetailsViewModel.swift; sourceTree = "<group>"; };
 		40719C51288FC4F8005E9E59 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		40719C54288FEC02005E9E59 /* MockedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MockedAssets.xcassets; sourceTree = "<group>"; };
@@ -142,7 +156,6 @@
 		409F087728857BAE00512203 /* GetPalettesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPalettesRequest.swift; sourceTree = "<group>"; };
 		409F087A28857DC900512203 /* PaletteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteModel.swift; sourceTree = "<group>"; };
 		409F08802886ACFE00512203 /* ColourLoversListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversListViewModel.swift; sourceTree = "<group>"; };
-		409F08832886B3FC00512203 /* GetColorRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColorRequest.swift; sourceTree = "<group>"; };
 		409F08862886B40700512203 /* GetPaletteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaletteRequest.swift; sourceTree = "<group>"; };
 		409F08892886BE4000512203 /* ColourLoversModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversModel.swift; sourceTree = "<group>"; };
 		409F088C2886D07C00512203 /* ColourLoversListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversListView.swift; sourceTree = "<group>"; };
@@ -336,6 +349,10 @@
 			children = (
 				402748E0289A463D00837217 /* GetColors.json */,
 				402748E6289A4DF300837217 /* GetPalettes.json */,
+				402748F1289A984400837217 /* GetCurrentWeather_wroclaw.json */,
+				402748F5289A990700837217 /* GetCurrentWeather_london.json */,
+				402748F9289A992400837217 /* GetCurrentWeather_sydney.json */,
+				402748FD289A9B5400837217 /* GetCurrentWeather_tokyo.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -374,7 +391,6 @@
 		409F08BB288933EC00512203 /* ColourLovers */ = {
 			isa = PBXGroup;
 			children = (
-				409F08832886B3FC00512203 /* GetColorRequest.swift */,
 				401A37A2287826C200C411B9 /* GetColorsRequest.swift */,
 				409F08862886B40700512203 /* GetPaletteRequest.swift */,
 				409F087728857BAE00512203 /* GetPalettesRequest.swift */,
@@ -535,10 +551,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402748FE289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */,
 				402748ED289A50BF00837217 /* GetColors.json in Resources */,
+				402748F4289A984800837217 /* GetCurrentWeather_wroclaw.json in Resources */,
 				401A375B2876F7C600C411B9 /* Assets.xcassets in Resources */,
 				40719C55288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
+				402748F6289A990700837217 /* GetCurrentWeather_london.json in Resources */,
 				40B61A2B287DB8BC001BD1AF /* Colors.xcassets in Resources */,
+				402748FA289A992400837217 /* GetCurrentWeather_sydney.json in Resources */,
 				402748EF289A50C200837217 /* GetPalettes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,10 +567,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402748FF289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */,
 				402748EE289A50BF00837217 /* GetColors.json in Resources */,
+				402748F3289A984800837217 /* GetCurrentWeather_wroclaw.json in Resources */,
 				401A375C2876F7C600C411B9 /* Assets.xcassets in Resources */,
 				40719C56288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
+				402748F7289A990700837217 /* GetCurrentWeather_london.json in Resources */,
 				40B61A2C287DB8BC001BD1AF /* Colors.xcassets in Resources */,
+				402748FB289A992400837217 /* GetCurrentWeather_sydney.json in Resources */,
 				402748F0289A50C200837217 /* GetPalettes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,7 +583,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402748F8289A990700837217 /* GetCurrentWeather_london.json in Resources */,
 				402748E1289A463D00837217 /* GetColors.json in Resources */,
+				40274900289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */,
+				402748FC289A992400837217 /* GetCurrentWeather_sydney.json in Resources */,
+				402748F2289A984400837217 /* GetCurrentWeather_wroclaw.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +624,6 @@
 				401A37A3287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F522288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */,
 				40B61A2F287DBA08001BD1AF /* ColorStyle.swift in Sources */,
-				409F08842886B3FC00512203 /* GetColorRequest.swift in Sources */,
 				409F088A2886BE4000512203 /* ColourLoversModel.swift in Sources */,
 				409F088D2886D07C00512203 /* ColourLoversListView.swift in Sources */,
 				401A37A928782E6D00C411B9 /* RequestError.swift in Sources */,
@@ -640,7 +667,6 @@
 				401A37A4287826C200C411B9 /* GetColorsRequest.swift in Sources */,
 				4064F523288188A200AC2B28 /* ColourLoversDetailsViewModel.swift in Sources */,
 				40B61A30287DBA08001BD1AF /* ColorStyle.swift in Sources */,
-				409F08852886B3FC00512203 /* GetColorRequest.swift in Sources */,
 				409F088B2886BE4000512203 /* ColourLoversModel.swift in Sources */,
 				409F088E2886D07C00512203 /* ColourLoversListView.swift in Sources */,
 				401A37AA28782E6D00C411B9 /* RequestError.swift in Sources */,

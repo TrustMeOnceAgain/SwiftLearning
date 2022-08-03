@@ -1,0 +1,41 @@
+{
+    "location": {
+        "name": "Wroclaw",
+        "region": "",
+        "country": "Poland",
+        "lat": 51.1,
+        "lon": 17.03,
+        "tz_id": "Europe/Warsaw",
+        "localtime_epoch": 1659528364,
+        "localtime": "2022-08-03 14:06"
+    },
+    "current": {
+        "last_updated_epoch": 1659528000,
+        "last_updated": "2022-08-03 14:00",
+        "temp_c": 30.0,
+        "temp_f": 86.0,
+        "is_day": 1,
+        "condition": {
+            "text": "Sunny",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            "code": 1000
+        },
+        "wind_mph": 4.3,
+        "wind_kph": 6.8,
+        "wind_degree": 200,
+        "wind_dir": "SSW",
+        "pressure_mb": 1018.0,
+        "pressure_in": 30.06,
+        "precip_mm": 0.0,
+        "precip_in": 0.0,
+        "humidity": 35,
+        "cloud": 0,
+        "feelslike_c": 29.6,
+        "feelslike_f": 85.3,
+        "vis_km": 10.0,
+        "vis_miles": 6.0,
+        "uv": 8.0,
+        "gust_mph": 6.5,
+        "gust_kph": 10.4
+    }
+}

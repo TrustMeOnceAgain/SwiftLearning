@@ -17,7 +17,7 @@ class DIManager {
         case .realData:
             return RealNetworkController()
         case .mocked:
-            return MockedNetworkController(mockedRequests: [MockedData.getColorsRequest, MockedData.getPalettesRequest])
+            return MockedNetworkController()
         }
     }
     
