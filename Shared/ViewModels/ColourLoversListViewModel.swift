@@ -12,7 +12,7 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
     @Published var search: String = ""
     @Published var dataStatus: ViewDataStatus<[ModelType]> = .notLoaded
     
-    @Published private var model: [ModelType]? // TODO: change name
+    @Published private var filteredData: [ModelType]?
     @Published private var data: [ModelType]?
     private var cancellable: Set<AnyCancellable> = []
     private let repository: ColourLoversRepository
@@ -86,13 +86,13 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
                 return data?.filter { $0.title.range(of: search, options: .caseInsensitive) != nil || $0.userName.range(of: search, options: .caseInsensitive) != nil }
             }
             .sink(receiveValue: { [weak self] model in
-                self?.model = model
+                self?.filteredData = model
             })
             .store(in: &cancellable)
     }
     
     private func setupDataStatus() {
-        $model
+        $filteredData
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { [weak self] result in
