@@ -13,6 +13,6 @@ struct GetPaletteRequest: Request {
     
     var path: String { "/api/palette/\(paletteId)" }
     var host: Host { .colourLovers }
-    var parameters: Parameters? { ["format": "json"] }
+    var parameters: Parameters? { [("format", "json")] }
     var httpMethod: HTTPMethod { .GET }
 }

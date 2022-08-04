@@ -16,7 +16,7 @@ struct WeatherView: View {
             .padding()
             .background(Color(.backgroundColor))
             .navigationTitle(viewModel.navigationTitle)
-            .toolbar { // TODO: fix for macOS
+            .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Refresh") {
                         viewModel.onRefreshButtonTap()

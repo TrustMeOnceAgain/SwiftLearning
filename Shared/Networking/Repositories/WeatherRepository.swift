@@ -15,7 +15,7 @@ protocol WeatherRepository {
 
 class RealWeatherRepository: WeatherRepository {
     
-    let networkController: NetworkController
+    private let networkController: NetworkController
     
     init(networkController: NetworkController) {
         self.networkController = networkController

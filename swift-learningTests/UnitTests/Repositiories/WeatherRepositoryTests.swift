@@ -14,12 +14,12 @@ class WeatherRepositoryTests: XCTestCase {
     private var cancellable = Set<AnyCancellable>()
     
     func testRepository() {
-        let mockedColourRepository: MockedColourLoversRepository = MockedColourLoversRepository(colorsResponse: .failure(.badRequest),
-                                                                                                palettesResponse: .failure(.parsingFailure))
+        let mockedNetworkController = MockedNetworkController(mockedRequests: [MockedRequest(request: GetColorsRequest(), response: .failure(.badRequest)), MockedRequest(request: GetPalettesRequest(), response: .failure(.parsingFailure))])
+        let colourRepository: ColourLoversRepository = RealColourLoversRepository(networkController: mockedNetworkController)
         let colorExpectation = XCTestExpectation(description: "Color Completion")
         let paletteExpectation = XCTestExpectation(description: "Palette Completion")
         
-        mockedColourRepository
+        colourRepository
             .getColors()
             .sinkToResult( { result in
                 if case .failure(let error) = result {
@@ -31,7 +31,7 @@ class WeatherRepositoryTests: XCTestCase {
             })
             .store(in: &cancellable)
         
-        mockedColourRepository
+        colourRepository
             .getPalettes()
             .sinkToResult( { result in
                 if case .failure(let error) = result {

@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct CurrentWeatherModel {
+struct CurrentWeatherModel: Equatable {
     
-    struct Location: Decodable {
+    struct Location: Decodable, Equatable {
         let name, country: String
     }
     
-    struct Condition: Decodable {
+    struct Condition: Decodable, Equatable {
         let text: String
         let imageUrlString: String
         let code: Int

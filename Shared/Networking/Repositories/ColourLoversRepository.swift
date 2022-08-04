@@ -18,7 +18,7 @@ protocol ColourLoversRepository {
 
 class RealColourLoversRepository: ColourLoversRepository {
     
-    let networkController: NetworkController
+    private let networkController: NetworkController
     
     init(networkController: NetworkController) {
         self.networkController = networkController

@@ -47,7 +47,7 @@ extension Request {
     }
 }
 
-typealias Parameters = [String: Any]
+typealias Parameters = [(String, Any)]
 
 enum HTTPMethod: String {
     case GET, POST, PUT, DELETE, PATCH
