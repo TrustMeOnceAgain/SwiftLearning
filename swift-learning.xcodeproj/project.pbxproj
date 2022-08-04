@@ -27,7 +27,6 @@
 		401A37A728782A4B00C411B9 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A528782A4B00C411B9 /* NetworkController.swift */; };
 		401A37A928782E6D00C411B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A828782E6D00C411B9 /* RequestError.swift */; };
 		401A37AA28782E6D00C411B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37A828782E6D00C411B9 /* RequestError.swift */; };
-		402748CE28993E1600837217 /* swift_learningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748CD28993E1600837217 /* swift_learningTests.swift */; };
 		402748D428993E5000837217 /* WeatherRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748C428993D9A00837217 /* WeatherRepositoryTests.swift */; };
 		402748D8289946D400837217 /* Publisher+sinkToResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748D5289946BC00837217 /* Publisher+sinkToResult.swift */; };
 		402748DC289A43A900837217 /* NetworkControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748DB289A43A900837217 /* NetworkControllerTests.swift */; };
@@ -65,6 +64,7 @@
 		40719C5F288FF38D005E9E59 /* URL+localURLForXCAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C5D288FF38D005E9E59 /* URL+localURLForXCAssets.swift */; };
 		40719C612893C20E005E9E59 /* ViewDataStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C602893C20D005E9E59 /* ViewDataStatus.swift */; };
 		40719C622893C20E005E9E59 /* ViewDataStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C602893C20D005E9E59 /* ViewDataStatus.swift */; };
+		4085402F289B9D400023AC25 /* ColourLoversRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4085402E289B9D400023AC25 /* ColourLoversRepositoryTests.swift */; };
 		409F086F288576D000512203 /* MainSectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F086E288576D000512203 /* MainSectionList.swift */; };
 		409F0870288576D000512203 /* MainSectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F086E288576D000512203 /* MainSectionList.swift */; };
 		409F087828857BAE00512203 /* GetPalettesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087728857BAE00512203 /* GetPalettesRequest.swift */; };
@@ -135,7 +135,6 @@
 		401A37A828782E6D00C411B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		402748C428993D9A00837217 /* WeatherRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryTests.swift; sourceTree = "<group>"; };
 		402748CB28993E1600837217 /* swift-learningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-learningTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		402748CD28993E1600837217 /* swift_learningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_learningTests.swift; sourceTree = "<group>"; };
 		402748D5289946BC00837217 /* Publisher+sinkToResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+sinkToResult.swift"; sourceTree = "<group>"; };
 		402748DB289A43A900837217 /* NetworkControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerTests.swift; sourceTree = "<group>"; };
 		402748DD289A45B300837217 /* JsonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
@@ -152,6 +151,7 @@
 		40719C54288FEC02005E9E59 /* MockedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MockedAssets.xcassets; sourceTree = "<group>"; };
 		40719C5D288FF38D005E9E59 /* URL+localURLForXCAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+localURLForXCAssets.swift"; sourceTree = "<group>"; };
 		40719C602893C20D005E9E59 /* ViewDataStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDataStatus.swift; sourceTree = "<group>"; };
+		4085402E289B9D400023AC25 /* ColourLoversRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversRepositoryTests.swift; sourceTree = "<group>"; };
 		409F086E288576D000512203 /* MainSectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionList.swift; sourceTree = "<group>"; };
 		409F087728857BAE00512203 /* GetPalettesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPalettesRequest.swift; sourceTree = "<group>"; };
 		409F087A28857DC900512203 /* PaletteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteModel.swift; sourceTree = "<group>"; };
@@ -282,6 +282,7 @@
 			children = (
 				40719C632893CCA4005E9E59 /* Repositories */,
 				401A37A1287826A400C411B9 /* Requests */,
+				402748DF289A462900837217 /* Mocks */,
 				401A379E2878200C00C411B9 /* Host.swift */,
 				401A379B28781BEE00C411B9 /* Request.swift */,
 				402748E2289A4CB900837217 /* MockedRequest.swift */,
@@ -303,9 +304,7 @@
 		402748C228993D6100837217 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				402748DF289A462900837217 /* Mocks */,
 				402748DA289A439B00837217 /* Networking */,
-				402748C328993D7100837217 /* Repositiories */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -314,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				402748C428993D9A00837217 /* WeatherRepositoryTests.swift */,
+				4085402E289B9D400023AC25 /* ColourLoversRepositoryTests.swift */,
 			);
 			path = Repositiories;
 			sourceTree = "<group>";
@@ -323,7 +323,6 @@
 			children = (
 				402748D92899485E00837217 /* Extensions */,
 				402748C228993D6100837217 /* UnitTests */,
-				402748CD28993E1600837217 /* swift_learningTests.swift */,
 			);
 			path = "swift-learningTests";
 			sourceTree = "<group>";
@@ -339,6 +338,7 @@
 		402748DA289A439B00837217 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				402748C328993D7100837217 /* Repositiories */,
 				402748DB289A43A900837217 /* NetworkControllerTests.swift */,
 			);
 			path = Networking;
@@ -686,8 +686,8 @@
 			files = (
 				402748DC289A43A900837217 /* NetworkControllerTests.swift in Sources */,
 				402748D8289946D400837217 /* Publisher+sinkToResult.swift in Sources */,
+				4085402F289B9D400023AC25 /* ColourLoversRepositoryTests.swift in Sources */,
 				402748D428993E5000837217 /* WeatherRepositoryTests.swift in Sources */,
-				402748CE28993E1600837217 /* swift_learningTests.swift in Sources */,
 				402748E7289A4DF300837217 /* GetPalettes.json in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
