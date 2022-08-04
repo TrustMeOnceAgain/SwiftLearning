@@ -66,7 +66,7 @@ class MockedNetworkController: NetworkController {
     
     var mockedRequests: [MockedRequest]
     
-    init(mockedRequests: [MockedRequest] = MockedData.allRequests) {
+    init(mockedRequests: [MockedRequest] = MockedData.basicRequests) {
         self.mockedRequests = mockedRequests
     }
     
