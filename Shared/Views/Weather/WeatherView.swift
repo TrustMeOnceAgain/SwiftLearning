@@ -37,12 +37,10 @@ struct WeatherView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             case .notLoaded:
                 InfoView(text: "There is no data to show!",
-                         onAppearAction: viewModel.onAppear,
-                         onRefreshButtonTapAction: nil)
+                         onAppearAction: viewModel.onAppear)
             case .error(_):
                 InfoView(text: "Error during loading data!",
-                         onAppearAction: nil,
-                         onRefreshButtonTapAction: nil)
+                         onAppearAction: nil)
             }
         }
     }

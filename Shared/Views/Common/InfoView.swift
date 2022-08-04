@@ -12,23 +12,16 @@ struct InfoView: View {
     let text: String
     let backgroundColor: Color
     let onAppearAction: (() -> ())?
-    let onRefreshButtonTapAction: (() -> ())?
     
-    init(text: String, backgroundColor: Color = Color(.backgroundColor), onAppearAction: (() -> ())?, onRefreshButtonTapAction: (() -> ())?) {
+    init(text: String, backgroundColor: Color = Color(.backgroundColor), onAppearAction: (() -> ())?) {
         self.text = text
         self.backgroundColor = backgroundColor
         self.onAppearAction = onAppearAction
-        self.onRefreshButtonTapAction = onRefreshButtonTapAction
     }
     
     var body: some View {
         VStack(alignment: .center) {
             Text(text)
-            if let tapAction = onRefreshButtonTapAction {
-                Button("Refresh") {
-                    tapAction()
-                }
-            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(backgroundColor)
@@ -44,8 +37,7 @@ struct InfoView_Previews: PreviewProvider {
             ForEach(ColorScheme.allCases, id: \.hashValue) { colorScheme in
                 InfoView(text: "Info view text",
                          backgroundColor: Color(.backgroundColor),
-                         onAppearAction: nil,
-                         onRefreshButtonTapAction: { })
+                         onAppearAction: nil)
                     .preferredColorScheme(colorScheme)
             }
         }

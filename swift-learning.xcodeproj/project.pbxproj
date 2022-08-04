@@ -33,15 +33,12 @@
 		402748E1289A463D00837217 /* GetColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E0289A463D00837217 /* GetColors.json */; };
 		402748E4289A4CC900837217 /* MockedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748E2289A4CB900837217 /* MockedRequest.swift */; };
 		402748E5289A4CC900837217 /* MockedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748E2289A4CB900837217 /* MockedRequest.swift */; };
-		402748E7289A4DF300837217 /* GetPalettes.json in Sources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
 		402748E9289A4F2A00837217 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748E8289A4F2A00837217 /* MockedData.swift */; };
 		402748EA289A4F2A00837217 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748E8289A4F2A00837217 /* MockedData.swift */; };
 		402748EB289A4F8100837217 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748DD289A45B300837217 /* JsonLoader.swift */; };
 		402748EC289A4F8200837217 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402748DD289A45B300837217 /* JsonLoader.swift */; };
 		402748ED289A50BF00837217 /* GetColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E0289A463D00837217 /* GetColors.json */; };
 		402748EE289A50BF00837217 /* GetColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E0289A463D00837217 /* GetColors.json */; };
-		402748EF289A50C200837217 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
-		402748F0289A50C200837217 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
 		402748F2289A984400837217 /* GetCurrentWeather_wroclaw.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F1289A984400837217 /* GetCurrentWeather_wroclaw.json */; };
 		402748F3289A984800837217 /* GetCurrentWeather_wroclaw.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F1289A984400837217 /* GetCurrentWeather_wroclaw.json */; };
 		402748F4289A984800837217 /* GetCurrentWeather_wroclaw.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748F1289A984400837217 /* GetCurrentWeather_wroclaw.json */; };
@@ -65,6 +62,9 @@
 		40719C612893C20E005E9E59 /* ViewDataStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C602893C20D005E9E59 /* ViewDataStatus.swift */; };
 		40719C622893C20E005E9E59 /* ViewDataStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40719C602893C20D005E9E59 /* ViewDataStatus.swift */; };
 		4085402F289B9D400023AC25 /* ColourLoversRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4085402E289B9D400023AC25 /* ColourLoversRepositoryTests.swift */; };
+		40854030289BACC70023AC25 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
+		40854031289BACC70023AC25 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
+		40854032289BACC80023AC25 /* GetPalettes.json in Resources */ = {isa = PBXBuildFile; fileRef = 402748E6289A4DF300837217 /* GetPalettes.json */; };
 		409F086F288576D000512203 /* MainSectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F086E288576D000512203 /* MainSectionList.swift */; };
 		409F0870288576D000512203 /* MainSectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F086E288576D000512203 /* MainSectionList.swift */; };
 		409F087828857BAE00512203 /* GetPalettesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F087728857BAE00512203 /* GetPalettesRequest.swift */; };
@@ -81,8 +81,6 @@
 		409F088E2886D07C00512203 /* ColourLoversListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F088C2886D07C00512203 /* ColourLoversListView.swift */; };
 		409F08A62887DB4700512203 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08A52887DB4700512203 /* InfoView.swift */; };
 		409F08A72887DB4700512203 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08A52887DB4700512203 /* InfoView.swift */; };
-		409F08A92887DBE000512203 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08A82887DBE000512203 /* SearchView.swift */; };
-		409F08AA2887DBE000512203 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08A82887DBE000512203 /* SearchView.swift */; };
 		409F08BE2889341100512203 /* GetCurrentWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08BD2889341100512203 /* GetCurrentWeatherRequest.swift */; };
 		409F08BF2889341100512203 /* GetCurrentWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08BD2889341100512203 /* GetCurrentWeatherRequest.swift */; };
 		409F08C12889350A00512203 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08C02889350A00512203 /* WeatherRepository.swift */; };
@@ -160,7 +158,6 @@
 		409F08892886BE4000512203 /* ColourLoversModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversModel.swift; sourceTree = "<group>"; };
 		409F088C2886D07C00512203 /* ColourLoversListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversListView.swift; sourceTree = "<group>"; };
 		409F08A52887DB4700512203 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		409F08A82887DBE000512203 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		409F08BD2889341100512203 /* GetCurrentWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentWeatherRequest.swift; sourceTree = "<group>"; };
 		409F08C02889350A00512203 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
 		409F08C32889371B00512203 /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
@@ -382,7 +379,6 @@
 			children = (
 				40B61A27287DA3DC001BD1AF /* Cell.swift */,
 				409F08A52887DB4700512203 /* InfoView.swift */,
-				409F08A82887DBE000512203 /* SearchView.swift */,
 				40719C51288FC4F8005E9E59 /* CustomButtonView.swift */,
 			);
 			path = Common;
@@ -554,12 +550,12 @@
 				402748FE289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */,
 				402748ED289A50BF00837217 /* GetColors.json in Resources */,
 				402748F4289A984800837217 /* GetCurrentWeather_wroclaw.json in Resources */,
+				40854030289BACC70023AC25 /* GetPalettes.json in Resources */,
 				401A375B2876F7C600C411B9 /* Assets.xcassets in Resources */,
 				40719C55288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
 				402748F6289A990700837217 /* GetCurrentWeather_london.json in Resources */,
 				40B61A2B287DB8BC001BD1AF /* Colors.xcassets in Resources */,
 				402748FA289A992400837217 /* GetCurrentWeather_sydney.json in Resources */,
-				402748EF289A50C200837217 /* GetPalettes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,12 +566,12 @@
 				402748FF289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */,
 				402748EE289A50BF00837217 /* GetColors.json in Resources */,
 				402748F3289A984800837217 /* GetCurrentWeather_wroclaw.json in Resources */,
+				40854031289BACC70023AC25 /* GetPalettes.json in Resources */,
 				401A375C2876F7C600C411B9 /* Assets.xcassets in Resources */,
 				40719C56288FEC02005E9E59 /* MockedAssets.xcassets in Resources */,
 				402748F7289A990700837217 /* GetCurrentWeather_london.json in Resources */,
 				40B61A2C287DB8BC001BD1AF /* Colors.xcassets in Resources */,
 				402748FB289A992400837217 /* GetCurrentWeather_sydney.json in Resources */,
-				402748F0289A50C200837217 /* GetPalettes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +579,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40854032289BACC80023AC25 /* GetPalettes.json in Resources */,
 				402748F8289A990700837217 /* GetCurrentWeather_london.json in Resources */,
 				402748E1289A463D00837217 /* GetColors.json in Resources */,
 				40274900289A9B5400837217 /* GetCurrentWeather_tokyo.json in Resources */,
@@ -608,7 +605,6 @@
 				409F086F288576D000512203 /* MainSectionList.swift in Sources */,
 				401A37552876F7C600C411B9 /* swift_learningApp.swift in Sources */,
 				409F08C42889371B00512203 /* CurrentWeatherModel.swift in Sources */,
-				409F08A92887DBE000512203 /* SearchView.swift in Sources */,
 				409F08C728893D7500512203 /* WeatherView.swift in Sources */,
 				409F08812886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */,
 				402748E4289A4CC900837217 /* MockedRequest.swift in Sources */,
@@ -651,7 +647,6 @@
 				409F0870288576D000512203 /* MainSectionList.swift in Sources */,
 				401A37562876F7C600C411B9 /* swift_learningApp.swift in Sources */,
 				409F08C52889371B00512203 /* CurrentWeatherModel.swift in Sources */,
-				409F08AA2887DBE000512203 /* SearchView.swift in Sources */,
 				409F08C828893D7500512203 /* WeatherView.swift in Sources */,
 				409F08822886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */,
 				402748E5289A4CC900837217 /* MockedRequest.swift in Sources */,
@@ -688,7 +683,6 @@
 				402748D8289946D400837217 /* Publisher+sinkToResult.swift in Sources */,
 				4085402F289B9D400023AC25 /* ColourLoversRepositoryTests.swift in Sources */,
 				402748D428993E5000837217 /* WeatherRepositoryTests.swift in Sources */,
-				402748E7289A4DF300837217 /* GetPalettes.json in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
