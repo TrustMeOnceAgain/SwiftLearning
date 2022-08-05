@@ -9,14 +9,19 @@ The focus was mainly on:
 - Concurrency
 
 ## Installation
-Simply clone the repo and open `swift-learning.xcodeproj` file in Xcode.
+Simply clone the repo and open `SwiftLearning.xcodeproj` file in Xcode.
 
 ## Usage
-There are two targets: `swift-learning (iOS)` and `swify-learning (macOS)`. 
+There are two targets: `SwiftLearning (iOS)` and `SwiftLearning (macOS)`. 
 Simply choose preferred target and select a device to run at (iOS simulator or mac machine).
 
-## Licence
-MIT
+## External links
+Markdown documents created using:
+- https://dillinger.io/
 
-## Externak links
-Badges created using: https://shields.io/
+Badges created using: 
+- https://shields.io/
+
+Used API:
+- https://www.colourlovers.com/api
+- https://www.weatherapi.com/
