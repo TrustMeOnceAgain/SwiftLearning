@@ -1,6 +1,6 @@
 //
 //  Publisher+sinkToResult.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 02/08/2022.
 //

@@ -1,6 +1,6 @@
 //
 //  NetworkController.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 08/07/2022.
 //

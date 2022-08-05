@@ -1,6 +1,6 @@
 //
 //  InfoView.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 20/07/2022.
 //

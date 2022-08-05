@@ -1,6 +1,6 @@
 //
 //  ColourLoversDetailsViewModel.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 15/07/2022.
 //

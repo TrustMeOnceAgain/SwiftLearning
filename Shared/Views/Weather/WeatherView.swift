@@ -1,6 +1,6 @@
 //
 //  WeatherView.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 21/07/2022.
 //

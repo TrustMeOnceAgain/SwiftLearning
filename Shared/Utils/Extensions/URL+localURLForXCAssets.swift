@@ -1,6 +1,6 @@
 //
 //  URL+localURLForXCAssets.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 26/07/2022.
 //

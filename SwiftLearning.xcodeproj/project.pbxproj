@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		401A37552876F7C600C411B9 /* swift_learningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37422876F7C400C411B9 /* swift_learningApp.swift */; };
-		401A37562876F7C600C411B9 /* swift_learningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37422876F7C400C411B9 /* swift_learningApp.swift */; };
+		401A37552876F7C600C411B9 /* SwiftLearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37422876F7C400C411B9 /* SwiftLearningApp.swift */; };
+		401A37562876F7C600C411B9 /* SwiftLearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A37422876F7C400C411B9 /* SwiftLearningApp.swift */; };
 		401A375B2876F7C600C411B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A37452876F7C600C411B9 /* Assets.xcassets */; };
 		401A375C2876F7C600C411B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A37452876F7C600C411B9 /* Assets.xcassets */; };
 		401A376B287711B800C411B9 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A376A287711B800C411B9 /* ColorModel.swift */; };
@@ -118,9 +118,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		401A37422876F7C400C411B9 /* swift_learningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_learningApp.swift; sourceTree = "<group>"; };
+		401A37422876F7C400C411B9 /* SwiftLearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLearningApp.swift; sourceTree = "<group>"; };
 		401A37452876F7C600C411B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		401A374A2876F7C600C411B9 /* swift-learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		401A374A2876F7C600C411B9 /* SwiftLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A37502876F7C600C411B9 /* swift-learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A37522876F7C600C411B9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		401A376A287711B800C411B9 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		401A37A528782A4B00C411B9 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		401A37A828782E6D00C411B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		402748C428993D9A00837217 /* WeatherRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryTests.swift; sourceTree = "<group>"; };
-		402748CB28993E1600837217 /* swift-learningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-learningTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		402748CB28993E1600837217 /* SwiftLearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLearningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		402748D5289946BC00837217 /* Publisher+sinkToResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+sinkToResult.swift"; sourceTree = "<group>"; };
 		402748DB289A43A900837217 /* NetworkControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerTests.swift; sourceTree = "<group>"; };
 		402748DD289A45B300837217 /* JsonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 			children = (
 				401A373F2876F7C400C411B9 /* Shared */,
 				401A37512876F7C600C411B9 /* macOS */,
-				402748CC28993E1600837217 /* swift-learningTests */,
+				402748CC28993E1600837217 /* Tests */,
 				401A374B2876F7C600C411B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				401A377E2877192A00C411B9 /* Models */,
 				4064F51D2881886600AC2B28 /* ViewModels */,
 				401A378C28771E6500C411B9 /* Views */,
-				401A37422876F7C400C411B9 /* swift_learningApp.swift */,
+				401A37422876F7C400C411B9 /* SwiftLearningApp.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -224,9 +224,9 @@
 		401A374B2876F7C600C411B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				401A374A2876F7C600C411B9 /* swift-learning.app */,
+				401A374A2876F7C600C411B9 /* SwiftLearning.app */,
 				401A37502876F7C600C411B9 /* swift-learning.app */,
-				402748CB28993E1600837217 /* swift-learningTests.xctest */,
+				402748CB28993E1600837217 /* SwiftLearningTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,13 +315,13 @@
 			path = Repositiories;
 			sourceTree = "<group>";
 		};
-		402748CC28993E1600837217 /* swift-learningTests */ = {
+		402748CC28993E1600837217 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				402748D92899485E00837217 /* Extensions */,
 				402748C228993D6100837217 /* UnitTests */,
 			);
-			path = "swift-learningTests";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		402748D92899485E00837217 /* Extensions */ = {
@@ -442,9 +442,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		401A37492876F7C600C411B9 /* swift-learning (iOS) */ = {
+		401A37492876F7C600C411B9 /* SwiftLearning (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 401A375F2876F7C600C411B9 /* Build configuration list for PBXNativeTarget "swift-learning (iOS)" */;
+			buildConfigurationList = 401A375F2876F7C600C411B9 /* Build configuration list for PBXNativeTarget "SwiftLearning (iOS)" */;
 			buildPhases = (
 				401A37462876F7C600C411B9 /* Sources */,
 				401A37472876F7C600C411B9 /* Frameworks */,
@@ -454,16 +454,16 @@
 			);
 			dependencies = (
 			);
-			name = "swift-learning (iOS)";
+			name = "SwiftLearning (iOS)";
 			packageProductDependencies = (
 			);
 			productName = "swift-learning (iOS)";
-			productReference = 401A374A2876F7C600C411B9 /* swift-learning.app */;
+			productReference = 401A374A2876F7C600C411B9 /* SwiftLearning.app */;
 			productType = "com.apple.product-type.application";
 		};
-		401A374F2876F7C600C411B9 /* swift-learning (macOS) */ = {
+		401A374F2876F7C600C411B9 /* SwiftLearning (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 401A37622876F7C600C411B9 /* Build configuration list for PBXNativeTarget "swift-learning (macOS)" */;
+			buildConfigurationList = 401A37622876F7C600C411B9 /* Build configuration list for PBXNativeTarget "SwiftLearning (macOS)" */;
 			buildPhases = (
 				401A374C2876F7C600C411B9 /* Sources */,
 				401A374D2876F7C600C411B9 /* Frameworks */,
@@ -473,16 +473,16 @@
 			);
 			dependencies = (
 			);
-			name = "swift-learning (macOS)";
+			name = "SwiftLearning (macOS)";
 			packageProductDependencies = (
 			);
 			productName = "swift-learning (macOS)";
 			productReference = 401A37502876F7C600C411B9 /* swift-learning.app */;
 			productType = "com.apple.product-type.application";
 		};
-		402748CA28993E1600837217 /* swift-learningTests */ = {
+		402748CA28993E1600837217 /* SwiftLearningTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 402748D128993E1600837217 /* Build configuration list for PBXNativeTarget "swift-learningTests" */;
+			buildConfigurationList = 402748D128993E1600837217 /* Build configuration list for PBXNativeTarget "SwiftLearningTests" */;
 			buildPhases = (
 				402748C728993E1600837217 /* Sources */,
 				402748C828993E1600837217 /* Frameworks */,
@@ -493,9 +493,9 @@
 			dependencies = (
 				402748D028993E1600837217 /* PBXTargetDependency */,
 			);
-			name = "swift-learningTests";
+			name = SwiftLearningTests;
 			productName = "swift-learningTests";
-			productReference = 402748CB28993E1600837217 /* swift-learningTests.xctest */;
+			productReference = 402748CB28993E1600837217 /* SwiftLearningTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -520,7 +520,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 401A373E2876F7C400C411B9 /* Build configuration list for PBXProject "swift-learning" */;
+			buildConfigurationList = 401A373E2876F7C400C411B9 /* Build configuration list for PBXProject "SwiftLearning" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -535,9 +535,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				401A37492876F7C600C411B9 /* swift-learning (iOS) */,
-				401A374F2876F7C600C411B9 /* swift-learning (macOS) */,
-				402748CA28993E1600837217 /* swift-learningTests */,
+				401A37492876F7C600C411B9 /* SwiftLearning (iOS) */,
+				401A374F2876F7C600C411B9 /* SwiftLearning (macOS) */,
+				402748CA28993E1600837217 /* SwiftLearningTests */,
 			);
 		};
 /* End PBXProject section */
@@ -603,7 +603,7 @@
 				40B61A1C287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */,
 				40B61A28287DA3DC001BD1AF /* Cell.swift in Sources */,
 				409F086F288576D000512203 /* MainSectionList.swift in Sources */,
-				401A37552876F7C600C411B9 /* swift_learningApp.swift in Sources */,
+				401A37552876F7C600C411B9 /* SwiftLearningApp.swift in Sources */,
 				409F08C42889371B00512203 /* CurrentWeatherModel.swift in Sources */,
 				409F08C728893D7500512203 /* WeatherView.swift in Sources */,
 				409F08812886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */,
@@ -645,7 +645,7 @@
 				40B61A1D287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */,
 				40B61A29287DA3DC001BD1AF /* Cell.swift in Sources */,
 				409F0870288576D000512203 /* MainSectionList.swift in Sources */,
-				401A37562876F7C600C411B9 /* swift_learningApp.swift in Sources */,
+				401A37562876F7C600C411B9 /* SwiftLearningApp.swift in Sources */,
 				409F08C52889371B00512203 /* CurrentWeatherModel.swift in Sources */,
 				409F08C828893D7500512203 /* WeatherView.swift in Sources */,
 				409F08822886ACFE00512203 /* ColourLoversListViewModel.swift in Sources */,
@@ -691,7 +691,7 @@
 /* Begin PBXTargetDependency section */
 		402748D028993E1600837217 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 401A37492876F7C600C411B9 /* swift-learning (iOS) */;
+			target = 401A37492876F7C600C411B9 /* SwiftLearning (iOS) */;
 			targetProxy = 402748CF28993E1600837217 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -813,7 +813,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D6R2CATDYP;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -828,7 +828,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.trustme.swift-learning";
-				PRODUCT_NAME = "swift-learning";
+				PRODUCT_NAME = SwiftLearning;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -843,7 +843,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D6R2CATDYP;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -858,7 +858,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.trustme.swift-learning";
-				PRODUCT_NAME = "swift-learning";
+				PRODUCT_NAME = SwiftLearning;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -876,7 +876,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D6R2CATDYP;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -904,7 +904,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D6R2CATDYP;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -927,9 +927,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D6R2CATDYP;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -947,9 +948,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D6R2CATDYP;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -967,7 +969,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		401A373E2876F7C400C411B9 /* Build configuration list for PBXProject "swift-learning" */ = {
+		401A373E2876F7C400C411B9 /* Build configuration list for PBXProject "SwiftLearning" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				401A375D2876F7C600C411B9 /* Debug */,
@@ -976,7 +978,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		401A375F2876F7C600C411B9 /* Build configuration list for PBXNativeTarget "swift-learning (iOS)" */ = {
+		401A375F2876F7C600C411B9 /* Build configuration list for PBXNativeTarget "SwiftLearning (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				401A37602876F7C600C411B9 /* Debug */,
@@ -985,7 +987,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		401A37622876F7C600C411B9 /* Build configuration list for PBXNativeTarget "swift-learning (macOS)" */ = {
+		401A37622876F7C600C411B9 /* Build configuration list for PBXNativeTarget "SwiftLearning (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				401A37632876F7C600C411B9 /* Debug */,
@@ -994,7 +996,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		402748D128993E1600837217 /* Build configuration list for PBXNativeTarget "swift-learningTests" */ = {
+		402748D128993E1600837217 /* Build configuration list for PBXNativeTarget "SwiftLearningTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				402748D228993E1600837217 /* Debug */,

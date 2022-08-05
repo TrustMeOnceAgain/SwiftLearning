@@ -1,6 +1,6 @@
 //
 //  MockedData.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 03/08/2022.
 //

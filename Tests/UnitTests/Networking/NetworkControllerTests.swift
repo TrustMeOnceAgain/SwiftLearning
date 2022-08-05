@@ -1,12 +1,12 @@
 //
 //  NetworkControllerTests.swift
-//  swift-learningTests
+//  SwiftLearningTests
 //
 //  Created by Filip Cybuch on 03/08/2022.
 //
 
 import XCTest
-@testable import swift_learning
+@testable import SwiftLearning
 
 class NetworkControllerTests: XCTestCase {
     

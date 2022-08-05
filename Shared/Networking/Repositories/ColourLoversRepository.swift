@@ -1,6 +1,6 @@
 //
 //  ColourLoversController.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 11/07/2022.
 //

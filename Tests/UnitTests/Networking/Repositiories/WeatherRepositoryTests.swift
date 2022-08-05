@@ -1,13 +1,13 @@
 //
 //  WeatherRepositoryTests.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 02/08/2022.
 //
 
 import XCTest
 import Combine
-@testable import swift_learning
+@testable import SwiftLearning
 
 class WeatherRepositoryTests: XCTestCase {
     

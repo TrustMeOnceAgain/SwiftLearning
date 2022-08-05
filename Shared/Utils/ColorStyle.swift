@@ -1,6 +1,6 @@
 //
 //  ColorStyle.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 12/07/2022.
 //

@@ -1,6 +1,6 @@
 //
 //  ViewDataStatus.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 29/07/2022.
 //

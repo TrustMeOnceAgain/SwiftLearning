@@ -1,5 +1,5 @@
 //
-//  swift_learningApp.swift
+//  SwiftLearningApp.swift
 //  Shared
 //
 //  Created by Filip Cybuch on 07/07/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct swift_learningApp: App {
+struct SwiftLearningApp: App {
 
     init() {
         #if os(iOS)

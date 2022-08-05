@@ -1,13 +1,13 @@
 //
 //  ColourLoversRepositoryTests.swift
-//  swift-learningTests
+//  SwiftLearningTests
 //
 //  Created by Filip Cybuch on 04/08/2022.
 //
 
 import XCTest
 import Combine
-@testable import swift_learning
+@testable import SwiftLearning
 
 class ColourLoversRepositoryTests: XCTestCase {
     

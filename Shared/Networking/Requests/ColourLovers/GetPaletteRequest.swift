@@ -1,6 +1,6 @@
 //
 //  GetPaletteRequest.swift
-//  swift-learning
+//  SwiftLearning
 //
 //  Created by Filip Cybuch on 19/07/2022.
 //

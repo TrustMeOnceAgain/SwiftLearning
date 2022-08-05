@@ -1,6 +1,6 @@
 //
 //  MockedRequest.swift
-//  swift-learningTests
+//  SwiftLearningTests
 //
 //  Created by Filip Cybuch on 03/08/2022.
 //
