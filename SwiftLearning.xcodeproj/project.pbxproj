@@ -95,6 +95,7 @@
 		409F08CE28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08CC28893F4D00512203 /* CurrentWeatherViewModel.swift */; };
 		409F08D32889595200512203 /* Numeric+temperatureSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */; };
 		409F08D42889595200512203 /* Numeric+temperatureSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */; };
+		40B0067528A3E71900738063 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0067428A3E71900738063 /* SearchView.swift */; };
 		40B61A1C287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */; };
 		40B61A1D287C00B5001BD1AF /* ColourLoversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */; };
 		40B61A22287C327D001BD1AF /* ColourLoversDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B61A21287C327D001BD1AF /* ColourLoversDetails.swift */; };
@@ -165,6 +166,7 @@
 		409F08C928893D8600512203 /* WeatherTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTile.swift; sourceTree = "<group>"; };
 		409F08CC28893F4D00512203 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 		409F08D22889595200512203 /* Numeric+temperatureSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+temperatureSymbol.swift"; sourceTree = "<group>"; };
+		40B0067428A3E71900738063 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		40B61A1B287C00B5001BD1AF /* ColourLoversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversRepository.swift; sourceTree = "<group>"; };
 		40B61A21287C327D001BD1AF /* ColourLoversDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLoversDetails.swift; sourceTree = "<group>"; };
 		40B61A27287DA3DC001BD1AF /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				40B61A27287DA3DC001BD1AF /* Cell.swift */,
 				409F08A52887DB4700512203 /* InfoView.swift */,
 				40719C51288FC4F8005E9E59 /* CustomButtonView.swift */,
+				40B0067428A3E71900738063 /* SearchView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				409F088A2886BE4000512203 /* ColourLoversModel.swift in Sources */,
 				409F088D2886D07C00512203 /* ColourLoversListView.swift in Sources */,
 				401A37A928782E6D00C411B9 /* RequestError.swift in Sources */,
+				40B0067528A3E71900738063 /* SearchView.swift in Sources */,
 				409F08A62887DB4700512203 /* InfoView.swift in Sources */,
 				401A376B287711B800C411B9 /* ColorModel.swift in Sources */,
 				409F08CD28893F4D00512203 /* CurrentWeatherViewModel.swift in Sources */,

@@ -29,10 +29,7 @@ struct ColourLoversListView<ModelType: Identifiable & ColourLoversModel>: View {
                     }
                 }
             }
-        #if os(iOS)
-            .searchable(text: $viewModel.search, placement: .navigationBarDrawer(displayMode: .always))
-            .disableAutocorrection(true)
-        #elseif os(macOS)
+        #if os(macOS)
             .searchable(text: $viewModel.search, placement: .toolbar)
         #endif
             
@@ -46,6 +43,9 @@ extension ColourLoversListView {
         VStack {
             switch viewModel.dataStatus {
             case .loaded(let model):
+                #if os(iOS)
+                SearchView(search: $viewModel.search)
+                #endif
                 loadedView(model: model)
             case .loading:
                 ProgressView()

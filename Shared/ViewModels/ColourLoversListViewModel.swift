@@ -41,6 +41,7 @@ class ColourLoversListViewModel<ModelType: ColourLoversModel>: ObservableObject 
     
     private func fetchData() {
         dataStatus = .loading
+        search = ""
         
         switch ModelType.self {
         case is ColorModel.Type:
