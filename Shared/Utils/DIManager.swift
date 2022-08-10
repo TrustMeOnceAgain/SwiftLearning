@@ -10,21 +10,26 @@ import Foundation
 class DIManager {
     static var shared: DIManager = DIManager()
     
-    var appEnvironment: AppEnvironment = .realData
+    let networkController: NetworkController
+    let colourLoversRepository: ColourLoversRepository
+    let weatherRepository: WeatherRepository
     
-    var networkController: NetworkController {
+    private init() {
+        self.networkController = DIManager.createNetworkController(using: .realData) // Change to use different environment TODO: extend this to use UserDefaults/compilation flags for configuration
+        self.colourLoversRepository = RealColourLoversRepository(networkController: networkController)
+        self.weatherRepository = RealWeatherRepository(networkController: networkController)
+    }
+    
+    private static func createNetworkController(using appEnvironment: AppEnvironment) -> NetworkController {
         switch appEnvironment {
         case .realData:
             return RealNetworkController()
-        case .mocked:
+        case .mockedData:
             return MockedNetworkController()
         }
     }
-    
-    var colourLoversRepository: ColourLoversRepository { RealColourLoversRepository(networkController: networkController) }
-    var weatherRepository: WeatherRepository { RealWeatherRepository(networkController: networkController) }
 }
 
 enum AppEnvironment {
-    case realData, mocked
+    case realData, mockedData
 }

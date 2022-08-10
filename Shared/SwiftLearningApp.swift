@@ -14,8 +14,6 @@ struct SwiftLearningApp: App {
         #if os(iOS)
         UITableView.appearance().backgroundColor = .clear
         #endif
-        // Change to use mock data instead of a real one
-        DIManager.shared.appEnvironment = .realData
     }
     
     var body: some Scene {
